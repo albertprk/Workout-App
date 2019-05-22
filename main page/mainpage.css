@@ -12,10 +12,10 @@ body {
 .startButton {
   float:right;
   vertical-align:middle;
-  height:40px;
+  height:32px;
   margin-right:40px;
-  margin-top:40px;
-  width:100px;
+  margin-top:44px;
+  width:170px;
   border:none;
   background:#f5f5f5;
   font-weight:bold;

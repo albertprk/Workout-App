@@ -1,0 +1,5 @@
+1. overall layout of the website, pages like gym and trainers and trainer and their functions
+
+2. start implementing the backend and design front Gender
+
+3. Setting up github and commit 

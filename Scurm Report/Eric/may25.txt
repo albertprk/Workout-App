@@ -1,3 +1,5 @@
 1. we have been working on the over all design of the project, functionality we wish to implment
 2.we will start designing the website frontend and backend logics, set up the gym and trainers
-3.could have conflict in design with groupmate, but it was avoided
+3.could have conflict in design with groupmate, but it was avoided. There was some problem with
+github and using git since i was not very familar with it. I was able to resolve the problem from cmd
+as atom's build in git clone had some problem

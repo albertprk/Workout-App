@@ -2,4 +2,4 @@
 
 2. start implementing the backend and design front Gender
 
-3. Setting up github and commit 
+3. Setting up github and commiting. I guess we could have ran into merge conflict issue but that hasn't happened yet.

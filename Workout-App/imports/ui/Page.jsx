@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import TrainerCard from './TrainerCard';
 import TrainersMenu from './TrainersMenu';
+import TrainerRow from './TrainerRow';
+import TrainerInfo from './TrainerInfo';
+
 
 export default class Page extends React.Component {
 
@@ -15,7 +18,17 @@ export default class Page extends React.Component {
             <TrainerCard />
           </div>
       );
-    } else {
+    }
+    if (this.props.value === 'Trainer') {
+      return (
+        <div>
+          <br/>
+          <TrainerRow />
+          <br />
+          <TrainerInfo/>
+        </div>
+    );
+   }else {
       return (
         <div>
           <p>to be implemented</p>

@@ -12,7 +12,7 @@ export default class TrainersMenu extends Component {
         <div class="right menu">
           <div class="item">
             <div class="ui transparent icon input">
-              <input type="text" placeholder="Search trainer..." />
+              <input type="text" placeholder="Search trainers..." />
               <i class="search link icon"></i>
             </div>
           </div>

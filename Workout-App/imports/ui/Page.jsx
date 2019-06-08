@@ -9,31 +9,41 @@ export default class Page extends React.Component {
 
 
 
-  render() {
-      if (this.props.value === 'Trainers') {
-        return (
-          <div>
-            <TrainersMenu />
-            <br />
-            <TrainerCard />
-          </div>
-      );
+    render() {
+        if (this.props.value === 'Trainers') {
+            return (
+                <div>
+                    <TrainersMenu />
+                    <br />
+                    <TrainerCard />
+                </div>
+            );
+        }
+        if (this.props.value === 'Trainer') {
+            return (
+                <div>
+                    <br/>
+                    <TrainerRow />
+                    <br />
+                    <TrainerInfo/>
+                </div>
+            );
+        }
+        if (this.props.value === 'Gym') {
+            return (
+                <div>
+                    <GymMenu/>
+                    <br/>
+                    <GymCard/>
+                </div>
+            )
+        } else {
+                return (
+                    <div>
+                        <p>to be implemented</p>
+                    </div>
+                );
+            }
+        }
     }
-    if (this.props.value === 'Trainer') {
-      return (
-        <div>
-          <br/>
-          <TrainerRow />
-          <br />
-          <TrainerInfo/>
-        </div>
-    );
-   }else {
-      return (
-        <div>
-          <p>to be implemented</p>
-        </div>
-    );
-    }
-  }
 }

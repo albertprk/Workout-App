@@ -11,13 +11,13 @@ export default class SideMenu extends React.Component {
 }
 
 //update the textvalue to the part user clicks, need to rewrite this to combined all 4 into one function
-handleclickgym() {
+handleClickGym() {
   this.setState({
     textvalue: "Gym"
   });
 }
 
-handleclicktrainers() {
+handleClickTrainers() {
   this.setState({
     textvalue: "Trainers"
   });
@@ -31,10 +31,10 @@ handleclicktrainers() {
       <div class="ui grid">
         <div class="four wide column">
           <div class="ui vertical fluid tabular menu">
-            <a class="item" onClick={this.handleclickgym.bind(this)}>
+            <a class="item" onClick={this.handleClickGym.bind(this)}>
               Gym
             </a>
-            <a class="item" onClick={this.handleclicktrainers.bind(this)}>
+            <a class="item" onClick={this.handleClickTrainers.bind(this)}>
               Trainers
             </a>
             <a class="item">

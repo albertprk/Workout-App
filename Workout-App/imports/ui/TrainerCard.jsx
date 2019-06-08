@@ -7,6 +7,7 @@ export default class TrainerCard extends Component {
    <div className="__trainer-card">
     <div class="ui four column centered grid">
       <div class="three right column row">
+
         <div class="column">
           <div class="ui link cards">
             <div class="card">
@@ -34,6 +35,7 @@ export default class TrainerCard extends Component {
             </div>
           </div>
         </div>
+
         <div class="column">
           <div class="ui link cards">
             <div class="card">
@@ -61,6 +63,7 @@ export default class TrainerCard extends Component {
             </div>
           </div>
         </div>
+
         <div class="column">
           <div class="ui link cards">
             <div class="card">
@@ -89,6 +92,7 @@ export default class TrainerCard extends Component {
           </div>
         </div>
       </div>
+
       <div class="three right column row">
         <div class="column">
           <div class="ui link cards">

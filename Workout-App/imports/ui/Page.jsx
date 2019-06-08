@@ -3,6 +3,8 @@ import TrainerCard from './TrainerCard';
 import TrainersMenu from './TrainersMenu';
 import TrainerRow from './TrainerRow';
 import TrainerInfo from './TrainerInfo';
+import GymCard from './GymCard'
+import GymMenu from './GymMenu'
 
 
 export default class Page extends React.Component {
@@ -38,12 +40,11 @@ export default class Page extends React.Component {
                 </div>
             )
         } else {
-                return (
-                    <div>
-                        <p>to be implemented</p>
-                    </div>
-                );
-            }
+            return (
+                <div>
+                    <p>to be implemented</p>
+                </div>
+            );
         }
     }
 }

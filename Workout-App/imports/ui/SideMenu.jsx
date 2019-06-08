@@ -23,6 +23,12 @@ handleClickTrainers() {
   });
 }
 
+handleclicktrainer() {
+  this.setState({
+    textvalue: "Trainer"
+  })
+}
+
 //page is responsible for rendering the content after selecting a tab on the side menu
 
   render() {
@@ -37,7 +43,7 @@ handleClickTrainers() {
             <a class="item" onClick={this.handleClickTrainers.bind(this)}>
               Trainers
             </a>
-            <a class="item">
+            <a class="item" onClick={this.handleclicktrainer.bind(this)}>
               Trainer
             </a>
             <a class="item">

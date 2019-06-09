@@ -6,8 +6,11 @@ import TrainerInfo from './TrainerInfo';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
 
+import { connect } from "react-redux";
+import { updatepage } from "../actions/page";
 
-export default class Page extends React.Component {
+
+class Page extends React.Component {
 
 
 
@@ -18,6 +21,9 @@ export default class Page extends React.Component {
                     <TrainersMenu />
                     <br />
                     <TrainerCard />
+                    //// TODO:
+                    // just testing redux, REMOVE later
+                    <h1>{this.props.currentpage}</h1>
                 </div>
             );
         }
@@ -48,3 +54,11 @@ export default class Page extends React.Component {
         }
     }
 }
+
+const mapStateToProps = (state) => {
+  return {
+          currentpage: state.currentpage
+         };
+  }
+
+export default connect(mapStateToProps, { updatepage })(Page);

@@ -5,6 +5,7 @@ import TrainerRow from './TrainerRow';
 import TrainerInfo from './TrainerInfo';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
+import Gyms from './Gyms'
 
 import { connect } from "react-redux";
 import { updatepage } from "../actions/page";
@@ -40,9 +41,7 @@ class Page extends React.Component {
         if (this.props.value === 'Gym') {
             return (
                 <div>
-                    <GymMenu/>
-                    <br/>
-                    <GymCard/>
+                    <Gyms/>
                 </div>
             )
         } else {

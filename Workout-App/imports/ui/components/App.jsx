@@ -6,7 +6,6 @@ import Header from './Header';
 
 const App = () => (
   <div>
-
     <Header />
     <br />
     <SideMenu />

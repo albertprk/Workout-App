@@ -1,4 +1,5 @@
 import React from 'react';
+
 import TrainerCard from './components/TrainerCard';
 import TrainersMenu from './components/TrainersMenu';
 import SideMenu from './components/SideMenu';
@@ -7,8 +8,7 @@ import './App.css';
 
 const App = () => (
   <div>
-
-    <Provider<Header />
+    <Header />
     <br />
     <SideMenu />
   </div>

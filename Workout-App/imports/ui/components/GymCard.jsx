@@ -4,6 +4,12 @@ export default class GymCard extends React.Component {
     constructor(props) {
         super(props);
     }
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 55e02fba6947661ad3b2f2b7917a47d55189c8bc
     render() {
         var now = new Date();
         var days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]

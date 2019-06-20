@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+<<<<<<< HEAD
 import './../actions/page.js';
 
 //TO-DO:
@@ -8,6 +9,16 @@ const currentpageReducer = (currentpage = 'Gym', action) => {
       return action.currentpage;
     }
   return currentpage;
+=======
+
+//TO-DO:
+//simple page reducer, need to be updated later
+const currentpageReducer = (currentpage = 'gym', action) => {
+  if (action.type === "UPDATE_PAGE") {
+      return action.payload;
+    }
+    return currentpage;
+>>>>>>> 55e02fba6947661ad3b2f2b7917a47d55189c8bc
 };
 
 const gymsReducer = () => {

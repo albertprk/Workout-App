@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @keyframes panning {
   0% {
     background-position: 70% 70%;
@@ -21,12 +22,20 @@ h1 {
 }
 
 body {
+=======
+body {
+  padding: 10px;
+>>>>>>> 55e02fba6947661ad3b2f2b7917a47d55189c8bc
   font-family: sans-serif;
 }
 
 .__trainers-menu-bar {
   position: relative;
+<<<<<<< HEAD
   margin-left:0;
+=======
+  margin-left:auto;
+>>>>>>> 55e02fba6947661ad3b2f2b7917a47d55189c8bc
   margin-right:8%;
   width: 80%;
 }
@@ -35,6 +44,7 @@ body {
   position: relative;
 }
 
+<<<<<<< HEAD
 .navigationMenu {
   margin-left:30px;
 }
@@ -75,6 +85,13 @@ body {
   padding-top:30px;
   padding-left:30px;
   margin-left:8px;
+=======
+#header {
+  background: #3e4d63;
+  height:114px;
+  padding:-20px;
+  margin:-8px;
+>>>>>>> 55e02fba6947661ad3b2f2b7917a47d55189c8bc
 }
 
 #startButton {

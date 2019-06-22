@@ -2,6 +2,7 @@ import React from 'react';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
 import { connect } from 'react-redux'
+import { addGym } from '../actions/page.js'
 
 
 class Gyms extends React.Component {
@@ -19,6 +20,13 @@ class Gyms extends React.Component {
     render() {
         return (
             <div>
+                <button
+                    className="ui button primary"
+                    onClick={ () => this.props.addGym("dummy")}
+                    align="left"
+                >
+                    Add Gym
+                </button>
                 <GymMenu/>
                 <ul>
                     { this.renderGyms() }
@@ -30,13 +38,13 @@ class Gyms extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        gymList: state.gymsReducer
+        gymList: state.manageGyms
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        addGym: (gym) => dispatch(addGym(gym))
     };
 };
 

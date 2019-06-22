@@ -12,7 +12,7 @@ import { updatePage } from "../actions/page";
 
 class Page extends Component {
     render() {
-        if (this.props.currentpage === 'Trainers') {
+        if (this.props.currentPage === 'Trainers') {
             return (
                 <center>
                   <div>
@@ -21,12 +21,12 @@ class Page extends Component {
                       <TrainerCard />
                       //// TODO:
                       // just testing redux, REMOVE later
-                      <h1>{this.props.currentpage}</h1>
+                      <h1>{this.props.currentPage}</h1>
                   </div>
                 </center>
             );
         }
-        if (this.props.currentpage === 'Trainer') {
+        if (this.props.currentPage === 'Trainer') {
             return (
               <center>
                 <div>
@@ -38,7 +38,7 @@ class Page extends Component {
               </center>
             );
         }
-        if (this.props.currentpage === 'Gym') {
+        if (this.props.currentPage === 'Gym') {
             return (
               <center>
                 <div>
@@ -58,7 +58,7 @@ class Page extends Component {
 
 const mapStateToProps = (state) => {
   return {
-        currentpage: state.currentpage
+        currentPage: state.currentPage
   };
 }
 

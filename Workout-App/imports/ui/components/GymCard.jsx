@@ -1,12 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux'
+import { updatePage } from '../actions/page.js'
 
-export default class GymCard extends React.Component {
+
+class GymCard extends React.Component {
     constructor(props) {
         super(props);
     }
     render() {
         var now = new Date();
-        var days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
         var todayIndex = now.getDay();
 
         return (
@@ -25,7 +27,7 @@ export default class GymCard extends React.Component {
                             </div>
 
 
-                            <div className="ui primary button">
+                            <div className="ui primary button" onClick={ () => this.props.updatePage("Trainers") }>
                                 See trainers at { this.props.gym.name }
                                 <i className="right chevron icon"></i>
                             </div>
@@ -80,7 +82,19 @@ export default class GymCard extends React.Component {
             </div>
 
         )
-
-
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        currentPage: state.currentPage
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        updatePage: (currentPage) => dispatch(updatePage(currentPage))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GymCard)

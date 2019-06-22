@@ -2,27 +2,28 @@ import React, { Component } from 'react';
 import Page from './Page';
 import { connect } from 'react-redux';
 import './../../../client/main.css';
+import { updatePage } from "../actions/page";
 
 class SideMenu extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentpage: this.props.currentpage
+      currentPage: this.props.currentPage
     };
   }
 
-  //update the textvalue to the part user clicks, need to rewrite this to combined all 4 into one function
+  //update the text value to the part user clicks, need to rewrite this to combined all 4 into one function
   handleClickGym = () => {
-    this.props.updatepage("Gym");
-  }
+    this.props.updatePage("Gym");
+  };
 
   handleClickTrainers = () => {
-    this.props.updatepage("Trainers");
-  }
+    this.props.updatePage("Trainers");
+  };
 
   handleClickTrainer = () => {
-    this.props.updatepage("Trainer");
-  }
+    this.props.updatePage("Trainer");
+  };
 
 
 //page is responsible for rendering the content after selecting a tab on the side menu
@@ -59,15 +60,14 @@ class SideMenu extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    currentpage: state.currentpage
+    currentPage: state.currentPage
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updatepage: (currentpage) =>
-      {dispatch({type: 'UPDATE_PAGE', currentpage: currentpage})
-  }}
-}
+    updatePage: (currentPage) => dispatch(updatePage(currentPage))
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideMenu)

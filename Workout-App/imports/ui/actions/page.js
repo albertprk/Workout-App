@@ -2,6 +2,7 @@ export const UPDATE_PAGE = 'UPDATE_PAGE';
 export const ADD_GYM = 'ADD_GYM';
 export const ADD_GYM_ERROR = 'ADD_GYM_ERROR';
 export const GYMS_LOADING = 'GYMS_LOADING';
+export const REMOVE_GYM = 'REMOVE_GYM';
 export const ADD_TRAINER = 'ADD_TRAINER';
 export const ADD_TRAINER_ERROR = 'ADD_TRAINER_ERROR';
 export const TRAINERS_LOADING = 'TRAINERS_LOADING';

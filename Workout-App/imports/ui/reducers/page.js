@@ -1,13 +1,16 @@
 import { combineReducers } from "redux";
-import './../actions/page.js';
+import '../actions/page.js';
+import { UPDATE_PAGE, ADD_GYM, ADD_GYM_ERROR, GYMS_LOADING,
+         ADD_TRAINER, ADD_TRAINER_ERROR, TRAINERS_LOADING} from '../actions/page.js'
+// IMPORT CONSTANTS FROM ACTIONS PAGE^^
 
 //TO-DO:
 //simple page reducer, need to be updated later
-const currentpageReducer = (currentpage = 'Gym', action) => {
-  if (action.type === "UPDATE_PAGE") {
+const currentPageReducer = (currentPage = 'Gym', action) => {
+  if (action.type === UPDATE_PAGE) {
       return action.currentpage;
     }
-  return currentpage;
+  return currentPage;
 };
 
 const gymsReducer = () => {
@@ -42,6 +45,6 @@ const gymsReducer = () => {
 };
 
 export default combineReducers({
-    currentpage: currentpageReducer,
+    currentpage: currentPageReducer,
     gymsReducer: gymsReducer
 });

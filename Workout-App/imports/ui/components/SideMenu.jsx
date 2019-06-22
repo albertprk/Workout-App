@@ -45,7 +45,7 @@ class SideMenu extends React.Component {
           </div>
       </div>
       <div className="ui grid">
-        <div className="twelve wide stretched column">
+        <div className="sixteen wide stretched column">
           <div className="ui segment">
             <Page value={this.state.textvalue}/>
           </div>

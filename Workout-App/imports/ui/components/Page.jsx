@@ -8,7 +8,7 @@ import GymMenu from './GymMenu'
 import Gyms from './Gyms'
 
 import { connect } from "react-redux";
-import { updatepage } from "../actions/page";
+import { updatePage } from "../actions/page";
 
 class Page extends Component {
     render() {
@@ -62,4 +62,4 @@ const mapStateToProps = (state) => {
   };
 }
 
-export default connect(mapStateToProps, { updatepage })(Page);
+export default connect(mapStateToProps, { updatepage: updatePage })(Page);

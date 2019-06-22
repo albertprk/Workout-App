@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ee8434e-9781-4019-845a-2e3ec2d6721f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/actions/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/actions/page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/GymCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/GymCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/Gyms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/Gyms.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/Page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/Page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/SideMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/SideMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/reducers/page.js" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/reducers/page.js" afterDir="false" />
-    </list>
+    <list default="true" id="3ee8434e-9781-4019-845a-2e3ec2d6721f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/GymCard.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
+                <state relative-caret-position="-1138">
                   <caret line="5" selection-start-line="5" selection-end-line="5" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
@@ -264,17 +257,30 @@
       <option name="project" value="LOCAL" />
       <updated>1561185965779</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="added functionality for actions">
+      <created>1561188070322</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561188070322</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added functionality for actions">
+      <created>1561188081262</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1561188081262</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26251000" />
+    <option name="totallyTimeSpent" value="26522000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -291,7 +297,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32394367" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32394367" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -309,7 +315,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added some simple actions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added some simple actions" />
+    <MESSAGE value="added functionality for actions" />
+    <option name="LAST_COMMIT_MESSAGE" value="added functionality for actions" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/Hello.jsx" />
@@ -457,7 +464,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/GymCard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
+        <state relative-caret-position="-1138">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />

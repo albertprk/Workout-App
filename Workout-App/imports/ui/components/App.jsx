@@ -3,10 +3,10 @@ import SideMenu from './SideMenu';
 import Header from './Header';
 
 import { Provider } from 'react-redux';
-import currentpageReducer from './../reducers/page.js'
-import { createStore } from 'redux';
+import configureStore from '../../../store/configureStore'
 
-const store = createStore(currentpageReducer);
+
+const store = configureStore();
 class App extends Component {
   constructor(props) {
     super(props);

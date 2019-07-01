@@ -3,8 +3,7 @@ import TrainerCard from './TrainerCard';
 import TrainersMenu from './TrainersMenu';
 import TrainerRow from './TrainerRow';
 import TrainerInfo from './TrainerInfo';
-import GymCard from './GymCard'
-import GymMenu from './GymMenu'
+import Account from './Account'
 import Gyms from './Gyms'
 
 import { connect } from "react-redux";
@@ -25,8 +24,7 @@ class Page extends Component {
                   </div>
                 </center>
             );
-        }
-        if (this.props.currentpage === 'Trainer') {
+        } else if (this.props.currentpage === 'Trainer') {
             return (
               <center>
                 <div>
@@ -37,14 +35,19 @@ class Page extends Component {
                 </div>
               </center>
             );
-        }
-        if (this.props.currentpage === 'Gym') {
+        } else if (this.props.currentpage === 'Gym') {
             return (
               <center>
                 <div>
                     <Gyms/>
                 </div>
               </center>
+            )
+        } else if (this.props.currentpage === 'Account') {
+            return (
+                <div>
+                    <Account/>
+                </div>
             )
         } else {
             return (

@@ -80,7 +80,5 @@ export default class GymCard extends React.Component {
             </div>
 
         )
-
-
     }
 }

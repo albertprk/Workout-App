@@ -2,14 +2,21 @@ import React from 'react';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
 import { connect } from 'react-redux'
-
+import { gymsFetchData } from'../actions/page'
 
 class Gyms extends React.Component {
 
+    componentDidMount() {
+        console.log("mounting");
+        this.props.fetchData("http://localhost:9000/gyms");
+        console.log("mounted");
+        console.log(this.props);
+    }
+
     renderGyms() {
         console.log("render gyms");
-        console.log(this.props.gymList);
-        return this.props.gymList.map((gym) => {
+        console.log(this.props.gymsList);
+        return this.props.gymsList.map((gym) => {
             return (
                 <GymCard gym={gym}/>
             )
@@ -17,6 +24,16 @@ class Gyms extends React.Component {
     };
 
     render() {
+        if (this.props.hasErrored) {
+            return <p>Sorry! Error rendering</p>
+        }
+
+        if (this.props.isLoading) {
+            return <div align="center">
+                <p>Loading...</p>
+            </div>
+        }
+
         return (
             <div>
                 <GymMenu/>
@@ -30,13 +47,15 @@ class Gyms extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        gymList: state.gymsReducer
+        gymsList: state.gymsReducer,
+        hasErrored: state.gymsErrored,
+        isLoading: state.gymsLoading
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        fetchData: (url) => dispatch(gymsFetchData(url))
     };
 };
 

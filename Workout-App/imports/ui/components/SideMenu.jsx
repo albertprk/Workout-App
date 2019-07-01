@@ -14,15 +14,19 @@ class SideMenu extends React.Component {
   //update the textvalue to the part user clicks, need to rewrite this to combined all 4 into one function
   handleClickGym = () => {
     this.props.updatepage("Gym");
-  }
+  };
 
   handleClickTrainers = () => {
     this.props.updatepage("Trainers");
-  }
+  };
 
   handleClickTrainer = () => {
     this.props.updatepage("Trainer");
-  }
+  };
+
+  handleClickAccount = () => {
+    this.props.updatepage("Account");
+  };
 
 
 //page is responsible for rendering the content after selecting a tab on the side menu
@@ -40,7 +44,7 @@ class SideMenu extends React.Component {
           <div className="navItem" onClick={this.handleClickTrainer}>
             myTrainers
           </div>
-          <div className="navItem">
+          <div className="navItem" onClick={this.handleClickAccount}>
             Account
           </div>
       </div>

@@ -1,63 +1,27 @@
 var express = require('express');
 var router = express.Router();
-var mongoose = require('mongoose');
+var Trainer = require('../models/Trainer')
 
-const dbRoute =
-'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-wrjir.mongodb.net/test?retryWrites=true&w=majority'
-
-mongoose.connect(dbRoute, {dbName: 'workoutApp'});
-
-var trainerSchema = new mongoose.Schema(
-    {
-        "firstName": String,
-        "lastName": String,
-        "gender": String,
-        "gym": String,
-        "description": String,
-        "email": String,
-        "tags":[
-            String
-        ],
-        "cost": Number,
-        "overall_rate": Number,
-        "comments":[
-            {     
-                "fullname" : String,
-                "context": String,
-                "date": Date,
-                "rate": Number
-            }
-        ]
-    },
-    { collection : "trainers"}
-    )
-    
-    var Trainer = mongoose.model("Trainer", trainerSchema)
-    
-    // we can add more filter 
-    var allTrainers = Trainer.find({},function(err,trainers){
-        if(err){
-            console.log("Oh Error!");
-            console.log(err);
-        } else {
-            console.log("We have all the trainers");
-            console.log(trainers);
-        }
+// we can add more filter
+var allTrainers = Trainer.find({},function(err,trainers){
+    if(err){
+        console.log("error in getting all trainers");
+        console.log(err);
+    } else {
+        console.log("trainers successfully loaded");
+        console.log(trainers);
     }
-    
-    
-    )
-    
-    // mongoose.connect('')
-    
-    /* GET home page. */
-    router.get('/', function(req, res, next) {
-        // console.log("gettttttt:   ");
-        //console.log(t);
-        res.render('index', { title: 'Express' });
-    });
-    
-    module.exports = router;
+});
+
+
+/* GET home page. */
+router.get('/', function(req, res, next) {
+    // console.log("gettttttt:   ");
+    //console.log(t);
+    res.render('index', { title: 'Express' });
+});
+
+module.exports = router;
     
     // [
     // {

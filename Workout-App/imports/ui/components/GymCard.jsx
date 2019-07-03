@@ -1,9 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux'
 
-export default class GymCard extends React.Component {
+class GymCard extends React.Component {
+
     constructor(props) {
         super(props);
     }
+
+    sendTagToParent = (tag) => {
+        console.log("sending tag to parent");
+        console.log(tag);
+        this.props.parentCallBack(tag);
+    };
+
     render() {
         var now = new Date();
         var days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
@@ -27,13 +36,20 @@ export default class GymCard extends React.Component {
 
                             <div className="ui primary button">
                                 See trainers at { this.props.gym.name }
-                                <i className="right chevron icon"></i>
+                                <i className="right chevron icon"/>
                             </div>
                             <div className="content">
                                 <div className="extra">
                                     {
                                         this.props.gym.tags.map((tag) => {
-                                            return <div className="ui label">{ tag }</div>;
+                                            return (
+                                                <button
+                                                    className="ui button"
+                                                    onClick={ () => this.sendTagToParent(tag) }
+                                                >
+                                                { tag }
+                                            </button>
+                                            );
                                         })
                                     }
                                 </div>
@@ -82,3 +98,17 @@ export default class GymCard extends React.Component {
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addTag: (tag) => dispatch(addTag(tag))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(GymCard);

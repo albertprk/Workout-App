@@ -110,3 +110,10 @@ export const addGym = (gym) => {
             });
     };
 };
+
+export const addTag = (tag) => {
+    return {
+        type: 'ADD_TAG',
+        payload: tag
+    }
+}

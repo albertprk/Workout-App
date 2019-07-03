@@ -22,7 +22,6 @@ class GymForm extends React.Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault();
         this.setState({ _id: this.generateKey(), tag: "test" });
         this.props.addGym(this.state);
     }
@@ -41,10 +40,21 @@ class GymForm extends React.Component {
         this.renderTags();
     };
 
+    removeTag = (tagToRemove) => {
+        this.setState({
+            tags: this.state.tags.filter((tag) => tag !== tagToRemove)
+        })
+    };
+
     renderTags = () => {
         return this.state.tags.map((tag) => {
             return (
-                <li className="ui button primary">{ tag }</li>
+                <li
+                    className="ui button primary"
+                    onClick={() => this.removeTag(tag) }
+                >
+                    { tag }
+                </li>
             )
         })
     };

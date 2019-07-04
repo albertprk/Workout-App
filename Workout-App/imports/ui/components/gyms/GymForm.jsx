@@ -1,7 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update'
 import { connect } from 'react-redux'
-import { addGym } from '../actions/page'
+import { addGym } from '../../actions/page'
 
 class GymForm extends React.Component {
     constructor(props) {

@@ -1,16 +1,16 @@
 import { combineReducers } from "redux";
-import './../actions/page.js';
+import '../actions/page.js';
 
 //TO-DO:
 //simple page reducer, need to be updated later
-const currentpageReducer = (currentpage = 'Gym', action) => {
+export const currentpageReducer = (currentpage = 'Gym', action) => {
   if (action.type === "UPDATE_PAGE") {
       return action.currentpage;
     }
   return currentpage;
 };
 
-const gymsDummyReducer = () => {
+export const gymsDummyReducer = () => {
     return [
         {
             name: "Ron Zalko's Fitness",
@@ -41,21 +41,25 @@ const gymsDummyReducer = () => {
     ]
 };
 
-const gymsLoading = (state = false, action) => {
+
+export const gymsLoading = (state = false, action) => {
+    console.log("gymsLoading in reducer works", action.isLoading);
+
     if (action.type === 'GYMS_LOADING') {
         return action.isLoading;
     }
     return state;
 };
 
-const gymsErrored = (state = false, action) => {
+export const gymsErrored = (state = false, action) => {
     if (action.type === 'GYMS_ERRORED') {
         return action.hasErrored;
     }
     return state;
 };
 
-const manageGymsReducer = (gymsList = [], action) => {
+
+export const manageGymsReducer = (gymsList = [], action) => {
     switch (action.type) {
         case 'ADD_GYM_SUCCESS':
             console.log(action.gym);
@@ -70,14 +74,15 @@ const manageGymsReducer = (gymsList = [], action) => {
             console.log(action.gyms.data);
             return action.gyms.data;
         default:
+            console.log("gym reducer");
             return gymsList;
     }
 };
 
-export default combineReducers({
-    gymsReducer: manageGymsReducer,
-    gymsLoading: gymsLoading,
-    gymsErrored: gymsErrored,
-    manageGyms: manageGymsReducer,
-    currentpage: currentpageReducer
-});
+// export default combineReducers({
+//     gymsReducer: manageGymsReducer,
+//     gymsLoading: gymsLoading,
+//     gymsErrored: gymsErrored,
+//     manageGyms: manageGymsReducer,
+//     currentpage: currentpageReducer
+// });

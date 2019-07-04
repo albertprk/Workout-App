@@ -14,14 +14,51 @@ var allTrainers = Trainer.find({},function(err,trainers){
 });
 
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-    // console.log("gettttttt:   ");
+    console.log("getting trainers in Route:   ");
+    Trainer.find((err,trainers) => {
+        if(err){
+            console.log("error in getting trainers mongo data");
+            console.log(err);
+            return res.json({success: false, error:err})
+        }
+        console.log("success in getting trainers mongo data");
+        console.log(trainers);
+        return res.json({success: true, data: trainers})
+
+    })
     //console.log(t);
-    res.render('index', { title: 'Express' });
+    // res.render('index', { title: 'Express' });
 });
 
+// /* POST reviews. */
+// router.post('/', (req, res, next) => {
+//     console.log("POSTING...");
+//     console.log(req.body.gym);
+//     var myData = new Gym(req.body.gym);
+//     myData.save()
+//         .then(item => {
+//             res.send(myData);
+//             console.log("saved gym");
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             console.log("unable to save gym");
+//         });
+// });
+
+
+/* GET home page. */
+
+
 module.exports = router;
+
+
+
+
+
+
+
     
     // [
     // {

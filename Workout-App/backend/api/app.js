@@ -18,9 +18,15 @@ var connected = false;
 // oliver's database
 // const dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-wrjir.mongodb.net/test?retryWrites=true&w=majority'
 // brent's database
-var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-obiso.mongodb.net/workout-app?retryWrites=true&w=majority';
+  // dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-obiso.mongodb.net/workout-app?retryWrites=true&w=majority';
+
+// let's use swolr work out Mongo Database
+ var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority';
+
 // mongoose.connect(dbRoute, {dbName: 'workoutApp'});
-var db = mongoose.connect(dbRoute, (error) => {
+ var db = mongoose.connect(dbRoute, {dbName: 'swolr'},(error) => {
+  //var db = mongoose.connect(dbRoute,(error) => {
+
   console.log("connecting to mongo...");
   if (error) {
     console.log("error connecting to mongodb");

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import TrainerCard from './TrainerCard';
-import TrainersMenu from './TrainersMenu';
-import TrainerRow from './TrainerRow';
-import TrainerInfo from './TrainerInfo';
+import TrainerCard from './trainers/TrainerCard';
+import TrainersMenu from './trainers/TrainersMenu';
+import TrainerRow from './trainers/TrainerRow';
+import TrainerInfo from './trainers/TrainerInfo';
 import Account from './Account'
-import Gyms from './Gyms'
+import Gyms from './gyms/Gyms'
 
 import { connect } from "react-redux";
 import { updatepage } from "../actions/page";
@@ -29,7 +29,7 @@ class Page extends Component {
               <center>
                 <div>
                     <br/>
-                    <TrainerRow />
+                    {/* todo: Rename to Trainers */}
                     <br />
                     <TrainerInfo/>
                 </div>

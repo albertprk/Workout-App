@@ -2,8 +2,8 @@ import React from 'react';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
 import { connect } from 'react-redux'
-import { gymsFetchData } from'../actions/page'
-import Spinner from './Spinner'
+import { gymsFetchData } from'../../actions/page'
+import Spinner from '../Spinner'
 
 class Gyms extends React.Component {
 
@@ -87,6 +87,8 @@ class Gyms extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log("state.gymsReducer")
+    console.log(state.gymsReducer)
     return {
         gymsList: state.gymsReducer,
         hasErrored: state.gymsErrored,

@@ -66,3 +66,32 @@ export const trainersFetchData = (url) => {
                 });
     }
 }
+
+//add a trainer to databse, called from trainerform
+export const addTrainer = (Trainer) => {
+	return dispatch => {
+		console.log("adding a new trainer to database!");
+		console.log(Trainer);
+
+
+		axios
+            .post("http://localhost:9000/trainers", {
+                trainer: Trainer
+            })
+            .then(res => {
+                dispatch(addTrainerSuccess(Trainer));
+            })
+            .catch(err => {
+                console.log("There is an error occurring in add Trainer");
+            });
+
+	}
+}
+
+//called when a Trainer is successfully posted to database, will update redux with new trainer
+export const addTrainerSuccess = (Trainer) => {
+    return {
+        type: 'ADD_TRAINER',
+        payload: Trainer
+    }
+};

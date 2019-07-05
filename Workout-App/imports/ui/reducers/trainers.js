@@ -35,7 +35,12 @@ export const managerTrainersReducer = (trainersList = [], action) => {
         case 'TRAINERS_FETCH_SUCCESS':
             console.log("getting trainers in reducer");
             return action.trainers.data;
-        
+
+		case 'ADD_TRAINER':
+			console.log("a new trainer is added to store");
+			console.log([...trainersList, action.payload]);
+			return [...trainersList, action.payload];
+
         default:
             return trainersList;
 

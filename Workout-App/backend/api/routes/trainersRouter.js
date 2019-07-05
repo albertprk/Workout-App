@@ -31,21 +31,21 @@ router.get('/', function(req, res, next) {
     // res.render('index', { title: 'Express' });
 });
 
-// /* POST reviews. */
-// router.post('/', (req, res, next) => {
-//     console.log("POSTING...");
-//     console.log(req.body.gym);
-//     var myData = new Gym(req.body.gym);
-//     myData.save()
-//         .then(item => {
-//             res.send(myData);
-//             console.log("saved gym");
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             console.log("unable to save gym");
-//         });
-// });
+ /* POST reviews. */
+ router.post('/', (req, res, next) => {
+     console.log("POSTING...");
+     console.log(req.body.trainer);
+     var myData = new Trainer(req.body.trainer);
+     myData.save()
+         .then(item => {
+             res.send(myData);
+             console.log("saved gym");
+         })
+         .catch(err => {
+             console.log(err);
+             console.log("unable to save trainer");
+         });
+ });
 
 
 /* GET home page. */

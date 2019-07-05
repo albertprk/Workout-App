@@ -23,6 +23,7 @@ router.post('/', (req, res, next) => {
     console.log("POSTING...");
     console.log(req.body.gym);
     var myData = new Gym(req.body.gym);
+    console.log(myData);
     myData.save()
         .then(item => {
             res.send(myData);

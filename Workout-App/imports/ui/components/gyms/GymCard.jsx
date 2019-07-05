@@ -15,7 +15,7 @@ class GymCard extends React.Component {
 
     render() {
         var now = new Date();
-        var days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         var todayIndex = now.getDay();
 
         return (
@@ -23,7 +23,7 @@ class GymCard extends React.Component {
                 <div className="ui divided items">
                     <div className="item">
                         <div className="ui large image">
-                            <img src="https://i.imgur.com/LrlfMk1.jpg" alt=""/>
+                            <img src={ this.props.gym.picture } alt=""/>
                         </div>
                         <div className="content">
                             <a className="header">{ this.props.gym.name }</a>
@@ -75,7 +75,7 @@ class GymCard extends React.Component {
                                     </a>
                                     <div className="meta">
                                         <span className="date">
-                                            Open today { this.props.gym.hours[todayIndex] }
+                                            Open { days[todayIndex] } { this.props.gym.hours[todayIndex] }
                                         </span>
                                     </div>
                                     <div className="description">

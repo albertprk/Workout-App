@@ -15,16 +15,30 @@ class GymForm extends React.Component {
             tag: "",
             tags: [],
             address: "",
-            hours: ["","","","","","",""]
+            hours: ["","","","","","",""],
+            picture: "",
+            rating: 0
         });
 
         this.handleSubmit = this.handleSubmit.bind(this.state);
     }
 
     handleSubmit = (e) => {
-        this.setState({ _id: this.generateKey(), tag: "test" });
+        e.preventDefault();
+        this.setState({ _id: this.generateKey(), tag: "" });
         this.props.addGym(this.state);
-    }
+        this.setState({
+            _id: this.generateKey(),
+            name: "",
+            description: "",
+            spiel: "",
+            tag: "",
+            tags: [],
+            address: "",
+            hours: ["","","","","","",""],
+            picture: ""
+        });
+    };
 
     generateKey() {
         return new Date().getTime();
@@ -76,6 +90,7 @@ class GymForm extends React.Component {
                                     id="name"
                                     placeholder="Gym Name"
                                     required="required"
+                                    value={ this.state.name }
                                     onChange={ (e) => { this.setState( { name: e.target.value } ) }}
                                 />
                             </div>
@@ -93,6 +108,7 @@ class GymForm extends React.Component {
                                     id="address"
                                     placeholder="Street Address"
                                     required="required"
+                                    value={ this.state.address }
                                     onChange={ (e) => { this.setState( { address: e.target.value } ) }}
                                 />
                             </div>
@@ -110,6 +126,7 @@ class GymForm extends React.Component {
                                     id="description"
                                     placeholder="Short description of gym"
                                     required="required"
+                                    value={ this.state.description }
                                     onChange={ (e) => { this.setState( { description: e.target.value } ) }}
                                 />
                             </div>
@@ -127,7 +144,26 @@ class GymForm extends React.Component {
                                     id="spiel"
                                     placeholder="Long description of gym"
                                     required="required"
+                                    value={ this.state.spiel }
                                     onChange={ (e) => { this.setState( { spiel: e.target.value } ) }}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="field">
+                        <label>Picture URL</label>
+                        <div className="fields">
+                            <div className="sixteen wide field">
+                                <input
+                                    type="text"
+                                    name="picture"
+                                    id="picture"
+                                    placeholder="URL for picture of gym"
+                                    required="required"
+                                    value={ this.state.picture }
+                                    onChange={ (e) => { this.setState( { picture: e.target.value } ) }}
                                 />
                             </div>
                         </div>
@@ -143,6 +179,7 @@ class GymForm extends React.Component {
                                     placeholder="Sunday"
                                     id="sunday"
                                     required="required"
+                                    value={ this.state.hours[0] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 0: { $set: e.target.value } })
                                     })}}
@@ -154,6 +191,7 @@ class GymForm extends React.Component {
                                     placeholder="Monday"
                                     id="monday"
                                     required="required"
+                                    value={ this.state.hours[1] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 1: { $set: e.target.value } })
                                     })}}
@@ -165,6 +203,7 @@ class GymForm extends React.Component {
                                     placeholder="Tuesday"
                                     id="tuesday"
                                     required="required"
+                                    value={ this.state.hours[2] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 2: { $set: e.target.value } })
                                     })}}
@@ -176,6 +215,7 @@ class GymForm extends React.Component {
                                     placeholder="Wednesday"
                                     id="wednesday"
                                     required="required"
+                                    value={ this.state.hours[3] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 3: { $set: e.target.value } })
                                     })}}
@@ -187,6 +227,7 @@ class GymForm extends React.Component {
                                     placeholder="Thursday"
                                     id="thursday"
                                     required="required"
+                                    value={ this.state.hours[4] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 4: { $set: e.target.value } })
                                     })}}
@@ -198,6 +239,7 @@ class GymForm extends React.Component {
                                     placeholder="Friday"
                                     id="friday"
                                     required="required"
+                                    value={ this.state.hours[5] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 5: { $set: e.target.value } })
                                     })}}
@@ -209,6 +251,7 @@ class GymForm extends React.Component {
                                     placeholder="Saturday"
                                     id="saturday"
                                     required="required"
+                                    value={ this.state.hours[6] }
                                     onChange={ (e) => { this.setState( {
                                         hours: update(this.state.hours, { 6: { $set: e.target.value } })
                                     })}}

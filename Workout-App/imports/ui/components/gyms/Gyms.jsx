@@ -9,7 +9,7 @@ class Gyms extends React.Component {
 
     constructor() {
         super();
-        this.state = ({ filterTags: ["dummy", "tags"] });
+        this.state = ({ filterTags: [] });
     }
 
     componentDidMount() {
@@ -24,6 +24,13 @@ class Gyms extends React.Component {
         console.log("render gyms");
         console.log(this.props.gymsList);
         return this.props.gymsList.map((gym) => {
+            let contains = true;
+            for (let i = 0; i < this.state.filterTags.length; i++) {
+                if (!gym.tags.includes(this.state.filterTags[i])) {
+                    contains = false
+                }
+            }
+            if (this.state.filterTags.length === 0 || contains)
             return (
                 <GymCard
                     parentCallBack = { this.getTagFromChild }

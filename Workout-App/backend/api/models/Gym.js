@@ -8,7 +8,9 @@ var gymSchema = new Schema({
     description: String,
     spiel: String,
     hours: [String],
-    tags: [String]
+    tags: [String],
+    picture: String,
+    rating: Number
 }, { collection: "gyms"});
 
 module.exports = mongoose.model('Gym', gymSchema);

@@ -16,7 +16,7 @@ class TrainerForm extends React.Component {
 			description: "",
 			email: "",
 			phone: "",
-			joiningDate: "",
+			joiningDate: new Date().toLocaleString(),
 			tag: "",
 			tags: [],
 			cost: 0,
@@ -28,13 +28,7 @@ class TrainerForm extends React.Component {
 	}
 
 	handleSubmit = (e) => {
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth() + 1;
-		var yyyy = today.getFullYear();
-		today = dd + '/' + mm + '/' + yyyy;
-		this.setState({joiningDate: today})
-		console.log(today)
+
         this.props.addTrainer(this.state);
 		e.preventDefault();
     }
@@ -52,13 +46,6 @@ class TrainerForm extends React.Component {
         })
     };
 
-	gettodaydate = () => {
-		var today = new Date();
-		var dd = today.getDate();
-		var mm = today.getMonth() + 1;
-		var yyyy = today.getFullYear();
-		today = dd + '/' + mm + '/' + yyyy;
-	}
 
 	renderTags = () => {
         return this.state.tags.map((tag) => {

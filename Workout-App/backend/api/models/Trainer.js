@@ -8,9 +8,9 @@ var trainerSchema = new mongoose.Schema({
     "gym": String,
     "description": String,
     "email": String,
-	"phone": String,
-	"joiningDate": String,
-	"profilePicture": "",
+	  "phone": String,
+	  "joiningDate": String,
+	  "profilePicture": String,
     "tags":[
         String
     ],

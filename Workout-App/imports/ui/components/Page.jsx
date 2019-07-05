@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TrainerCard from './trainers/TrainerCard';
+import TrainerCards from './trainers/TrainerCards';
 import TrainersMenu from './trainers/TrainersMenu';
 import TrainerRow from './trainers/TrainerRow';
 import TrainerInfo from './trainers/TrainerInfo';
@@ -17,7 +17,7 @@ class Page extends Component {
                   <div>
                       <TrainersMenu />
                       <br />
-                      <TrainerCard />
+                      <TrainerCards />
                       //// TODO:
                       // just testing redux, REMOVE later
                       <h1>{this.props.currentpage}</h1>

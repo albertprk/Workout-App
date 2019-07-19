@@ -9,6 +9,13 @@ export const updatepage = page => {
     };
 };
 
+export const trainerInfoLastName = lastName =>{
+    return {
+        type: "UPDATE_LASTNAME",
+        lastName: lastName
+    }
+};
+
  export const trainersErrored = (bool) => {
      return {
          type: 'TRIANERS_ERRORED',

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import { trainersFetchData } from '../../actions/trainers'
+import { trainersFetchData, trainerInfoLastName} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
+import { updatepage } from "../../actions/page";
 
 
 class TrainerCards extends React.Component {
@@ -33,7 +34,7 @@ class TrainerCards extends React.Component {
       </div>
       )
     };
-    
+
     
     
     renderTrainerCards() {
@@ -68,7 +69,11 @@ class TrainerCards extends React.Component {
               allTrainers.map((targetTrainer,index) => {
                 
                 return(
-                  <div className="card">
+                  <div className="card" onClick={() => {
+                    this.props.changeTrainerInfoLastName(targetTrainer.lastName)
+                    this.props.changePage("Trainer")
+
+                  }}>
                   <div className="image">
                   <img src={targetTrainer.profilePicture}/>
                   </div>
@@ -93,7 +98,7 @@ class TrainerCards extends React.Component {
                   </div>
                   
                   </div>
-                  
+
                   )
                   
                   
@@ -116,13 +121,15 @@ class TrainerCards extends React.Component {
             return {
               trainersList: state.trainersReducer,
               hasErrored: state.trainersErrored,
-              isLoading: state.trainersLoading
+              isLoading: state.trainersLoading,
             }
           }
           
           const mapDispatchToProps = (dispatch) => {
             return {
-              fetchData: (url) => dispatch(trainersFetchData(url))
+              fetchData: (url) => dispatch(trainersFetchData(url)),
+              changePage: (page) =>dispatch(updatepage(page)),
+              changeTrainerInfoLastName: (lastName) => dispatch(trainerInfoLastName(lastName))
             }
           }
           

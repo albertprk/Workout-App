@@ -31,7 +31,7 @@ class Page extends Component {
                     <br/>
                     {/* todo: Rename to Trainers */}
                     <br />
-                    <TrainerInfo/>
+                    <TrainerInfo firtName = "Rock" lastName="Li"  />
                 </div>
               </center>
             );

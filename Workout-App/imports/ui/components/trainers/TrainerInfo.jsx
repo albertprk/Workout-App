@@ -13,8 +13,6 @@ import Spinner from '../Spinner'
 class TrainerInfo extends React.Component {
     constructor(){
       super();
-      // this.state = this.props.trainersList[0]
-      // this.state = ({filter})
     }
   
 
@@ -64,7 +62,11 @@ class TrainerInfo extends React.Component {
       )
     }
     else {
-      var targetTrainer =  this.props.trainersList[0]
+
+      var thatLastName = this.props.thatTrainerInfoLastName;
+      var targetTrainer =  this.props.trainersList.find( x => x.lastName == thatLastName);
+
+
 
       const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
@@ -74,12 +76,13 @@ class TrainerInfo extends React.Component {
           <div className="item">
             <div className="image">
               {/* todo: oliver Dynamic show this from Mongo data! */}
-              <img src="/image/trainer1.jpg"/>
+              <img src={targetTrainer.profilePicture}/>
             </div>
             <div className="content">
               <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
               <div className="meta">
                 <span>verified personal trainer</span>
+                <span> {this.props.thatTrainerInfoLastName}</span>
               </div>
               <div className="description">
                 <p>
@@ -176,7 +179,8 @@ const mapStateToProps = (state) => {
   return {
     trainersList: state.trainersReducer,
     hasErrored: state.trainersErrored,
-    isLoading: state.trainersLoading
+    isLoading: state.trainersLoading,
+    thatTrainerInfoLastName: state.lastName,
   }
 }
 

@@ -26,6 +26,13 @@ export const trainersErrored = (state = false, action) => {
     return state;
 }
 
+export const trainerInfoLastName = (lastName = "Rose", action) => {
+    if(action.type === 'UPDATE_LASTNAME'){
+        return action.lastName;
+    }
+    return lastName;
+}
+
 export const managerTrainersReducer = (trainersList = [], action) => {
     switch(action.type){
         case 'ADD_TRAINER_SUCCESS':

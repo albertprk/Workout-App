@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Page from './Page';
 import { connect } from 'react-redux';
 import './../../../client/main.css';
+import AccountsUIWrapper from './AccountsUIWrapper';
 
 class SideMenu extends React.Component {
   constructor(props) {
@@ -46,6 +47,9 @@ class SideMenu extends React.Component {
           </div>
           <div className="navItem" onClick={this.handleClickAccount}>
             Account
+          </div>
+          <div className="navItem">
+            <AccountsUIWrapper />
           </div>
       </div>
       <div className="ui grid">

@@ -19,3 +19,7 @@ react-meteor-data       # React higher-order component for reactively tracking M
 semantic:ui
 less
 juliancwirko:postcss
+accounts-password
+accounts-ui
+accounts-google
+service-configuration

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import { trainersFetchData, trainerInfoLastName} from '../../actions/trainers'
+import { trainersFetchData, trainerInfoObjectId} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 import { updatepage } from "../../actions/page";
@@ -70,7 +70,7 @@ class TrainerCards extends React.Component {
                 
                 return(
                   <div className="card" onClick={() => {
-                    this.props.changeTrainerInfoLastName(targetTrainer.lastName)
+                    this.props.changetrainerInfoObjectId(targetTrainer._id)
                     this.props.changePage("Trainer")
 
                   }}>
@@ -129,7 +129,7 @@ class TrainerCards extends React.Component {
             return {
               fetchData: (url) => dispatch(trainersFetchData(url)),
               changePage: (page) =>dispatch(updatepage(page)),
-              changeTrainerInfoLastName: (lastName) => dispatch(trainerInfoLastName(lastName))
+              changetrainerInfoObjectId: (trainerId) => dispatch(trainerInfoObjectId(trainerId))
             }
           }
           

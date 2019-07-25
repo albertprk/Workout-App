@@ -26,11 +26,11 @@ export const trainersErrored = (state = false, action) => {
     return state;
 }
 
-export const trainerInfoLastName = (lastName = "Rose", action) => {
-    if(action.type === 'UPDATE_LASTNAME'){
-        return action.lastName;
+export const trainerInfoObjectId = (trainerId = "5d10010e9112ea2c77b0a989", action) => {
+    if(action.type === 'UPDATE_OBJECTID'){
+        return action.trainerId;
     }
-    return lastName;
+    return trainerId;
 }
 
 export const managerTrainersReducer = (trainersList = [], action) => {

@@ -63,8 +63,8 @@ class TrainerInfo extends React.Component {
     }
     else {
 
-      var thatLastName = this.props.thatTrainerInfoLastName;
-      var targetTrainer =  this.props.trainersList.find( x => x.lastName == thatLastName);
+      var thatTrainerId = this.props.thatTrainerInfoObjectId;
+      var targetTrainer =  this.props.trainersList.find( x => x._id == thatTrainerId);
 
 
 
@@ -82,7 +82,7 @@ class TrainerInfo extends React.Component {
               <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
               <div className="meta">
                 <span>verified personal trainer</span>
-                <span> {this.props.thatTrainerInfoLastName}</span>
+                <span> {this.props.thatTrainerInfoObjectId}</span>
               </div>
               <div className="description">
                 <p>
@@ -180,7 +180,7 @@ const mapStateToProps = (state) => {
     trainersList: state.trainersReducer,
     hasErrored: state.trainersErrored,
     isLoading: state.trainersLoading,
-    thatTrainerInfoLastName: state.lastName,
+    thatTrainerInfoObjectId: state.trainerId,
   }
 }
 

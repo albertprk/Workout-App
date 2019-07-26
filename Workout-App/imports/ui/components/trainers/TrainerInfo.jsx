@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {trainersFetchData} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
+import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
+import TrainerEditForm from "./TrainerEditForm";
 
 
 // export default class TrainerInfo extends Component {
@@ -12,7 +14,59 @@ import Spinner from '../Spinner'
 class TrainerInfo extends React.Component {
     constructor() {
         super();
+        this.state = ({
+            firstName: "",
+            lastName: "",
+            gender: "",
+            profilePicture: "",
+            gym: "",
+            description: "",
+            email: "",
+            phone: "",
+            joiningDate: new Date().toLocaleString(),
+            tag: "",
+            tags: [],
+            cost: 0,
+            overall_rate: null,
+            comments: []
+        });
+
+        this.handleSubmit = this.handleSubmit.bind(this.state);
+
     }
+
+    handleSubmit = (e) => {
+
+        this.props.addTrainer(this.state);
+        e.preventDefault();
+    }
+
+    addTag = (e) => {
+        e.preventDefault();
+        this.setState({tags: [...this.state.tags, this.state.tag]} );
+        this.setState( { tag: "" });
+        this.renderTags();
+    };
+
+    removeTag = (tagToRemove) => {
+        this.setState({
+            tags: this.state.tags.filter((tag) => tag !== tagToRemove)
+        })
+    };
+
+
+    renderTags = () => {
+        return this.state.tags.map((tag) => {
+            return (
+                <li
+                    className="ui button primary"
+                    onClick={() => this.removeTag(tag) }
+                >
+                    { tag }
+                </li>
+            )
+        })
+    };
 
 
     componentDidMount() {
@@ -63,6 +117,8 @@ class TrainerInfo extends React.Component {
 
             var thatTrainerId = this.props.thatTrainerInfoObjectId;
             var targetTrainer = this.props.trainersList.find(x => x._id == thatTrainerId);
+
+
 
 
             const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -163,6 +219,29 @@ class TrainerInfo extends React.Component {
                             </div>
                         </div>
                     </div>
+
+                    <button className="ui button">
+                        Leave a Comment and Rate
+                    </button>
+
+                    <Modal trigger={<Button>Edit</Button>}>
+                        <Modal.Header>Profile Picture</Modal.Header>
+                        <Modal.Content image>
+                            <Image wrapped size='medium' src={targetTrainer.profilePicture}e />
+                        </Modal.Content>
+
+                        <TrainerEditForm
+                            targetTrainer={targetTrainer}
+                        />
+
+
+                        <Modal.Actions>
+                            <Button primary>
+                                Proceed <Icon name='right chevron' />
+                            </Button>
+                        </Modal.Actions>
+                    </Modal>
+
                 </div>
 
 

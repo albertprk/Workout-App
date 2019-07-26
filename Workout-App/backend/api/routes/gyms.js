@@ -18,6 +18,21 @@ router.get('/', (req, res, next) => {
     })
 });
 
+router.get('/names', (req, res, next) => {
+    console.log("getting gyms names");
+    Gym.find().distinct('name',function(err, names){
+        if (err) {
+            console.log("error in getting gyms names");
+            console.log(err);
+            return res.json({success: false, error: err})
+        }
+        console.log("success in getting gyms names");
+        console.log(names);
+        return res.json({success: true, data: names})
+    })
+
+});
+
 /* POST reviews. */
 router.post('/', (req, res, next) => {
     console.log("POSTING...");

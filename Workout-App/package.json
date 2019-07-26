@@ -24,7 +24,8 @@
     "react-router-dom": "^5.0.1",
     "react-spinners": "^0.5.4",
     "redux": "^4.0.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.3"
   },
   "meteor": {
     "mainModule": {

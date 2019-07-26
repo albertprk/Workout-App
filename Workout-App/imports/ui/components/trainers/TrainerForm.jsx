@@ -2,6 +2,7 @@ import React from 'react';
 import update from 'react-addons-update'
 import {connect} from 'react-redux'
 import {addTrainer} from '../../actions/trainers'
+import FileBase64 from "react-file-base64";
 
 class TrainerForm extends React.Component {
     constructor(props) {
@@ -27,10 +28,13 @@ class TrainerForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this.state);
     }
 
-    handleSubmit = (e) => {
+    getFiles = (pic) => {
+        this.setState({profilePicture: pic[0].base64});
+        console.log(this.state);
+    };
 
+    handleSubmit = (e) => {
         this.props.addTrainer(this.state);
-        e.preventDefault();
     }
 
     addTag = (e) => {
@@ -162,15 +166,18 @@ class TrainerForm extends React.Component {
                         <label>Profile Picture</label>
                         <div className="fields">
                             <div className="eight wide field">
-                                <input
-                                    type="text"
-                                    id="profilepicture"
-                                    placeholder="Profile Picture URL"
-                                    required="required"
-                                    onChange={(e) => {
-                                        this.setState({profilePicture: e.target.value})
-                                    }}
-                                />
+                                <FileBase64
+                                    multiple={ true }
+                                    onDone={ this.getFiles.bind(this) } />
+                                {/*<input*/}
+                                {/*    type="text"*/}
+                                {/*    id="profilepicture"*/}
+                                {/*    placeholder="Profile Picture URL"*/}
+                                {/*    required="required"*/}
+                                {/*    onChange={(e) => {*/}
+                                {/*        this.setState({profilePicture: e.target.value})*/}
+                                {/*    }}*/}
+                                {/*/>*/}
                             </div>
                         </div>
                     </div>
@@ -179,8 +186,8 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Rate</label>
                         <div className="three wide field">
-                            <div class="ui labeled input">
-                                <label for="amount" class="ui label">$</label>
+                            <div className="ui labeled input">
+                                <label for="amount" className="ui label">$</label>
                                 <input
                                     type="text"
                                     id="cost"
@@ -202,10 +209,10 @@ class TrainerForm extends React.Component {
                                     row="3"
                                     type="text"
                                     id="description"
-                                    placeholder="Profile Picture URL"
+                                    placeholder="Description"
                                     required="required"
                                     onChange={(e) => {
-                                        this.setState({profilePicture: e.target.value})
+                                        this.setState({description: e.target.value})
                                     }}
                                 />
                             </div>

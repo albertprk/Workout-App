@@ -1,7 +1,9 @@
 import React from 'react';
-import update from 'react-addons-update'
+import FileBase64 from 'react-file-base64';
 import {connect} from 'react-redux'
+import update from 'react-addons-update'
 import {addGym} from '../../actions/page'
+
 
 class GymForm extends React.Component {
     constructor(props) {
@@ -23,8 +25,12 @@ class GymForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this.state);
     }
 
+    getFiles = (pic) => {
+        this.setState({picture: pic[0].base64});
+        console.log(this.state);
+    };
+
     handleSubmit = (e) => {
-        e.preventDefault();
         this.setState({_id: this.generateKey(), tag: ""});
         this.props.addGym(this.state);
         this.setState({
@@ -164,17 +170,9 @@ class GymForm extends React.Component {
                         <label>Picture URL</label>
                         <div className="fields">
                             <div className="sixteen wide field">
-                                <input
-                                    type="text"
-                                    name="picture"
-                                    id="picture"
-                                    placeholder="URL for picture of gym"
-                                    required="required"
-                                    value={this.state.picture}
-                                    onChange={(e) => {
-                                        this.setState({picture: e.target.value})
-                                    }}
-                                />
+                                <FileBase64
+                                    multiple={ true }
+                                    onDone={ this.getFiles.bind(this) } />
                             </div>
                         </div>
                     </div>

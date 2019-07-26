@@ -1,15 +1,4 @@
-import {combineReducers} from "redux";
 import './../actions/trainers.js';
-
-//TO-DO:
-//simple page reducer, need to be updated later
-
-// export const currentTrainerReducer = (currentPage = 'Trainer', action) =>{
-//     if(action.type === "UPDATE_TRAINER"){
-//         // return action.current
-//         // todo: write more!
-//     }
-// }
 
 export const trainersLoading = (state = false, action) => {
     console.log("trainersLoading in reducer works", action.isLoading);

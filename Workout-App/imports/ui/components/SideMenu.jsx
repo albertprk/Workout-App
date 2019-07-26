@@ -8,30 +8,16 @@ class SideMenu extends React.Component {
         return (
             <div className="__sidemenu">
                 <div className="navigationMenu">
-                    <div className="navItem">
-                        <NavLink to="/home">Home</NavLink>
-                    </div>
-                    <div className="navItem">
-                        <NavLink to="/gyms">Gyms</NavLink>
-                    </div>
-                    <div className="navItem">
-                        <NavLink to="/trainers">Trainers</NavLink>
-                    </div>
-                    <div className="navItem">
-                        <NavLink to="/mytrainers">myTrainers</NavLink>
-                    </div>
-                    <div className="navItem">
-                        <NavLink to="/account">Account</NavLink>
-                    </div>
-                    <div className="navItem">
-                        <AccountsUIWrapper/>
-                    </div>
+                    <NavLink className="navItem" to="/home">Home</NavLink>
+                    <NavLink className="navItem" to="/gyms">Gyms</NavLink>
+                    <NavLink className="navItem" to="/trainers">Trainers</NavLink>
+                    <NavLink className="navItem" to="/mytrainers">myTrainers</NavLink>
+                    <NavLink className="navItem" to="/account">Account</NavLink>
+                    <div className="navItem"> <AccountsUIWrapper/> </div>
                 </div>
-
-
             </div>
         );
     }
 }
 
-export default SideMenu
+export default SideMenu;

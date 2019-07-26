@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import {currentpageReducer,gymsDummyReducer,gymsLoading,gymsErrored,manageGymsReducer} from "./gyms";
-import {trainersLoading,trainersErrored,managerTrainersReducer,trainerInfoLastName} from "./trainers"
+import {trainersLoading,trainersErrored,managerTrainersReducer,trainerInfoObjectId} from "./trainers"
 
 const rootReducer = combineReducers({
 
@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
     trainersReducer: managerTrainersReducer,
     trainersLoading: trainersLoading,
     trainersErrored: trainersErrored,
-    lastName: trainerInfoLastName,
+    trainerId: trainerInfoObjectId,
     
 });
 

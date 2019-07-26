@@ -9,10 +9,10 @@ export const updatepage = page => {
     };
 };
 
-export const trainerInfoLastName = lastName =>{
+export const trainerInfoObjectId = trainerId =>{
     return {
-        type: "UPDATE_LASTNAME",
-        lastName: lastName
+        type: "UPDATE_OBJECTID",
+        trainerId: trainerId
     }
 };
 

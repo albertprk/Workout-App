@@ -1,4 +1,0 @@
-<changelist name="Commit_30_6_2019_-_changed_EVERYTHING_added_thunk,_which_meant_reconfiguring_the_store_abs" date="1564089475716" recycled="false">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Commit_30_6_2019_-_changed_EVERYTHING_added_thunk,_which_meant_reconfiguring_the_store_abs/shelved.patch" />
-  <option name="DESCRIPTION" value="Commit 30/6/2019 - changed EVERYTHING added thunk, which meant reconfiguring the store abstracted schema into models folder added schema for gym data added get, post calls for gym data added actions to get and post gym data changed reducers to handle data from mongo added axios to actions added gym form which can submit gym data to mongo database created account component, right now it just has gym form" />
-</changelist>

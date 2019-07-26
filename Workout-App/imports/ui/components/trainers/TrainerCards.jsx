@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import {trainersFetchData, trainerInfoObjectId} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
-import {updatepage} from "../../actions/page";
 import TrainersMenu from './TrainersMenu';
 
 
@@ -61,7 +60,7 @@ class TrainerCards extends React.Component {
                                     return (
                                         <div className="card" onClick={() => {
                                             this.props.changetrainerInfoObjectId(targetTrainer._id)
-                                            this.props.changePage("Trainer")
+                                            this.props.history.push("/mytrainers")
                                         }}>
                                             <div className="image">
                                                 <img src={targetTrainer.profilePicture}/>
@@ -109,7 +108,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(trainersFetchData(url)),
-        changePage: (page) => dispatch(updatepage(page)),
         changetrainerInfoObjectId: (trainerId) => dispatch(trainerInfoObjectId(trainerId))
     }
 }

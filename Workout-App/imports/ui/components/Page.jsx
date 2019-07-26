@@ -5,6 +5,7 @@ import TrainerRow from './trainers/TrainerRow';
 import TrainerInfo from './trainers/TrainerInfo';
 import Account from './Account'
 import Gyms from './gyms/Gyms'
+import Home from './Home'
 
 import { connect } from "react-redux";
 import { updatepage } from "../actions/page";
@@ -18,8 +19,6 @@ class Page extends Component {
                       <TrainersMenu />
                       <br />
                       <TrainerCards />
-                      //// TODO:
-                      // just testing redux, REMOVE later
                       <h1>{this.props.currentpage}</h1>
                   </div>
                 </center>
@@ -31,7 +30,7 @@ class Page extends Component {
                     <br/>
                     {/* todo: Rename to Trainers */}
                     <br />
-                    <TrainerInfo firtName = "Rock" lastName="Li"  />
+                    <TrainerInfo firstName = "Rock" lastName="Li"  />
                 </div>
               </center>
             );
@@ -52,7 +51,7 @@ class Page extends Component {
         } else {
             return (
                 <div>
-                    <p>to be implemented</p>
+                    <Home/>
                 </div>
             );
         }

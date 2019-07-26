@@ -8,22 +8,22 @@ var trainerSchema = new mongoose.Schema({
     "gym": String,
     "description": String,
     "email": String,
-	  "phone": String,
-	  "joiningDate": String,
-	  "profilePicture": String,
-    "tags":[
+    "phone": String,
+    "joiningDate": String,
+    "profilePicture": String,
+    "tags": [
         String
     ],
     "cost": Number,
     "overall_rate": Number,
-    "comments":[
+    "comments": [
         {
-            "fullname" : String,
+            "fullname": String,
             "context": String,
             "date": Date,
             "rate": Number
         }
     ]
-}, { collection : "trainers"});
+}, {collection: "trainers"});
 
 module.exports = mongoose.model('Trainer', trainerSchema);

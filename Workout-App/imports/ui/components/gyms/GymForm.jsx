@@ -1,7 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update'
-import { connect } from 'react-redux'
-import { addGym } from '../../actions/page'
+import {connect} from 'react-redux'
+import {addGym} from '../../actions/page'
 
 class GymForm extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ class GymForm extends React.Component {
             tag: "",
             tags: [],
             address: "",
-            hours: ["","","","","","",""],
+            hours: ["", "", "", "", "", "", ""],
             picture: "",
             rating: 0
         });
@@ -25,7 +25,7 @@ class GymForm extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.setState({ _id: this.generateKey(), tag: "" });
+        this.setState({_id: this.generateKey(), tag: ""});
         this.props.addGym(this.state);
         this.setState({
             _id: this.generateKey(),
@@ -35,7 +35,7 @@ class GymForm extends React.Component {
             tag: "",
             tags: [],
             address: "",
-            hours: ["","","","","","",""],
+            hours: ["", "", "", "", "", "", ""],
             picture: ""
         });
     };
@@ -46,11 +46,11 @@ class GymForm extends React.Component {
 
     addTag = (e) => {
         e.preventDefault();
-        this.setState({tags: [...this.state.tags, this.state.tag]} );
+        this.setState({tags: [...this.state.tags, this.state.tag]});
         console.log("added tag:");
         console.log(this.state.tag);
         console.log(this.state);
-        this.setState( { tag: "" });
+        this.setState({tag: ""});
         this.renderTags();
     };
 
@@ -65,9 +65,9 @@ class GymForm extends React.Component {
             return (
                 <li
                     className="ui button primary"
-                    onClick={() => this.removeTag(tag) }
+                    onClick={() => this.removeTag(tag)}
                 >
-                    { tag }
+                    {tag}
                 </li>
             )
         })
@@ -90,8 +90,10 @@ class GymForm extends React.Component {
                                     id="name"
                                     placeholder="Gym Name"
                                     required="required"
-                                    value={ this.state.name }
-                                    onChange={ (e) => { this.setState( { name: e.target.value } ) }}
+                                    value={this.state.name}
+                                    onChange={(e) => {
+                                        this.setState({name: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -108,8 +110,10 @@ class GymForm extends React.Component {
                                     id="address"
                                     placeholder="Street Address"
                                     required="required"
-                                    value={ this.state.address }
-                                    onChange={ (e) => { this.setState( { address: e.target.value } ) }}
+                                    value={this.state.address}
+                                    onChange={(e) => {
+                                        this.setState({address: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -126,8 +130,10 @@ class GymForm extends React.Component {
                                     id="description"
                                     placeholder="Short description of gym"
                                     required="required"
-                                    value={ this.state.description }
-                                    onChange={ (e) => { this.setState( { description: e.target.value } ) }}
+                                    value={this.state.description}
+                                    onChange={(e) => {
+                                        this.setState({description: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -144,8 +150,10 @@ class GymForm extends React.Component {
                                     id="spiel"
                                     placeholder="Long description of gym"
                                     required="required"
-                                    value={ this.state.spiel }
-                                    onChange={ (e) => { this.setState( { spiel: e.target.value } ) }}
+                                    value={this.state.spiel}
+                                    onChange={(e) => {
+                                        this.setState({spiel: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -162,8 +170,10 @@ class GymForm extends React.Component {
                                     id="picture"
                                     placeholder="URL for picture of gym"
                                     required="required"
-                                    value={ this.state.picture }
-                                    onChange={ (e) => { this.setState( { picture: e.target.value } ) }}
+                                    value={this.state.picture}
+                                    onChange={(e) => {
+                                        this.setState({picture: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -179,10 +189,12 @@ class GymForm extends React.Component {
                                     placeholder="Sunday"
                                     id="sunday"
                                     required="required"
-                                    value={ this.state.hours[0] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 0: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[0]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {0: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -191,10 +203,12 @@ class GymForm extends React.Component {
                                     placeholder="Monday"
                                     id="monday"
                                     required="required"
-                                    value={ this.state.hours[1] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 1: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[1]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {1: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -203,10 +217,12 @@ class GymForm extends React.Component {
                                     placeholder="Tuesday"
                                     id="tuesday"
                                     required="required"
-                                    value={ this.state.hours[2] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 2: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[2]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {2: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -215,10 +231,12 @@ class GymForm extends React.Component {
                                     placeholder="Wednesday"
                                     id="wednesday"
                                     required="required"
-                                    value={ this.state.hours[3] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 3: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[3]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {3: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -227,10 +245,12 @@ class GymForm extends React.Component {
                                     placeholder="Thursday"
                                     id="thursday"
                                     required="required"
-                                    value={ this.state.hours[4] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 4: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[4]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {4: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -239,10 +259,12 @@ class GymForm extends React.Component {
                                     placeholder="Friday"
                                     id="friday"
                                     required="required"
-                                    value={ this.state.hours[5] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 5: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[5]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {5: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                             <div className="two wide field">
@@ -251,10 +273,12 @@ class GymForm extends React.Component {
                                     placeholder="Saturday"
                                     id="saturday"
                                     required="required"
-                                    value={ this.state.hours[6] }
-                                    onChange={ (e) => { this.setState( {
-                                        hours: update(this.state.hours, { 6: { $set: e.target.value } })
-                                    })}}
+                                    value={this.state.hours[6]}
+                                    onChange={(e) => {
+                                        this.setState({
+                                            hours: update(this.state.hours, {6: {$set: e.target.value}})
+                                        })
+                                    }}
                                 />
                             </div>
                         </div>
@@ -263,7 +287,7 @@ class GymForm extends React.Component {
 
                     <form
                         className="ui form"
-                        onSubmit={ this.addTag }
+                        onSubmit={this.addTag}
                     >
                         <h4 className="ui dividing header">Tags</h4>
                         <div className="field">
@@ -273,11 +297,11 @@ class GymForm extends React.Component {
                                     type="text"
                                     placeholder="Enter tags"
                                     id="tagInput"
-                                    value={ this.state.tag }
+                                    value={this.state.tag}
                                     required="required"
-                                    onChange={ (e) => {
-                                        this.setState( {tag: e.target.value} );
-                                    } }
+                                    onChange={(e) => {
+                                        this.setState({tag: e.target.value});
+                                    }}
                                 />
                                 <button
                                     className="ui tag label"
@@ -289,7 +313,7 @@ class GymForm extends React.Component {
                         </div>
                         <div className="field">
                             <ul>
-                                { this.renderTags() }
+                                {this.renderTags()}
                             </ul>
                         </div>
                     </form>
@@ -298,7 +322,7 @@ class GymForm extends React.Component {
                         <button
                             className="ui button primary"
                             id="addGym"
-                            onClick={ this.handleSubmit }
+                            onClick={this.handleSubmit}
                         >
                             Submit Gym
                         </button>
@@ -312,12 +336,12 @@ class GymForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return{  }
+    return {}
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        addGym:(gym) => dispatch(addGym(gym))
+    return {
+        addGym: (gym) => dispatch(addGym(gym))
     };
 };
 

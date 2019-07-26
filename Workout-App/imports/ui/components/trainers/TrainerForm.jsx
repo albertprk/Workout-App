@@ -1,42 +1,42 @@
 import React from 'react';
 import update from 'react-addons-update'
-import { connect } from 'react-redux'
-import { addTrainer } from '../../actions/trainers'
+import {connect} from 'react-redux'
+import {addTrainer} from '../../actions/trainers'
 
 class TrainerForm extends React.Component {
     constructor(props) {
-		super(props);
+        super(props);
 
-		this.state = ({
-			firstName: "",
-			lastName: "",
-			gender: "",
-			profilePicture: "",
-			gym: "",
-			description: "",
-			email: "",
-			phone: "",
-			joiningDate: new Date().toLocaleString(),
-			tag: "",
-			tags: [],
-			cost: 0,
-			overall_rate: null,
-			comments: []
-		});
+        this.state = ({
+            firstName: "",
+            lastName: "",
+            gender: "",
+            profilePicture: "",
+            gym: "",
+            description: "",
+            email: "",
+            phone: "",
+            joiningDate: new Date().toLocaleString(),
+            tag: "",
+            tags: [],
+            cost: 0,
+            overall_rate: null,
+            comments: []
+        });
 
-		this.handleSubmit = this.handleSubmit.bind(this.state);
-	}
-
-	handleSubmit = (e) => {
-
-        this.props.addTrainer(this.state);
-		e.preventDefault();
+        this.handleSubmit = this.handleSubmit.bind(this.state);
     }
 
-	addTag = (e) => {
+    handleSubmit = (e) => {
+
+        this.props.addTrainer(this.state);
         e.preventDefault();
-        this.setState({tags: [...this.state.tags, this.state.tag]} );
-        this.setState( { tag: "" });
+    }
+
+    addTag = (e) => {
+        e.preventDefault();
+        this.setState({tags: [...this.state.tags, this.state.tag]});
+        this.setState({tag: ""});
         this.renderTags();
     };
 
@@ -47,21 +47,21 @@ class TrainerForm extends React.Component {
     };
 
 
-	renderTags = () => {
+    renderTags = () => {
         return this.state.tags.map((tag) => {
             return (
                 <li
                     className="ui button primary"
-                    onClick={() => this.removeTag(tag) }
+                    onClick={() => this.removeTag(tag)}
                 >
-                    { tag }
+                    {tag}
                 </li>
             )
         })
     };
 
 
-	render() {
+    render() {
         return (
             <div>
                 <form
@@ -77,7 +77,9 @@ class TrainerForm extends React.Component {
                                     placeholder="First Name"
                                     id="firstName"
                                     required="required"
-                                    onChange={ (e) => { this.setState( {firstName: e.target.value })}}
+                                    onChange={(e) => {
+                                        this.setState({firstName: e.target.value})
+                                    }}
                                 />
                             </div>
                             <div className="five wide field">
@@ -86,13 +88,15 @@ class TrainerForm extends React.Component {
                                     placeholder="Last Name"
                                     id="lastName"
                                     required="required"
-                                    onChange={ (e) => { this.setState( {lastName: e.target.value })}}
+                                    onChange={(e) => {
+                                        this.setState({lastName: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
                     </div>
 
-					<div className="field">
+                    <div className="field">
                         <label>Gender</label>
                         <div className="fields">
                             <div className="five wide field">
@@ -101,13 +105,15 @@ class TrainerForm extends React.Component {
                                     id="gender"
                                     placeholder="Male/Female/Other"
                                     required="required"
-                                    onChange={ (e) => { this.setState( { gender: e.target.value } ) }}
+                                    onChange={(e) => {
+                                        this.setState({gender: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
                     </div>
 
-					<div className="field">
+                    <div className="field">
                         <label>Primany Gym</label>
                         <div className="fields">
                             <div className="eight wide field">
@@ -116,13 +122,15 @@ class TrainerForm extends React.Component {
                                     id="gym"
                                     placeholder="Gym Name"
                                     required="required"
-                                    onChange={ (e) => { this.setState( { gym: e.target.value } ) }}
+                                    onChange={(e) => {
+                                        this.setState({gym: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
                     </div>
 
-					<div className="field">
+                    <div className="field">
                         <label>Contact Information</label>
                         <div className="fields">
                             <div className="six wide field">
@@ -131,7 +139,9 @@ class TrainerForm extends React.Component {
                                     placeholder="Phone Number"
                                     id="phone"
                                     required="required"
-                                    onChange={ (e) => { this.setState( {phone: e.target.value })}}
+                                    onChange={(e) => {
+                                        this.setState({phone: e.target.value})
+                                    }}
                                 />
                             </div>
                             <div className="six wide field">
@@ -140,13 +150,15 @@ class TrainerForm extends React.Component {
                                     placeholder="Email"
                                     id="email"
                                     required="required"
-                                    onChange={ (e) => { this.setState( {email: e.target.value })}}
+                                    onChange={(e) => {
+                                        this.setState({email: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
                     </div>
 
-					<div className="field">
+                    <div className="field">
                         <label>Profile Picture</label>
                         <div className="fields">
                             <div className="eight wide field">
@@ -155,41 +167,46 @@ class TrainerForm extends React.Component {
                                     id="profilepicture"
                                     placeholder="Profile Picture URL"
                                     required="required"
-                                    onChange={ (e) => { this.setState( { profilePicture: e.target.value } ) }}
+                                    onChange={(e) => {
+                                        this.setState({profilePicture: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
                     </div>
 
 
-
-					<div className="field">
+                    <div className="field">
                         <label>Rate</label>
                         <div className="three wide field">
-							<div class="ui labeled input">
-								<label for="amount" class="ui label">$</label>
-								<input
+                            <div class="ui labeled input">
+                                <label for="amount" class="ui label">$</label>
+                                <input
                                     type="text"
                                     id="cost"
                                     placeholder="Desired Rate"
                                     required="required"
-                                    onChange={ (e) => { this.setState( { cost: e.target.value } ) }}
+                                    onChange={(e) => {
+                                        this.setState({cost: e.target.value})
+                                    }}
                                 />
-							</div>
+                            </div>
                         </div>
                     </div>
 
-					<div className="field">
+                    <div className="field">
                         <label>Description Of Yourself</label>
                         <div className="fields">
                             <div className="eight wide field">
                                 <textarea
-									row="3"
+                                    row="3"
                                     type="text"
                                     id="description"
                                     placeholder="Profile Picture URL"
                                     required="required"
-                                    onChange={ (e) => { this.setState( { profilePicture: e.target.value } ) }}
+                                    onChange={(e) => {
+                                        this.setState({profilePicture: e.target.value})
+                                    }}
                                 />
                             </div>
                         </div>
@@ -197,7 +214,7 @@ class TrainerForm extends React.Component {
 
                     <form
                         className="ui form"
-                        onSubmit={ this.addTag }
+                        onSubmit={this.addTag}
                     >
                         <h4 className="ui dividing header">Tags</h4>
                         <div className="field">
@@ -207,11 +224,11 @@ class TrainerForm extends React.Component {
                                     type="text"
                                     placeholder="Enter tags"
                                     id="tagInput"
-                                    value={ this.state.tag }
+                                    value={this.state.tag}
                                     required="required"
-                                    onChange={ (e) => {
-                                        this.setState( {tag: e.target.value} );
-                                    } }
+                                    onChange={(e) => {
+                                        this.setState({tag: e.target.value});
+                                    }}
                                 />
                                 <button
                                     className="ui tag label"
@@ -223,17 +240,17 @@ class TrainerForm extends React.Component {
                         </div>
                         <div className="field">
                             <ul>
-                                { this.renderTags() }
+                                {this.renderTags()}
                             </ul>
                         </div>
                     </form>
 
 
-					<div className="field">
+                    <div className="field">
                         <button
                             className="ui button primary"
                             id="addTrainer"
-                            onClick={ this.handleSubmit }
+                            onClick={this.handleSubmit}
                         >
                             Submit Trainer
                         </button>
@@ -247,12 +264,12 @@ class TrainerForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return{  }
+    return {}
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        addTrainer:(Trainer) => dispatch(addTrainer(Trainer))
+    return {
+        addTrainer: (Trainer) => dispatch(addTrainer(Trainer))
     };
 };
 

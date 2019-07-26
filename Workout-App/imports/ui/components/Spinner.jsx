@@ -1,5 +1,5 @@
 import React from 'react';
-import { ClipLoader } from 'react-spinners';
+import {ClipLoader} from 'react-spinners';
 
 class Spinner extends React.Component {
     constructor(props) {

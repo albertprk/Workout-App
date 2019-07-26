@@ -1,15 +1,15 @@
 import React from 'react';
 import GymCard from './GymCard'
 import GymMenu from './GymMenu'
-import { connect } from 'react-redux'
-import { gymsFetchData } from'../../actions/page'
+import {connect} from 'react-redux'
+import {gymsFetchData} from '../../actions/page'
 import Spinner from '../Spinner'
 
 class Gyms extends React.Component {
 
     constructor() {
         super();
-        this.state = ({ filterTags: [] });
+        this.state = ({filterTags: []});
     }
 
     componentDidMount() {
@@ -31,18 +31,18 @@ class Gyms extends React.Component {
                 }
             }
             if (this.state.filterTags.length === 0 || contains)
-            return (
-                <GymCard
-                    parentCallBack = { this.getTagFromChild }
-                    gym={gym}
-                />
-            )
+                return (
+                    <GymCard
+                        parentCallBack={this.getTagFromChild}
+                        gym={gym}
+                    />
+                )
         });
     };
 
     getTagFromChild = (tag) => {
         if (this.state.filterTags.indexOf(tag) == -1) {
-            this.setState( { filterTags: [...this.state.filterTags, tag] });
+            this.setState({filterTags: [...this.state.filterTags, tag]});
         }
     };
 
@@ -53,9 +53,9 @@ class Gyms extends React.Component {
             return (
                 <div
                     className="ui button"
-                    onClick={ () => this.removeTag(tag) }
+                    onClick={() => this.removeTag(tag)}
                 >
-                    { tag }
+                    {tag}
                 </div>
             )
         });
@@ -83,10 +83,10 @@ class Gyms extends React.Component {
 
         return (
             <div>
-                { this.renderTags() }
+                {this.renderTags()}
                 <GymMenu/>
                 <ul>
-                    { this.renderGyms() }
+                    {this.renderGyms()}
                 </ul>
             </div>
         )

@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 class GymCard extends React.Component {
 
@@ -23,19 +23,19 @@ class GymCard extends React.Component {
                 <div className="ui divided items">
                     <div className="item">
                         <div className="ui large image">
-                            <img src={ this.props.gym.picture } alt=""/>
+                            <img src={this.props.gym.picture} alt=""/>
                         </div>
                         <div className="content">
-                            <a className="header">{ this.props.gym.name }</a>
+                            <a className="header">{this.props.gym.name}</a>
                             <div className="meta">
                                 <span className="cinema">
-                                    { this.props.gym.description }
+                                    {this.props.gym.description}
                                 </span>
                             </div>
 
 
                             <div className="ui primary button">
-                                See trainers at { this.props.gym.name }
+                                See trainers at {this.props.gym.name}
                                 <i className="right chevron icon"/>
                             </div>
                             <div className="content">
@@ -45,10 +45,10 @@ class GymCard extends React.Component {
                                             return (
                                                 <button
                                                     className="ui button"
-                                                    onClick={ () => this.sendTagToParent(tag) }
+                                                    onClick={() => this.sendTagToParent(tag)}
                                                 >
-                                                { tag }
-                                            </button>
+                                                    {tag}
+                                                </button>
                                             );
                                         })
                                     }
@@ -56,12 +56,11 @@ class GymCard extends React.Component {
 
                                 <div className="bottom aligned">
                                     <p>
-                                        { this.props.gym.spiel }
+                                        {this.props.gym.spiel}
                                     </p>
                                 </div>
                             </div>
                         </div>
-
 
 
                         <div className="content">
@@ -71,20 +70,20 @@ class GymCard extends React.Component {
                                 </div>
                                 <div className="content">
                                     <a className="header">
-                                        { this.props.gym.name }
+                                        {this.props.gym.name}
                                     </a>
                                     <div className="meta">
                                         <span className="date">
-                                            Open { days[todayIndex] } { this.props.gym.hours[todayIndex] }
+                                            Open {days[todayIndex]} {this.props.gym.hours[todayIndex]}
                                         </span>
                                     </div>
                                     <div className="description">
-                                        { this.props.gym.description }
+                                        {this.props.gym.description}
                                     </div>
                                 </div>
                                 <div className="extra content">
                                     <a>
-                                        <i className="user icon" />
+                                        <i className="user icon"/>
                                         22 swolr members checked in here
                                     </a>
                                 </div>
@@ -100,9 +99,7 @@ class GymCard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {
-
-    };
+    return {};
 };
 
 const mapDispatchToProps = (dispatch) => {

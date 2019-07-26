@@ -3,11 +3,11 @@ import '../actions/gyms.js';
 
 //TO-DO:
 //simple page reducer, need to be updated later
-export const currentpageReducer = (currentpage = "" , action) => {
-  if (action.type === "UPDATE_PAGE") {
-      return action.currentpage;
+export const currentpageReducer = (currentpage = "", action) => {
+    if (action.type === "UPDATE_PAGE") {
+        return action.currentpage;
     }
-  return currentpage;
+    return currentpage;
 };
 
 export const gymsDummyReducer = () => {

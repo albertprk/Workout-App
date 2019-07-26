@@ -8,8 +8,8 @@ export default class Account extends React.Component {
         return (
             <div>
                 <GymForm/>
-				  <h4 class="ui horizontal inverted divider"></h4>
-				<TrainerForm/>
+                <h4 class="ui horizontal inverted divider"></h4>
+                <TrainerForm/>
             </div>
         )
     }

@@ -3,30 +3,30 @@ import axios from 'axios';
 
 // update the current page the user have selected (page should be 'Gym' / 'Trainers' etc)
 export const updatepage = page => {
-  return {
-      type: "UPDATE_PAGE",
-      currentpage: page
+    return {
+        type: "UPDATE_PAGE",
+        currentpage: page
     };
 };
 
-export const trainerInfoObjectId = trainerId =>{
+export const trainerInfoObjectId = trainerId => {
     return {
         type: "UPDATE_OBJECTID",
         trainerId: trainerId
     }
 };
 
- export const trainersErrored = (bool) => {
-     return {
-         type: 'TRIANERS_ERRORED',
-         hasErrored: bool
-     };
- };
+export const trainersErrored = (bool) => {
+    return {
+        type: 'TRIANERS_ERRORED',
+        hasErrored: bool
+    };
+};
 
 
-export const isTrainersLoading = (bool) =>{
-    console.log("isTrainersLoading starts in actions" )
-    return{
+export const isTrainersLoading = (bool) => {
+    console.log("isTrainersLoading starts in actions")
+    return {
         type: 'TRAINERS_LOADING',
         isLoading: bool
     };
@@ -50,7 +50,7 @@ export const trainersFetchData = (url) => {
         axios.get(url)
             .then((response) => {
                 console.log(url)
-                if (!response.data){
+                if (!response.data) {
                     throw Error(response.statusText);
                 }
                 console.log("dispatch starts")
@@ -66,22 +66,22 @@ export const trainersFetchData = (url) => {
                 console.log(response.data);
                 return response.data;
             })
-                .catch((err) => {
-                    console.log("There is an error ouccring in fetch trainers action")
-                    console.log(err);
-                    dispatch(trainersErrored(true))
-                });
+            .catch((err) => {
+                console.log("There is an error ouccring in fetch trainers action")
+                console.log(err);
+                dispatch(trainersErrored(true))
+            });
     }
 }
 
 //add a trainer to databse, called from trainerform
 export const addTrainer = (Trainer) => {
-	return dispatch => {
-		console.log("adding a new trainer to database!");
-		console.log(Trainer);
+    return dispatch => {
+        console.log("adding a new trainer to database!");
+        console.log(Trainer);
 
 
-		axios
+        axios
             .post("http://localhost:9000/trainers", {
                 trainer: Trainer
             })
@@ -92,7 +92,7 @@ export const addTrainer = (Trainer) => {
                 console.log("There is an error occurring in add Trainer");
             });
 
-	}
+    }
 }
 
 //called when a Trainer is successfully posted to database, will update redux with new trainer

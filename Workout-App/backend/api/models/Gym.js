@@ -11,6 +11,6 @@ var gymSchema = new Schema({
     tags: [String],
     picture: String,
     rating: Number
-}, { collection: "gyms"});
+}, {collection: "gyms"});
 
 module.exports = mongoose.model('Gym', gymSchema);

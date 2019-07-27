@@ -38,6 +38,21 @@ router.get('/', function (req, res, next) {
     // res.render('index', { title: 'Express' });
 });
 
+// getting a specfic trainers information, req have _id for the user
+router.get('/gettrainer', function (req, res, next) {
+    let user = req.query.user;
+    console.log("coooooooooooooooooooooool" + user)
+    Trainer.findOne({'user': user}, function(err, trainer){
+        if(err) {
+            console.log("error in getting specfic trainer");
+            console.log(err);
+            return res.json({success: false, error: err})
+        }
+        console.log("got trainer under user:" + user)
+        return res.json({success: true, data: trainer})
+  })
+});
+
  /* POST reviews. */
  router.post('/', (req, res, next) => {
      console.log("POSTING...");

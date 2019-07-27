@@ -1,14 +1,16 @@
 import React from 'react';
 import update from 'react-addons-update'
 import {connect} from 'react-redux'
-import {addTrainer} from '../../actions/trainers'
+import {getTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
+import Spinner from '../Spinner'
 
-class TrainerForm extends React.Component {
+class TrainerUpdate extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = ({
+            _id: "",
             firstName: "",
             lastName: "",
             gender: "",
@@ -17,16 +19,30 @@ class TrainerForm extends React.Component {
             description: "",
             email: "",
             phone: "",
-            joiningDate: new Date().toLocaleString(),
+            joiningDate: "",
             tag: "",
             tags: [],
             cost: 0,
             overall_rate: null,
-            user: Meteor.userId(),
+            user: "",
+            __v: "",
             comments: []
         });
 
-        this.handleSubmit = this.handleSubmit.bind(this.state);
+
+    }
+
+    componentDidMount   ()  {
+      let currentuser = Meteor.userId();
+      if(currentuser) {
+        this.props.getTrainer(currentuser)
+          .then(result => {
+              console.log("wtf how did this work" + JSON.stringify(result.data))
+              this.setState(result.data);
+              console.log(this.state)
+        })
+
+      }
     }
 
     getFiles = (pic) => {
@@ -86,14 +102,14 @@ class TrainerForm extends React.Component {
                 <form
                     className="ui form"
                 >
-                    <h4 className="ui dividing header">Signup as a Trainer</h4>
+                    <h4 className="ui dividing header">Edit Your Information Below</h4>
                     <div className="field">
                         <label>Name</label>
                         <div className="fields">
                             <div className="five wide field">
                                 <input
                                     type="text"
-                                    placeholder="First Name"
+                                    value= {this.state.firstName}
                                     id="firstName"
                                     required="required"
                                     onChange={(e) => {
@@ -104,7 +120,7 @@ class TrainerForm extends React.Component {
                             <div className="five wide field">
                                 <input
                                     type="text"
-                                    placeholder="Last Name"
+                                    value= {this.state.lastName}
                                     id="lastName"
                                     required="required"
                                     onChange={(e) => {
@@ -122,7 +138,7 @@ class TrainerForm extends React.Component {
                                 <input
                                     type="text"
                                     id="gender"
-                                    placeholder="Male/Female/Other"
+                                    value= {this.state.gender}
                                     required="required"
                                     onChange={(e) => {
                                         this.setState({gender: e.target.value})
@@ -139,7 +155,7 @@ class TrainerForm extends React.Component {
                                 <input
                                     type="text"
                                     id="gym"
-                                    placeholder="Gym Name"
+                                    value= {this.state.gym}
                                     required="required"
                                     onChange={(e) => {
                                         this.setState({gym: e.target.value})
@@ -155,7 +171,7 @@ class TrainerForm extends React.Component {
                             <div className="six wide field">
                                 <input
                                     type="text"
-                                    placeholder="Phone Number"
+                                    value= {this.state.phone}
                                     id="phone"
                                     required="required"
                                     onChange={(e) => {
@@ -166,7 +182,7 @@ class TrainerForm extends React.Component {
                             <div className="six wide field">
                                 <input
                                     type="text"
-                                    placeholder="Email"
+                                    value= {this.state.email}
                                     id="email"
                                     required="required"
                                     onChange={(e) => {
@@ -206,7 +222,7 @@ class TrainerForm extends React.Component {
                                 <input
                                     type="text"
                                     id="cost"
-                                    placeholder="Desired Rate"
+                                    value= {this.state.cost}
                                     required="required"
                                     onChange={(e) => {
                                         this.setState({cost: e.target.value})
@@ -224,7 +240,7 @@ class TrainerForm extends React.Component {
                                     row="3"
                                     type="text"
                                     id="description"
-                                    placeholder="Description"
+                                    value= {this.state.description}
                                     required="required"
                                     onChange={(e) => {
                                         this.setState({description: e.target.value})
@@ -244,7 +260,7 @@ class TrainerForm extends React.Component {
                                 <i className="tags icon"></i>
                                 <input
                                     type="text"
-                                    placeholder="Enter tags"
+                                    value= {this.state.tags}
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
@@ -274,7 +290,7 @@ class TrainerForm extends React.Component {
                             id="addTrainer"
                             onClick={this.handleSubmit}
                         >
-                            Submit Trainer
+                            TODO: add u[date method tmr
                         </button>
                     </div>
                 </form>
@@ -286,13 +302,15 @@ class TrainerForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTrainer: (Trainer) => dispatch(addTrainer(Trainer))
+        getTrainer: (id) => dispatch(getTrainer(id))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TrainerForm);
+export default connect(mapStateToProps, mapDispatchToProps)(TrainerUpdate);

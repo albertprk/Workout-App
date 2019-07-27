@@ -66,6 +66,48 @@ export const trainersFetchData = (url) => {
     }
 }
 
+//get information about a specfic trainer using user _id
+export const getTrainer = (id) => {
+  return dispatch => {
+      console.log("getting trainer information for user: " + id);
+
+
+
+      return axios.get("http://localhost:9000/trainers/gettrainer", {
+          params: {
+            user: id
+          }
+      })
+          .then((response) => {
+              if (!response.data) {
+                  throw Error(response.statusText);
+              }
+              console.log("dispatch starts")
+              dispatch(isTrainersLoading(false));
+              console.log("dispatch ends")
+
+              console.log("trainer success starts")
+              console.log(response.data)
+              dispatch(trainersSuccess(response.data));
+              console.log("trainer success ends")
+
+              console.log("success in fetch data")
+              console.log("returning trainer: " + id + "'s data")
+
+
+
+              console.log(response.data)
+
+              return response.data;
+          })
+          .catch((err) => {
+              console.log("There is an error ouccring in fetching this specfic trainer")
+              console.log(err);
+          });
+
+  }
+}
+
 //add a trainer to databse, called from trainerform
 export const addTrainer = (Trainer) => {
     return dispatch => {

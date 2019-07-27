@@ -16,6 +16,7 @@ var trainerSchema = new mongoose.Schema({
     ],
     "cost": Number,
     "overall_rate": Number,
+    "user": String,
     "comments": [
         {
             "fullname": String,
@@ -24,6 +25,6 @@ var trainerSchema = new mongoose.Schema({
             "rate": Number
         }
     ]
-}, {collection: "trainers"});
+}, { collection : "trainers"});
 
 module.exports = mongoose.model('Trainer', trainerSchema);

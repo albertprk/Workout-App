@@ -8,6 +8,8 @@ import Gyms from "./gyms/Gyms";
 import TrainerCards from './trainers/TrainerCards';
 import TrainerInfo from './trainers/TrainerInfo';
 import Account from './Account'
+import TrainerForm from './trainers/TrainerForm'
+import GymForm from './gyms/GymForm'
 
 class App extends Component {
     constructor(props) {
@@ -41,6 +43,8 @@ class App extends Component {
                                 <Route path='/trainers' component={TrainerCards}/>
                                 <Route path='/mytrainers' component={TrainerInfo}/>
                                 <Route path='/account' component={Account}/>
+                                <Route path='/account/addgym' component={GymForm}/>    
+                                <Route path='/account/addtrainer' component={TrainerForm}/>
                             </div>
                         </div>
                     </div>

@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 /* GET reviews initial data */
-router.get('/', (req, res, next) => {
+router.get('/*', (req, res, next) => {
     console.log("getting");
     Gym.find((err, gyms) => {
         if (err) {

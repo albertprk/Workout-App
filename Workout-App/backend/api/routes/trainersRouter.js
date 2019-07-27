@@ -21,7 +21,7 @@ var allTrainers = Trainer.find({}, function (err, trainers) {
 });
 
 
-router.get('/', function (req, res, next) {
+router.get('/*', function (req, res, next) {
     console.log("getting trainers in Route:   ");
     Trainer.find((err, trainers) => {
         if (err) {

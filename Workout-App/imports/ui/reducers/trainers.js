@@ -42,5 +42,3 @@ export const managerTrainersReducer = (trainersList = [], action) => {
 
     }
 }
-
-

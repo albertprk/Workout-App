@@ -82,21 +82,7 @@ export const getTrainer = (id) => {
               if (!response.data) {
                   throw Error(response.statusText);
               }
-              console.log("dispatch starts")
-              dispatch(isTrainersLoading(false));
-              console.log("dispatch ends")
-
-              console.log("trainer success starts")
-              console.log(response.data)
-              dispatch(trainersSuccess(response.data));
-              console.log("trainer success ends")
-
-              console.log("success in fetch data")
-              console.log("returning trainer: " + id + "'s data")
-
-
-
-              console.log(response.data)
+              console.log("this is the returned data" + response.data)
 
               return response.data;
           })

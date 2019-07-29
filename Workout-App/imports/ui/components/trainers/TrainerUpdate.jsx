@@ -15,7 +15,7 @@ class TrainerUpdate extends React.Component {
             lastName: "",
             gender: "",
             profilePicture: "",
-            gym: "",
+            gym: [],
             description: "",
             email: "",
             phone: "",

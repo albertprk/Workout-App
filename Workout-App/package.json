@@ -16,6 +16,7 @@
     "cors": "^2.8.5",
     "jquery": "^3.4.1",
     "meteor-node-stubs": "^0.4.1",
+    "query-string": "^6.8.2",
     "react": "^16.8.6",
     "react-addons-update": "^15.6.2",
     "react-dom": "^16.5.0",

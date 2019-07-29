@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {trainersFetchData} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
+const querystring = require('query-string');
 
 
 // export default class TrainerInfo extends Component {
@@ -20,9 +21,16 @@ class TrainerInfo extends React.Component {
         this.props.fetchData("http://localhost:9000/trainers")
         console.log("mounted");
         console.log(this.props)
+
+        const queries = querystring.parse(this.props.location.search);
+        console.log("QUERYS:");
+        console.log(queries);
+        console.log(queries.trainer);
+        console.log(queries.tags);
     }
 
     render() {
+
         if (this.props.hasErrored) {
             return <div>
                 <p>Sorry! Error rendering</p>

@@ -1,5 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import {NavLink} from 'react-router-dom'
+
 
 class GymCard extends React.Component {
 
@@ -33,11 +35,14 @@ class GymCard extends React.Component {
                                 </span>
                             </div>
 
-
-                            <div className="ui primary button">
+                            <NavLink
+                                className="ui primary button"
+                                to={"trainers?gym=" + JSON.stringify(this.props.gym.name)}
+                            >
                                 See trainers at {this.props.gym.name}
                                 <i className="right chevron icon"/>
-                            </div>
+                            </NavLink>
+
                             <div className="content">
                                 <div className="extra">
                                     {

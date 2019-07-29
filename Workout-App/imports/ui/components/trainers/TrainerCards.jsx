@@ -67,7 +67,7 @@ class TrainerCards extends React.Component {
                             allTrainers.map((targetTrainer, index) => {
                                 // below if statement renders all trainers if no gym query exists
                                 // if it does exist it only shows the trainers at that gym
-                                if (!queries.gym || targetTrainer.gym.includes(queries.gym.replace(/"/g, ""))) {
+                                if (!queries.gym || targetTrainer.gym === queries.gym.replace(/"/g, "")) {
                                     return (
                                         <div className="card" onClick={() => {
                                             this.props.changetrainerInfoObjectId(targetTrainer._id);

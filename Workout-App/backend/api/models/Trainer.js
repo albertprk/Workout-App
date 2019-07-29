@@ -5,9 +5,7 @@ var trainerSchema = new mongoose.Schema({
     "firstName": String,
     "lastName": String,
     "gender": String,
-    "gym": [
-        String
-    ],
+    "gym": String,
     "description": String,
     "email": String,
     "phone": String,

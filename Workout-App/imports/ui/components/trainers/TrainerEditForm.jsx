@@ -9,9 +9,26 @@ class TrainerEditForm extends React.Component {
     constructor(props) {
         super(props);
 
+        // this.state = ({
+        //     tag: "",
+        //     tags: this.props.targetTrainer.tags,
+        // });
+
         this.state = ({
+            firstName: this.props.targetTrainer.firstName,
+            lastName: this.props.targetTrainer.lastName,
+            gender: this.props.targetTrainer.gender,
+            profilePicture: this.props.targetTrainer.profilePicture,
+            gyms: this.props.targetTrainer.gym,
+            description: this.props.targetTrainer.description,
+            email: this.props.targetTrainer.email,
+            phone: this.props.targetTrainer.phone,
+            joiningDate: new Date().toLocaleString(),
             tag: "",
             tags: this.props.targetTrainer.tags,
+            cost: 0,
+            overall_rate: null,
+            comments: []
         });
 
         this.handleSubmit = this.handleSubmit.bind(this.state);
@@ -59,6 +76,10 @@ class TrainerEditForm extends React.Component {
             )
         })
     };
+
+    // addGymInTrainerForm = () => {
+    //     this.state.gym
+    // }
 
     renderTagsFromTrainer = () => {
         return this.props.targetTrainer.tags.map((tag) => {
@@ -181,31 +202,15 @@ render() {
                     <br/>
 
                     <div className="four wide field">
-                        <p>Adding an existing gym</p>
                         <select className="ui dropdown" >
-                            <option value>Gyn Name</option>
                             {
                                 gymNameList.map((name) => {
                                     return (<option value> {name} </option>)
                                 })
                             }
                         </select>
-                        <button> submit </button>
+                        <button> add this gym </button>
 
-                    </div>
-
-                    <p>Adding a new  gym</p>
-                    <div className="eight wide field">
-                        <input
-                            type="text"
-                            id="gym"
-                            placeholder="Gym Name"
-                            required="required"
-                            onChange={(e) => {
-                                this.setState({gym: e.target.value})
-                            }}
-                        />
-                        <button> submit </button>
                     </div>
 
                         <div className="field">
@@ -312,10 +317,7 @@ render() {
                                     this.setState({tag: e.target.value});
                                 }}
                             />
-                            <button
-                                className="ui tag label"
-                                id="tagButton"
-                            >
+                            <button className="ui tag label" id="tagButton">
                                 Add Tag
                             </button>
                         </div>

@@ -48,6 +48,30 @@ router.post('/', (req, res, next) => {
 });
 
 
+// NOT finished yet!!!
+router.put('/', (req, res, next) => {
+    console.log("Updating...");
+    console.log(req.body.trainer);
+    var myData = new Trainer(req.body.trainer);
+
+    Trainer.findById(myData._id, function(err,item) {
+        if(err)
+            res.send(err);
+
+
+    });
+    myData.save()
+        .then(item => {
+            res.send(myData);
+            console.log("saved gym");
+        })
+        .catch(err => {
+            console.log(err);
+            console.log("unable to save trainer");
+        });
+});
+
+
 /* GET home page. */
 
 

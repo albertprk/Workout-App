@@ -3,6 +3,7 @@ import update from 'react-addons-update'
 import {connect} from 'react-redux'
 import {addTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
+import {gymsFetchData} from "../../actions/page";
 
 class TrainerForm extends React.Component {
     constructor(props) {
@@ -81,6 +82,14 @@ class TrainerForm extends React.Component {
 
 
     render() {
+        if (this.props.gymsList.length == 0) {
+            this.props.fetchData("http://localhost:9000/gyms");
+            // Hard Code Change later!
+        }
+
+        const gymList = this.props.gymsList;
+        const gymNameList = gymList.map(function (el) { return el.name;});
+
         return (
             <div>
                 <form
@@ -118,17 +127,17 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Gender</label>
                         <div className="fields">
-                            <div className="five wide field">
-                                <input
-                                    type="text"
-                                    id="gender"
-                                    placeholder="Male/Female/Other"
-                                    required="required"
-                                    onChange={(e) => {
-                                        this.setState({gender: e.target.value})
-                                    }}
-                                />
-                            </div>
+                            <select className="ui dropdown"
+                                    onChange={
+                                        (e) => {
+                                            this.setState(
+                                                {gender: e.target.value})
+                                        }
+                                    }>
+                                <option value= "Male">Male</option>
+                                <option value= "Female">Female</option>
+                                <option value= "Other">Other</option>
+                            </select>
                         </div>
                     </div>
 
@@ -136,15 +145,19 @@ class TrainerForm extends React.Component {
                         <label>Primany Gym</label>
                         <div className="fields">
                             <div className="eight wide field">
-                                <input
-                                    type="text"
-                                    id="gym"
-                                    placeholder="Gym Name"
-                                    required="required"
-                                    onChange={(e) => {
-                                        this.setState({gym: e.target.value})
-                                    }}
-                                />
+                                <select className="ui dropdown"
+                                        onChange={
+                                            (e) => {
+                                            this.setState({gym: e.target.value})
+                                }}>
+                                    <option value>Gym Name</option>
+                                    {
+                                        gymNameList.map((name) => {
+                                            return (<option value = {name}> {name} </option>)
+                                        })
+                                    }
+                                </select>
+
                             </div>
                         </div>
                     </div>
@@ -182,8 +195,8 @@ class TrainerForm extends React.Component {
                         <div className="fields">
                             <div className="eight wide field">
                                 <FileBase64
-                                    multiple={ true }
-                                    onDone={ this.getFiles.bind(this) } />
+                                    multiple={true}
+                                    onDone={this.getFiles.bind(this)}/>
                                 {/*<input*/}
                                 {/*    type="text"*/}
                                 {/*    id="profilepicture"*/}
@@ -282,16 +295,20 @@ class TrainerForm extends React.Component {
 
             </div>
         )
+
     }
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        gymsList: state.gymsReducer,
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTrainer: (Trainer) => dispatch(addTrainer(Trainer))
+        addTrainer: (Trainer) => dispatch(addTrainer(Trainer)),
+        fetchData: (url) => dispatch(gymsFetchData(url))
     };
 };
 

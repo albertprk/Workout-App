@@ -20,7 +20,9 @@ export const managerGymsTagsReducer = (gymsTagsList = [], action) => {
         case 'GYMS_TAGS_FETCH_SUCCESS':
             console.log("Gymtags reducer");
             console.log(action.gymsTags.data);
-            return action.gymsTags.data;
+            var gymsTagsSorted = action.gymsTags.data;
+            gymsTagsSorted.sort();
+            return gymsTagsSorted;
         default:
             return gymsTagsList;
     }

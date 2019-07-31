@@ -80,6 +80,17 @@ class GymForm extends React.Component {
         })
     };
 
+    renderGymTags = () => {
+        if (this.props.gymTagsList.length == 0) {
+            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.gymTagsList);
+        return this.props.gymTagsList.map((tag)=>{
+            return ( <option> {tag} </option>)
+        });
+    };
+
     render() {
         if (this.props.gymTagsList.length == 0) {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
@@ -299,14 +310,22 @@ class GymForm extends React.Component {
                                 <i className="tags icon"></i>
                                 <input
                                     type="text"
-                                    placeholder="Enter tags"
+                                    placeholder="Enter a new tag"
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
+                                    list = "gymTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
-                                    }}
+                                    }
+                                    }
                                 />
+                                <datalist id="gymTags">
+                                    {
+                                        this.renderGymTags()
+                                    }
+                                </datalist>
+
                                 <button
                                     className="ui tag label"
                                     id="tagButton"

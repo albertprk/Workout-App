@@ -4,6 +4,8 @@ import {connect} from 'react-redux'
 import {getTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
 import Spinner from '../Spinner'
+import {gymsFetchData} from "../../actions/page";
+import {trainerTagsFetchData} from "../../actions/trainerTags";
 
 class TrainerUpdate extends React.Component {
     constructor(props) {
@@ -95,8 +97,35 @@ class TrainerUpdate extends React.Component {
         })
     };
 
+    renderTrainerTags = () => {
+        if (this.props.trainerTagsList.length == 0) {
+            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.trainerTagsList);
+        return this.props.trainerTagsList.map((tag)=>{
+            return ( <option> {tag} </option>)
+        });
+    };
+
 
     render() {
+
+        if (this.props.gymsList.length == 0) {
+            this.props.fetchData("http://localhost:9000/gyms");
+            // Hard Code Change later!
+        }
+
+        if (this.props.trainerTagsList.length == 0) {
+            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            // Hard Code Change later!
+        }
+
+        console.log(this.props.trainerTagsList);
+
+        const gymList = this.props.gymsList;
+        const gymNameList = gymList.map(function (el) { return el.name;});
+
         return (
             <div>
                 <form
@@ -134,33 +163,44 @@ class TrainerUpdate extends React.Component {
                     <div className="field">
                         <label>Gender</label>
                         <div className="fields">
-                            <div className="five wide field">
-                                <input
-                                    type="text"
+                            <select className="ui dropdown"
                                     id="gender"
                                     value= {this.state.gender}
                                     required="required"
-                                    onChange={(e) => {
-                                        this.setState({gender: e.target.value})
-                                    }}
-                                />
-                            </div>
+                                    onChange={
+                                        (e) => {
+                                            this.setState(
+                                                {gender: e.target.value})
+                                        }
+                                    }>
+                                <option value= "-">  -  </option>
+                                <option value= "Male">Male</option>
+                                <option value= "Female">Female</option>
+                                <option value= "Other">Other</option>
+                            </select>
                         </div>
                     </div>
 
                     <div className="field">
-                        <label>Primany Gym</label>
+                        <label>Primary Gym</label>
                         <div className="fields">
                             <div className="eight wide field">
-                                <input
-                                    type="text"
-                                    id="gym"
-                                    value= {this.state.gym}
-                                    required="required"
-                                    onChange={(e) => {
-                                        this.setState({gym: e.target.value})
-                                    }}
-                                />
+                                <select className="ui dropdown"
+                                        id="gym"
+                                        required="required"
+                                        value= {this.state.gym}
+                                        onChange={
+                                            (e) => {
+                                                this.setState({gym: e.target.value})
+                                            }}>
+                                    <option value>Gym Name</option>
+                                    {
+                                        gymNameList.map((name) => {
+                                            return (<option value = {name}> {name} </option>)
+                                        })
+                                    }
+                                </select>
+
                             </div>
                         </div>
                     </div>
@@ -260,14 +300,22 @@ class TrainerUpdate extends React.Component {
                                 <i className="tags icon"></i>
                                 <input
                                     type="text"
-                                    value= {this.state.tags}
+                                    placeholder="Enter tags"
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
+                                    list = "trainerTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
                                     }}
                                 />
+
+                                <datalist id="trainerTags">
+                                    {
+                                        this.renderTrainerTags()
+                                    }
+                                </datalist>
+
                                 <button
                                     className="ui tag label"
                                     id="tagButton"
@@ -303,13 +351,16 @@ class TrainerUpdate extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-
+        gymsList: state.gymsReducer,
+        trainerTagsList :state.trainersTagsReducer
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getTrainer: (id) => dispatch(getTrainer(id))
+        getTrainer: (id) => dispatch(getTrainer(id)),
+        fetchData: (url) => dispatch(gymsFetchData(url)),
+        fetchTrainersTags: (url) => dispatch(trainerTagsFetchData(url))
     };
 };
 

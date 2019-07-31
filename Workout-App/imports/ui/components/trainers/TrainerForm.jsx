@@ -81,6 +81,17 @@ class TrainerForm extends React.Component {
         })
     };
 
+    renderTrainerTags = () => {
+        if (this.props.trainerTagsList.length == 0) {
+            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.trainerTagsList);
+        return this.props.trainerTagsList.map((tag)=>{
+            return ( <option> {tag} </option>)
+        });
+    };
+
 
     render() {
         if (this.props.gymsList.length == 0) {
@@ -136,12 +147,15 @@ class TrainerForm extends React.Component {
                         <label>Gender</label>
                         <div className="fields">
                             <select className="ui dropdown"
+                                    id="gender"
+                                    required="required"
                                     onChange={
                                         (e) => {
                                             this.setState(
                                                 {gender: e.target.value})
                                         }
                                     }>
+                                <option value= "-">  -  </option>
                                 <option value= "Male">Male</option>
                                 <option value= "Female">Female</option>
                                 <option value= "Other">Other</option>
@@ -150,10 +164,12 @@ class TrainerForm extends React.Component {
                     </div>
 
                     <div className="field">
-                        <label>Primany Gym</label>
+                        <label>Primary Gym</label>
                         <div className="fields">
                             <div className="eight wide field">
                                 <select className="ui dropdown"
+                                        id="gym"
+                                        required="required"
                                         onChange={
                                             (e) => {
                                             this.setState({gym: e.target.value})
@@ -269,10 +285,18 @@ class TrainerForm extends React.Component {
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
+                                    list = "trainerTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
                                     }}
                                 />
+
+                                <datalist id="trainerTags">
+                                    {
+                                        this.renderTrainerTags()
+                                    }
+                                </datalist>
+
                                 <button
                                     className="ui tag label"
                                     id="tagButton"

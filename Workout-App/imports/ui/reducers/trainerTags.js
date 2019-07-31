@@ -20,7 +20,9 @@ export const managerTrainersTagsReducer = (trainersTagsList = [], action) => {
         case 'TRAINERS_TAGS_FETCH_SUCCESS':
             console.log("tags reducer");
             console.log(action.trainersTags.data);
-            return action.trainersTags.data;
+            var trainersTagsSorted = action.trainersTags.data;
+            trainersTagsSorted.sort();
+            return trainersTagsSorted;
         default:
             return trainersTagsList;
     }

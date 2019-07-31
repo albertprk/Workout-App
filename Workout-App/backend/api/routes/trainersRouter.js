@@ -38,6 +38,19 @@ router.get('/', function (req, res, next) {
     // res.render('index', { title: 'Express' });
 });
 
+
+// get all the tags of Trainer
+router.get('/tags', function (req, res, next) {
+    Trainer.find({}).distinct('tags', function(err, trainers) {
+        if (err) {
+            return res.json({success: false, error: err})
+        }
+        console.log("success in getting trainers mongo data");
+        console.log(trainers);
+        return res.json({success: true, data: trainers})
+    });
+});
+
 // getting a specfic trainers information, req have _id for the user
 router.get('/gettrainer', function (req, res, next) {
     let user = req.query.user;

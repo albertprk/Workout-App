@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {addTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
 import {gymsFetchData} from "../../actions/page";
+import {trainerTagsFetchData } from "../../actions/trainerTags"
 
 class TrainerForm extends React.Component {
     constructor(props) {
@@ -86,6 +87,13 @@ class TrainerForm extends React.Component {
             this.props.fetchData("http://localhost:9000/gyms");
             // Hard Code Change later!
         }
+
+        if (this.props.trainerTagsList.length == 0) {
+            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            // Hard Code Change later!
+        }
+
+        console.log(this.props.trainerTagsList);
 
         const gymList = this.props.gymsList;
         const gymNameList = gymList.map(function (el) { return el.name;});
@@ -302,13 +310,15 @@ class TrainerForm extends React.Component {
 const mapStateToProps = (state) => {
     return {
         gymsList: state.gymsReducer,
+        trainerTagsList :state.trainersTagsReducer
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         addTrainer: (Trainer) => dispatch(addTrainer(Trainer)),
-        fetchData: (url) => dispatch(gymsFetchData(url))
+        fetchData: (url) => dispatch(gymsFetchData(url)),
+        fetchTrainersTags: (url) => dispatch(trainerTagsFetchData(url))
     };
 };
 

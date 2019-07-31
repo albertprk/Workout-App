@@ -3,6 +3,7 @@ import FileBase64 from 'react-file-base64';
 import {connect} from 'react-redux'
 import update from 'react-addons-update'
 import {addGym} from '../../actions/page'
+import {gymTagsFetchData } from "../../actions/gymTags"
 
 
 class GymForm extends React.Component {
@@ -80,6 +81,11 @@ class GymForm extends React.Component {
     };
 
     render() {
+        if (this.props.gymTagsList.length == 0) {
+            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.gymTagsList);
         return (
             <div>
                 <form
@@ -334,12 +340,15 @@ class GymForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        gymTagsList :state.gymsTagsReducer
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addGym: (gym) => dispatch(addGym(gym))
+        addGym: (gym) => dispatch(addGym(gym)),
+        fetchGymsTags: (url) => dispatch(gymTagsFetchData(url))
     };
 };
 

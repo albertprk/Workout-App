@@ -1,6 +1,8 @@
 import {combineReducers} from "redux";
 import {gymsLoading, gymsErrored, manageGymsReducer} from "./gyms";
 import {trainersLoading, trainersErrored, managerTrainersReducer, trainerInfoObjectId} from "./trainers"
+import {trainersTagsLoading,trainersTagsErrored,managerTrainersTagsReducer} from"./trainerTags"
+import {gymsTagsLoading, gymsTagsErrored, managerGymsTagsReducer} from "./gymTags"
 
 const rootReducer = combineReducers({
 
@@ -13,6 +15,14 @@ const rootReducer = combineReducers({
     trainersLoading: trainersLoading,
     trainersErrored: trainersErrored,
     trainerId: trainerInfoObjectId,
+
+    trainersTagsLoading: trainersTagsLoading,
+    trainersTagsErrored: trainersTagsErrored,
+    trainersTagsReducer: managerTrainersTagsReducer,
+
+    gymsTagsLoading: gymsTagsLoading,
+    gymsTagsErrored: gymsTagsErrored,
+    gymsTagsReducer: managerGymsTagsReducer,
 
 });
 

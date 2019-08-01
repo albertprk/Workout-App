@@ -30,7 +30,7 @@ export const trainersTagsSuccess = (trainersTags) => {
 
 export const trainerTagsFetchData = (url) => {
     return (dispatch) => {
-        dispatch(trainersTagsErrored(true));
+        dispatch(isTrainerTagsLoading(true));
 
         axios.get(url)
             .then((response) => {

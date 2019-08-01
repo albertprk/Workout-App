@@ -5,6 +5,7 @@ import {addTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
 import {gymsFetchData} from "../../actions/page";
 import {trainerTagsFetchData } from "../../actions/trainerTags"
+import Spinner from "../Spinner";
 
 class TrainerForm extends React.Component {
     constructor(props) {
@@ -94,6 +95,20 @@ class TrainerForm extends React.Component {
 
 
     render() {
+
+        if (this.props.hasErrored) {
+            return <div>
+                <p>Sorry! Error rendering</p>
+            </div>
+        }
+
+        if (this.props.isLoading) {
+            return <div align="center">
+                <p>Loading...</p>
+                <Spinner/>
+            </div>
+        }
+
         if (this.props.gymsList.length == 0) {
             this.props.fetchData("http://localhost:9000/gyms");
             // Hard Code Change later!
@@ -334,7 +349,9 @@ class TrainerForm extends React.Component {
 const mapStateToProps = (state) => {
     return {
         gymsList: state.gymsReducer,
-        trainerTagsList :state.trainersTagsReducer
+        trainerTagsList :state.trainersTagsReducer,
+        hasErrored: state.trainersTagsErrored,
+        isLoading: state.trainersTagsLoading,
     }
 };
 

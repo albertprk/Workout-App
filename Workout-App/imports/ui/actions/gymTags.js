@@ -29,7 +29,7 @@ export const gymsTagsSuccess = (gymsTags) => {
 
 export const gymTagsFetchData = (url) => {
     return (dispatch) => {
-        dispatch(gymsTagsErrored(true));
+        dispatch(isGymTagsLoading(true));
 
         axios.get(url)
             .then((response) => {

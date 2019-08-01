@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import update from 'react-addons-update'
 import {addGym} from '../../actions/page'
 import {gymTagsFetchData } from "../../actions/gymTags"
+import Spinner from "../Spinner";
 
 
 class GymForm extends React.Component {
@@ -92,11 +93,26 @@ class GymForm extends React.Component {
     };
 
     render() {
+
+        if (this.props.hasErrored) {
+            return <div>
+                <p>Sorry! Error rendering</p>
+            </div>
+        }
+
+        if (this.props.isLoading) {
+            return <div align="center">
+                <p>Loading...</p>
+                <Spinner/>
+            </div>
+        }
+
         if (this.props.gymTagsList.length == 0) {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
         console.log(this.props.gymTagsList);
+
         return (
             <div>
                 <form
@@ -360,7 +376,9 @@ class GymForm extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        gymTagsList :state.gymsTagsReducer
+        gymTagsList :state.gymsTagsReducer,
+        hasErrored: state.gymsTagsErrored,
+        isLoading: state.gymsTagsLoading,
     }
 };
 

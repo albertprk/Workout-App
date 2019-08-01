@@ -4,6 +4,7 @@ import {trainersFetchData} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 const querystring = require('query-string');
+import CommentForm from './CommentForm';
 
 
 // export default class TrainerInfo extends Component {
@@ -171,6 +172,9 @@ class TrainerInfo extends React.Component {
                             </div>
                         </div>
                     </div>
+
+                    <CommentForm/>
+
                 </div>
 
 

@@ -39,7 +39,7 @@ class App extends Component {
                     <div className="ui grid">
                         <div className="eighteen wide stretched column">
                             <div className="ui segment">
-                                <Route path='/home' component={Home}/>
+                                <Route exact path='/' component={Home}/>
                                 <Route path='/gyms' component={Gyms}/>
                                 <Route path='/trainers' component={TrainerCards}/>
                                 <Route path='/mytrainers' component={TrainerInfo}/>

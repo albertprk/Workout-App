@@ -80,14 +80,31 @@ class TrainerCards extends React.Component {
                                                 <div
                                                     className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</div>
                                                 <div className="meta">
-                                                    <a>verified personal trainer</a>
+                                                    <a>Trainer at {targetTrainer.gym}</a>
                                                 </div>
                                                 <div className="description">
                                                     {targetTrainer.description}
                                                 </div>
                                             </div>
                                             <div className="extra content">
-                                            <span className="right floated">
+
+                                                ADD RATING HERE:
+                                                {targetTrainer.overall_rate}
+
+                                                <div className="ui labels">
+                                                    {
+                                                        targetTrainer.tags.map((tag, index) => {
+                                                            return (
+                                                                <div className="ui label" key={index}>
+                                                                    {tag}
+                                                                </div>
+                                                            )
+                                                        })
+
+                                                    }
+                                                </div>
+
+                                                <span className="right floated">
                                                 Joined in {new Date(targetTrainer.joiningDate).getDate() + "-" + months[new Date(targetTrainer.joiningDate).getMonth()] + "-" + new Date(targetTrainer.joiningDate).getFullYear()}
                                             </span>
                                                 <span>

@@ -8,7 +8,7 @@ class SideMenu extends React.Component {
         return (
             <div className="__sidemenu">
                 <div className="navigationMenu">
-                    <NavLink className="navItem" to="/home">Home</NavLink>
+                    <NavLink className="navItem" to="/">Home</NavLink>
                     <NavLink className="navItem" to="/gyms">Gyms</NavLink>
                     <NavLink className="navItem" to="/trainers">Trainers</NavLink>
                     <NavLink className="navItem" to="/mytrainers">myTrainers</NavLink>

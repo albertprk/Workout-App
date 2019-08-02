@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {gymSearchName} from '../../actions/gyms'
+import {Icon} from 'semantic-ui-react'
 
 
 class GymMenu extends Component {
@@ -28,6 +29,12 @@ class GymMenu extends Component {
         });
     };
 
+    clearSearch = (e) => {
+        e.preventDefault();
+        this.props.gymSearchName("");
+        this.setState({ gymSearchName: "" })
+    };
+
     render() {
         return (
             <div className="__gym-menu-bar">
@@ -44,7 +51,7 @@ class GymMenu extends Component {
                                     type="text"
                                     placeholder="Search gyms by tags..."
                                 />
-                                <i className="search link icon"/>
+                                <Icon className="search icon" size='large'/>
                             </div>
                         </div>
 
@@ -60,6 +67,7 @@ class GymMenu extends Component {
                                     id="gymSearchName"
                                     name="gymSearchName"
                                     list="gymNames"
+                                    value={this.state.gymSearchName}
                                     onChange={(e) => {
                                         this.setState({gymSearchName: e.target.value})
                                     }}
@@ -69,8 +77,14 @@ class GymMenu extends Component {
                                         this.gymNames()
                                     }
                                 </datalist>
-                                <i className="search link icon"/>
+                                <Icon className="search icon" size='large'/>
                             </form>
+                        </div>
+                        <div
+                            className="item"
+                            onClick={this.clearSearch}
+                        >
+                            <Icon className="times circle icon" size='large'/>
                         </div>
 
                     </div>

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {trainersFetchData} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
+
 const querystring = require('query-string');
 import CommentForm from './CommentForm';
 
@@ -18,16 +19,8 @@ class TrainerInfo extends React.Component {
 
 
     componentDidMount() {
-        console.log("mouting");
         this.props.fetchData("http://localhost:9000/trainers")
-        console.log("mounted");
-        console.log(this.props)
-
-        const queries = querystring.parse(this.props.location.search);
-        console.log("QUERYS:");
-        console.log(queries);
-        console.log(queries.trainer);
-        console.log(queries.tags);
+        // const queries = querystring.parse(this.props.location.search);
     }
 
     render() {
@@ -62,7 +55,7 @@ class TrainerInfo extends React.Component {
         console.log("all three trainers : ")
         console.log(this.props.trainersList)
 
-        if (this.props.trainersList.length == 0) {
+        if (this.props.trainersList.length === 0) {
             return (
                 <div>
                     rendering
@@ -71,114 +64,118 @@ class TrainerInfo extends React.Component {
         } else {
 
             var thatTrainerId = this.props.thatTrainerInfoObjectId;
-            var targetTrainer = this.props.trainersList.find(x => x._id == thatTrainerId);
+            var targetTrainer = this.props.trainersList.find(x => x._id === thatTrainerId);
 
 
             const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
             return (
                 <div>
-                    <div className="ui items">
-                        <div className="item">
-                            <div className="image">
-                                {/* todo: oliver Dynamic show this from Mongo data! */}
-                                <img src={targetTrainer.profilePicture}/>
-                            </div>
-                            <div className="content">
-                                <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
-                                <div className="meta">
-                                    <span>verified personal trainer</span>
-                                    <span> {this.props.thatTrainerInfoObjectId}</span>
-                                </div>
-                                <div className="description">
-                                    <p>
-                                        {targetTrainer.description}
-                                    </p>
-                                </div>
-                                {/* <div className="extra">
-                recommended by 36 other users 
+                    <div className="ui segment">
+                        <div className="ui two column very relaxed grid">
+                            <div className="column">
+                                <div className="ui items">
+                                    <div className="item">
+                                        <div className="image">
+                                            {/* todo: oliver Dynamic show this from Mongo data! */}
+                                            <img src={targetTrainer.profilePicture}/>
+                                        </div>
+                                        <div className="content">
+                                            <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
+                                            <div className="meta">
+                                                <span>verified personal trainer</span>
+                                                <span> {this.props.thatTrainerInfoObjectId}</span>
+                                            </div>
+                                            <div className="description">
+                                                <p>
+                                                    {targetTrainer.description}
+                                                </p>
+                                            </div>
+                                            {/* <div className="extra">
+                recommended by 36 other users
               </div> */}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="ui label">
-                        <i className="mail icon"></i> {targetTrainer.email}
-                    </div>
-
-                    <div className="ui label">
-                        <i className="globe icon"></i> {targetTrainer.phone}
-                    </div>
-
-                    <br/>
-                    <br/>
-                    <div className="ui labels">
-                        {
-                            targetTrainer.tags.map((tag, index) => {
-                                return (
-                                    <div className="ui label" key={index}>
-                                        {tag}
+                                        </div>
                                     </div>
-                                )
-                            })
+                                </div>
 
-                        }
-                    </div>
+                                <div className="ui label">
+                                    <i className="mail icon"/> {targetTrainer.email}
+                                </div>
 
-                    <br></br>
-                    <div className="ui tag labels">
-                        <a className="ui label">
-                            ${targetTrainer.cost}
-                        </a>
-                    </div>
+                                <div className="ui label">
+                                    <i className="globe icon"/> {targetTrainer.phone}
+                                </div>
 
-
-                    <div className="ui comments">
-                        <div className="comment">
-                            <div className="content">
-                                <div>
+                                <br/>
+                                <br/>
+                                <div className="ui labels">
                                     {
-                                        targetTrainer.comments.length != 0 &&
-                                        targetTrainer.comments.map((comment, index) => {
-                                            if (comment != null){
+                                        targetTrainer.tags.map((tag, index) => {
                                             return (
-                                                <div key={index}>
-                                                    <a className="author">{comment.fullname}</a>
-                                                    <div className="metadata">
-                                                        <div className="date">
-                                                            {/* todo: oliver: get the subtraction of date */}
-                                                            {
-                                                                new Date(comment.date).getDate() + "-" + months[new Date(comment.date).getMonth()] + "-" + new Date(comment.date).getFullYear()
-                                                            }
-
-                                                        </div>
-
-                                                        <div className="rating">
-                                                            <i className="like icon"></i> {comment.rate}/10
-                                                        </div>
-
-                                                    </div>
-                                                    <div className="text">
-                                                        {comment.context}
-                                                    </div>
-
+                                                <div className="ui label" key={index}>
+                                                    {tag}
                                                 </div>
                                             )
-                                            }
                                         })
+
                                     }
                                 </div>
 
+                                <br></br>
+                                <div className="ui tag labels">
+                                    <a className="ui label">
+                                        ${targetTrainer.cost}
+                                    </a>
+                                </div>
+                            </div>
+                            <div className="column">
+                                <div className="ui comments">
+                                    <div className="comment">
+                                        <div className="content">
+                                            <div>
+                                                {
+                                                    targetTrainer.comments.length !== 0 &&
+                                                    targetTrainer.comments.map((comment, index) => {
+                                                        if (comment != null) {
+                                                            return (
+                                                                <div key={index}>
+                                                                    <a className="author">{comment.fullname}</a>
+                                                                    <div className="metadata">
+                                                                        <div className="date">
+                                                                            {/* todo: oliver: get the subtraction of date */}
+                                                                            {
+                                                                                new Date(comment.date).getDate() + "-" + months[new Date(comment.date).getMonth()] + "-" + new Date(comment.date).getFullYear()
+                                                                            }
 
+                                                                        </div>
+
+                                                                        <div className="rating">
+                                                                            <i className="like icon"></i> {comment.rate}/10
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div className="text">
+                                                                        {comment.context}
+                                                                    </div>
+
+                                                                </div>
+                                                            )
+                                                        }
+                                                    })
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br/>
+                                    <CommentForm/>
+                                </div>
                             </div>
                         </div>
+                        <div className="ui vertical divider">
+                            review
+                        </div>
                     </div>
-
-                    <CommentForm/>
-
                 </div>
-
-
             );
         }
     }

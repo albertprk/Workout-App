@@ -16,7 +16,6 @@ var allTrainers = Trainer.find({}, function (err, trainers) {
         console.log(err);
     } else {
         console.log("trainers successfully loaded");
-        console.log(trainers);
     }
 });
 
@@ -30,7 +29,6 @@ router.get('/', function (req, res, next) {
             return res.json({success: false, error: err})
         }
         console.log("success in getting trainers mongo data");
-        console.log(trainers);
         return res.json({success: true, data: trainers})
 
     })
@@ -46,7 +44,6 @@ router.get('/tags', function (req, res, next) {
             return res.json({success: false, error: err})
         }
         console.log("success in getting trainers mongo data");
-        console.log(trainers);
         return res.json({success: true, data: trainers})
     });
 });
@@ -66,10 +63,30 @@ router.get('/gettrainer', function (req, res, next) {
   })
 });
 
+// getting a specfic trainers information, req have _id for the id, comment for the new comment
+router.put('/updateOneTrainerComment', function (req, res, next) {
+    let id = req.body.id;
+    let comment = req.body.comment;
+    console.log("req.query.id");
+    console.log(req.body.id);
+
+    console.log('req.query.comment');
+    console.log(req.body.comment);
+
+    Trainer.updateOne(
+        {_id: id},
+        {$push: {comments: req.body.comment}},
+        function (error, doc, raw) {
+            if (error) {
+                return res.json({success: false, error: error})
+            }
+            return res.json({success: true})
+        });
+});
+
  /* POST reviews. */
  router.post('/', (req, res, next) => {
      console.log("POSTING...");
-     console.log(req.body.trainer);
      var myData = new Trainer(req.body.trainer);
      myData.save()
          .then(item => {

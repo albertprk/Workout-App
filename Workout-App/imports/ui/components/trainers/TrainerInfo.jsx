@@ -4,6 +4,7 @@ import {trainersFetchData} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 const querystring = require('query-string');
+import CommentForm from './CommentForm';
 
 
 // export default class TrainerInfo extends Component {
@@ -137,7 +138,9 @@ class TrainerInfo extends React.Component {
                             <div className="content">
                                 <div>
                                     {
+                                        targetTrainer.comments.length != 0 &&
                                         targetTrainer.comments.map((comment, index) => {
+                                            if (comment != null){
                                             return (
                                                 <div key={index}>
                                                     <a className="author">{comment.fullname}</a>
@@ -161,8 +164,7 @@ class TrainerInfo extends React.Component {
 
                                                 </div>
                                             )
-
-
+                                            }
                                         })
                                     }
                                 </div>
@@ -171,6 +173,9 @@ class TrainerInfo extends React.Component {
                             </div>
                         </div>
                     </div>
+
+                    <CommentForm/>
+
                 </div>
 
 

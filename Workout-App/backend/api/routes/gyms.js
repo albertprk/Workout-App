@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 /* GET reviews initial data */
-router.get('/*', (req, res, next) => {
+router.get('/', (req, res, next) => {
     console.log("getting");
     Gym.find((err, gyms) => {
         if (err) {
@@ -33,6 +33,15 @@ router.post('/', (req, res, next) => {
             console.log(err);
             console.log("unable to save gym");
         });
+});
+
+router.get('/tags', function (req, res, next) {
+    Gym.find({}).distinct('tags', function(err, gyms) {
+        if (err) {
+            return res.json({success: false, error: err})
+        }
+        return res.json({success: true, data: gyms})
+    });
 });
 
 module.exports = router;

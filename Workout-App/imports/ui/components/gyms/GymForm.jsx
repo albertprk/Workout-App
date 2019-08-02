@@ -3,6 +3,8 @@ import FileBase64 from 'react-file-base64';
 import {connect} from 'react-redux'
 import update from 'react-addons-update'
 import {addGym} from '../../actions/page'
+import {gymTagsFetchData } from "../../actions/gymTags"
+import Spinner from "../Spinner";
 
 
 class GymForm extends React.Component {
@@ -79,7 +81,38 @@ class GymForm extends React.Component {
         })
     };
 
+    renderGymTags = () => {
+        if (this.props.gymTagsList.length == 0) {
+            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.gymTagsList);
+        return this.props.gymTagsList.map((tag)=>{
+            return ( <option> {tag} </option>)
+        });
+    };
+
     render() {
+
+        if (this.props.hasErrored) {
+            return <div>
+                <p>Sorry! Error rendering</p>
+            </div>
+        }
+
+        if (this.props.isLoading) {
+            return <div align="center">
+                <p>Loading...</p>
+                <Spinner/>
+            </div>
+        }
+
+        if (this.props.gymTagsList.length == 0) {
+            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            // Hard Code Change later!
+        }
+        console.log(this.props.gymTagsList);
+
         return (
             <div>
                 <form
@@ -293,14 +326,22 @@ class GymForm extends React.Component {
                                 <i className="tags icon"></i>
                                 <input
                                     type="text"
-                                    placeholder="Enter tags"
+                                    placeholder="Enter a new tag"
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
+                                    list = "gymTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
-                                    }}
+                                    }
+                                    }
                                 />
+                                <datalist id="gymTags">
+                                    {
+                                        this.renderGymTags()
+                                    }
+                                </datalist>
+
                                 <button
                                     className="ui tag label"
                                     id="tagButton"
@@ -334,12 +375,17 @@ class GymForm extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {}
+    return {
+        gymTagsList :state.gymsTagsReducer,
+        hasErrored: state.gymsTagsErrored,
+        isLoading: state.gymsTagsLoading,
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addGym: (gym) => dispatch(addGym(gym))
+        addGym: (gym) => dispatch(addGym(gym)),
+        fetchGymsTags: (url) => dispatch(gymTagsFetchData(url))
     };
 };
 

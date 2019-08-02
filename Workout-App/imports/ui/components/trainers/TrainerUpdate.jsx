@@ -135,7 +135,7 @@ class TrainerUpdate extends React.Component {
                     <div className="field">
                         <label>Name</label>
                         <div className="fields">
-                            <div className="five wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     value= {this.state.firstName}
@@ -146,7 +146,7 @@ class TrainerUpdate extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="five wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     value= {this.state.lastName}
@@ -163,28 +163,30 @@ class TrainerUpdate extends React.Component {
                     <div className="field">
                         <label>Gender</label>
                         <div className="fields">
-                            <select className="ui dropdown"
-                                    id="gender"
-                                    value= {this.state.gender}
-                                    required="required"
-                                    onChange={
-                                        (e) => {
-                                            this.setState(
-                                                {gender: e.target.value})
-                                        }
-                                    }>
-                                <option value= "-">  -  </option>
-                                <option value= "Male">Male</option>
-                                <option value= "Female">Female</option>
-                                <option value= "Other">Other</option>
-                            </select>
+                            <div className="four wide field">
+                                <select className="ui dropdown"
+                                        id="gender"
+                                        value= {this.state.gender}
+                                        required="required"
+                                        onChange={
+                                            (e) => {
+                                                this.setState(
+                                                    {gender: e.target.value})
+                                            }
+                                        }>
+                                    <option value= "-">  -  </option>
+                                    <option value= "Male">Male</option>
+                                    <option value= "Female">Female</option>
+                                    <option value= "Other">Other</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
                     <div className="field">
                         <label>Primary Gym</label>
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="four wide field">
                                 <select className="ui dropdown"
                                         id="gym"
                                         required="required"
@@ -208,7 +210,7 @@ class TrainerUpdate extends React.Component {
                     <div className="field">
                         <label>Contact Information</label>
                         <div className="fields">
-                            <div className="six wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     value= {this.state.phone}
@@ -219,7 +221,7 @@ class TrainerUpdate extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="six wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     value= {this.state.email}
@@ -236,19 +238,10 @@ class TrainerUpdate extends React.Component {
                     <div className="field">
                         <label>Profile Picture</label>
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="four wide field">
                                 <FileBase64
                                     multiple={ true }
                                     onDone={ this.getFiles.bind(this) } />
-                                {/*<input*/}
-                                {/*    type="text"*/}
-                                {/*    id="profilepicture"*/}
-                                {/*    placeholder="Profile Picture URL"*/}
-                                {/*    required="required"*/}
-                                {/*    onChange={(e) => {*/}
-                                {/*        this.setState({profilePicture: e.target.value})*/}
-                                {/*    }}*/}
-                                {/*/>*/}
                             </div>
                         </div>
                     </div>
@@ -295,7 +288,7 @@ class TrainerUpdate extends React.Component {
                         onSubmit={this.addTag}
                     >
                         <h4 className="ui dividing header">Tags</h4>
-                        <div className="field">
+                        <div className="eight wide field">
                             <div className="ui right labeled left icon input">
                                 <i className="tags icon"></i>
                                 <input

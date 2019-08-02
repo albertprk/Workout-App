@@ -32,7 +32,6 @@ export const gymsSuccess = (gyms) => {
 export const gymsFetchData = (url) => {
     return (dispatch) => {
         dispatch(isGymsLoading(true));
-        console.log("fetching...");
 
         axios.get(url)
             .then((response) => {
@@ -41,8 +40,6 @@ export const gymsFetchData = (url) => {
                 }
                 dispatch(isGymsLoading(false));
                 dispatch(gymsSuccess(response.data));
-                console.log("success in fetchdata");
-                console.log(response.data);
                 return response.data;
             })
             .catch((err) => {
@@ -84,8 +81,6 @@ export const addGymFailure = error => {
 export const addGym = (gym) => {
     return dispatch => {
         dispatch(addGymStarted());
-        console.log("posting gym");
-        console.log(gym);
 
         axios
             .post("http://localhost:9000/gyms", {

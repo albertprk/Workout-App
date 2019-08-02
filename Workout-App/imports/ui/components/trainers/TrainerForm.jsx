@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {addTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
 import {gymsFetchData} from "../../actions/page";
-import {trainerTagsFetchData } from "../../actions/trainerTags"
+import {trainerTagsFetchData} from "../../actions/trainerTags"
 import Spinner from "../Spinner";
 
 class TrainerForm extends React.Component {
@@ -38,21 +38,21 @@ class TrainerForm extends React.Component {
     };
 
     handleSubmit = (e) => {
-      let user = Meteor.userId();
-      if (user === null) {
-        console.log("not logged in");
-        alert('Please Signin or Signup first');
-      } else {
+        let user = Meteor.userId();
+        if (user === null) {
+            console.log("not logged in");
+            alert('Please Signin or Signup first');
+        } else {
 
-        //TODO: its safer to make this update in the server but due to datbase issues, the call is made in client side but only user itself can modify its account
-        if(Meteor.userId()) {
-        Meteor.users.update({ _id: Meteor.userId() }, { $set: { Trainer: true } });
+            //TODO: its safer to make this update in the server but due to datbase issues, the call is made in client side but only user itself can modify its account
+            if (Meteor.userId()) {
+                Meteor.users.update({_id: Meteor.userId()}, {$set: {Trainer: true}});
+            }
+            //update state just incase it changed
+            this.setState({user: user});
+            console.log("updated user to" + user);
+            this.props.addTrainer(this.state);
         }
-          //update state just incase it changed
-          this.setState( { user: user });
-          console.log("updated user to" + user);
-        this.props.addTrainer(this.state);
-      }
     }
 
     addTag = (e) => {
@@ -88,8 +88,8 @@ class TrainerForm extends React.Component {
             // Hard Code Change later!
         }
         console.log(this.props.trainerTagsList);
-        return this.props.trainerTagsList.map((tag)=>{
-            return ( <option> {tag} </option>)
+        return this.props.trainerTagsList.map((tag) => {
+            return (<option> {tag} </option>)
         });
     };
 
@@ -109,12 +109,12 @@ class TrainerForm extends React.Component {
             </div>
         }
 
-        if (this.props.gymsList.length == 0) {
+        if (this.props.gymsList.length === 0) {
             this.props.fetchData("http://localhost:9000/gyms");
             // Hard Code Change later!
         }
 
-        if (this.props.trainerTagsList.length == 0) {
+        if (this.props.trainerTagsList.length === 0) {
             this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
             // Hard Code Change later!
         }
@@ -122,7 +122,9 @@ class TrainerForm extends React.Component {
         console.log(this.props.trainerTagsList);
 
         const gymList = this.props.gymsList;
-        const gymNameList = gymList.map(function (el) { return el.name;});
+        const gymNameList = gymList.map(function (el) {
+            return el.name;
+        });
 
         return (
             <div>
@@ -133,7 +135,7 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Name</label>
                         <div className="fields">
-                            <div className="five wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     placeholder="First Name"
@@ -144,7 +146,7 @@ class TrainerForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="five wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     placeholder="Last Name"
@@ -161,38 +163,40 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Gender</label>
                         <div className="fields">
-                            <select className="ui dropdown"
-                                    id="gender"
-                                    required="required"
-                                    onChange={
-                                        (e) => {
-                                            this.setState(
-                                                {gender: e.target.value})
-                                        }
-                                    }>
-                                <option value= "-">  -  </option>
-                                <option value= "Male">Male</option>
-                                <option value= "Female">Female</option>
-                                <option value= "Other">Other</option>
-                            </select>
+                            <div className="four wide field">
+                                <select className="ui dropdown"
+                                        id="gender"
+                                        required="required"
+                                        onChange={
+                                            (e) => {
+                                                this.setState(
+                                                    {gender: e.target.value})
+                                            }
+                                        }>
+                                    <option value="-"> -</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
                     <div className="field">
                         <label>Primary Gym</label>
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="four wide field">
                                 <select className="ui dropdown"
                                         id="gym"
                                         required="required"
                                         onChange={
                                             (e) => {
-                                            this.setState({gym: e.target.value})
-                                }}>
+                                                this.setState({gym: e.target.value})
+                                            }}>
                                     <option value>Gym Name</option>
                                     {
                                         gymNameList.map((name) => {
-                                            return (<option value = {name}> {name} </option>)
+                                            return (<option value={name}> {name} </option>)
                                         })
                                     }
                                 </select>
@@ -204,7 +208,7 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Contact Information</label>
                         <div className="fields">
-                            <div className="six wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     placeholder="Phone Number"
@@ -215,7 +219,7 @@ class TrainerForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="six wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     placeholder="Email"
@@ -232,7 +236,7 @@ class TrainerForm extends React.Component {
                     <div className="field">
                         <label>Profile Picture</label>
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="four wide field">
                                 <FileBase64
                                     multiple={true}
                                     onDone={this.getFiles.bind(this)}/>
@@ -252,7 +256,7 @@ class TrainerForm extends React.Component {
 
                     <div className="field">
                         <label>Rate</label>
-                        <div className="three wide field">
+                        <div className="four wide field">
                             <div className="ui labeled input">
                                 <label for="amount" className="ui label">$</label>
                                 <input
@@ -273,8 +277,6 @@ class TrainerForm extends React.Component {
                         <div className="fields">
                             <div className="eight wide field">
                                 <textarea
-                                    row="3"
-                                    type="text"
                                     id="description"
                                     placeholder="Description"
                                     required="required"
@@ -291,16 +293,16 @@ class TrainerForm extends React.Component {
                         onSubmit={this.addTag}
                     >
                         <h4 className="ui dividing header">Tags</h4>
-                        <div className="field">
+                        <div className="eight wide field">
                             <div className="ui right labeled left icon input">
-                                <i className="tags icon"></i>
+                                <i className="tags icon"/>
                                 <input
                                     type="text"
                                     placeholder="Enter tags"
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
-                                    list = "trainerTags"
+                                    list="trainerTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
                                     }}
@@ -349,7 +351,7 @@ class TrainerForm extends React.Component {
 const mapStateToProps = (state) => {
     return {
         gymsList: state.gymsReducer,
-        trainerTagsList :state.trainersTagsReducer,
+        trainerTagsList: state.trainersTagsReducer,
         hasErrored: state.trainersTagsErrored,
         isLoading: state.trainersTagsLoading,
     }

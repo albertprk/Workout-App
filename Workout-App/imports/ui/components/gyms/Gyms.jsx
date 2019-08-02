@@ -4,6 +4,7 @@ import GymMenu from './GymMenu'
 import {connect} from 'react-redux'
 import {gymsFetchData} from '../../actions/page'
 import Spinner from '../Spinner'
+import {gymSearchName} from "../../actions/gyms";
 
 class Gyms extends React.Component {
 
@@ -14,9 +15,12 @@ class Gyms extends React.Component {
 
     componentDidMount() {
         this.props.fetchData("http://localhost:9000/gyms");
+        this.props.gymSearchName("");
     }
 
-
+    // renders list of gyms
+    // filters by tags if tags present
+    // only shows single gym if searching by name
     renderGyms() {
         return this.props.gymsList.map((gym) => {
             let contains = true;
@@ -25,7 +29,18 @@ class Gyms extends React.Component {
                     contains = false
                 }
             }
-            if (this.state.filterTags.length === 0 || contains)
+            if (this.props.searchName) {
+                if (this.props.searchName === gym.name) {
+                    return (
+                        <GymCard
+                            parentCallBack={this.getTagFromChild}
+                            gym={gym}
+                        />
+                    )
+                        ;
+
+                }
+            } else if (this.state.filterTags.length === 0 || contains)
                 return (
                     <GymCard
                         parentCallBack={this.getTagFromChild}
@@ -33,6 +48,7 @@ class Gyms extends React.Component {
                     />
                 )
         });
+
     };
 
     getTagFromChild = (tag) => {
@@ -95,13 +111,15 @@ const mapStateToProps = (state) => {
     return {
         gymsList: state.gymsReducer,
         hasErrored: state.gymsErrored,
-        isLoading: state.gymsLoading
+        isLoading: state.gymsLoading,
+        searchName: state.gymSearchName
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(gymsFetchData(url))
+        fetchData: (url) => dispatch(gymsFetchData(url)),
+        gymSearchName: (name) => dispatch(gymSearchName(name))
     };
 };
 

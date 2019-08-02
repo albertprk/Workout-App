@@ -37,7 +37,7 @@ class App extends Component {
                     <SideMenu/>
 
                     <div className="ui grid">
-                        <div className="twelve wide stretched column">
+                        <div className="eighteen wide stretched column">
                             <div className="ui segment">
                                 <Route path='/home' component={Home}/>
                                 <Route path='/gyms' component={Gyms}/>

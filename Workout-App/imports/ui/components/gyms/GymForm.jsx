@@ -3,7 +3,7 @@ import FileBase64 from 'react-file-base64';
 import {connect} from 'react-redux'
 import update from 'react-addons-update'
 import {addGym} from '../../actions/page'
-import {gymTagsFetchData } from "../../actions/gymTags"
+import {gymTagsFetchData} from "../../actions/gymTags"
 import Spinner from "../Spinner";
 
 
@@ -55,9 +55,6 @@ class GymForm extends React.Component {
     addTag = (e) => {
         e.preventDefault();
         this.setState({tags: [...this.state.tags, this.state.tag]});
-        console.log("added tag:");
-        console.log(this.state.tag);
-        console.log(this.state);
         this.setState({tag: ""});
         this.renderTags();
     };
@@ -82,13 +79,13 @@ class GymForm extends React.Component {
     };
 
     renderGymTags = () => {
-        if (this.props.gymTagsList.length == 0) {
+        if (this.props.gymTagsList.length === 0) {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
         console.log(this.props.gymTagsList);
-        return this.props.gymTagsList.map((tag)=>{
-            return ( <option> {tag} </option>)
+        return this.props.gymTagsList.map((tag) => {
+            return (<option> {tag} </option>)
         });
     };
 
@@ -107,7 +104,7 @@ class GymForm extends React.Component {
             </div>
         }
 
-        if (this.props.gymTagsList.length == 0) {
+        if (this.props.gymTagsList.length === 0) {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
@@ -121,8 +118,8 @@ class GymForm extends React.Component {
                     <h4 className="ui dividing header">Gym Information</h4>
                     <div className="field">
                         <label>Gym Name</label>
-                        <div className="one field">
-                            <div className="eight wide field">
+                        <div className="fields">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     name="name"
@@ -142,7 +139,7 @@ class GymForm extends React.Component {
                     <div className="field">
                         <label>Address</label>
                         <div className="fields">
-                            <div className="eight wide field">
+                            <div className="four wide field">
                                 <input
                                     type="text"
                                     name="address"
@@ -162,7 +159,7 @@ class GymForm extends React.Component {
                     <div className="field">
                         <label>Description</label>
                         <div className="fields">
-                            <div className="sixteen wide field">
+                            <div className="eight wide field">
                                 <input
                                     type="text"
                                     name="description"
@@ -182,9 +179,8 @@ class GymForm extends React.Component {
                     <div className="field">
                         <label>Spiel</label>
                         <div className="fields">
-                            <div className="sixteen wide field">
-                                <input
-                                    type="text"
+                            <div className="eight wide field">
+                                <textarea
                                     name="spiel"
                                     id="spiel"
                                     placeholder="Long description of gym"
@@ -202,10 +198,10 @@ class GymForm extends React.Component {
                     <div className="field">
                         <label>Picture URL</label>
                         <div className="fields">
-                            <div className="sixteen wide field">
+                            <div className="four wide field">
                                 <FileBase64
-                                    multiple={ true }
-                                    onDone={ this.getFiles.bind(this) } />
+                                    multiple={true}
+                                    onDone={this.getFiles.bind(this)}/>
                             </div>
                         </div>
                     </div>
@@ -214,7 +210,7 @@ class GymForm extends React.Component {
                     <div className="field">
                         <label>Hours of Operation</label>
                         <div className="fields">
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Sunday"
@@ -228,7 +224,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Monday"
@@ -242,7 +238,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Tuesday"
@@ -256,7 +252,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Wednesday"
@@ -270,7 +266,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Thursday"
@@ -284,7 +280,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Friday"
@@ -298,7 +294,7 @@ class GymForm extends React.Component {
                                     }}
                                 />
                             </div>
-                            <div className="two wide field">
+                            <div className="one wide field">
                                 <input
                                     type="text"
                                     placeholder="Saturday"
@@ -321,20 +317,19 @@ class GymForm extends React.Component {
                         onSubmit={this.addTag}
                     >
                         <h4 className="ui dividing header">Tags</h4>
-                        <div className="field">
+                        <div className="eight wide field">
                             <div className="ui right labeled left icon input">
-                                <i className="tags icon"></i>
+                                <i className="tags icon"/>
                                 <input
                                     type="text"
                                     placeholder="Enter a new tag"
                                     id="tagInput"
                                     value={this.state.tag}
                                     required="required"
-                                    list = "gymTags"
+                                    list="gymTags"
                                     onChange={(e) => {
                                         this.setState({tag: e.target.value});
-                                    }
-                                    }
+                                    }}
                                 />
                                 <datalist id="gymTags">
                                     {
@@ -376,7 +371,7 @@ class GymForm extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        gymTagsList :state.gymsTagsReducer,
+        gymTagsList: state.gymsTagsReducer,
         hasErrored: state.gymsTagsErrored,
         isLoading: state.gymsTagsLoading,
     }

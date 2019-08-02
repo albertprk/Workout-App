@@ -5,15 +5,12 @@ var router = express.Router();
 
 /* GET reviews initial data */
 router.get('/', (req, res, next) => {
-    console.log("getting");
     Gym.find((err, gyms) => {
         if (err) {
             console.log("error in getting data");
             console.log(err);
             return res.json({success: false, error: err})
         }
-        console.log("success in getting data");
-        console.log(gyms);
         return res.json({success: true, data: gyms})
     })
 });

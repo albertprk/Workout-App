@@ -138,7 +138,9 @@ class TrainerInfo extends React.Component {
                             <div className="content">
                                 <div>
                                     {
+                                        targetTrainer.comments.length != 0 &&
                                         targetTrainer.comments.map((comment, index) => {
+                                            if (comment != null){
                                             return (
                                                 <div key={index}>
                                                     <a className="author">{comment.fullname}</a>
@@ -162,8 +164,7 @@ class TrainerInfo extends React.Component {
 
                                                 </div>
                                             )
-
-
+                                            }
                                         })
                                     }
                                 </div>

@@ -13,16 +13,11 @@ class Gyms extends React.Component {
     }
 
     componentDidMount() {
-        console.log("mounting");
         this.props.fetchData("http://localhost:9000/gyms");
-        console.log("mounted");
-        console.log(this.props);
     }
 
 
     renderGyms() {
-        console.log("render gyms");
-        console.log(this.props.gymsList);
         return this.props.gymsList.map((gym) => {
             let contains = true;
             for (let i = 0; i < this.state.filterTags.length; i++) {
@@ -41,7 +36,7 @@ class Gyms extends React.Component {
     };
 
     getTagFromChild = (tag) => {
-        if (this.state.filterTags.indexOf(tag) == -1) {
+        if (this.state.filterTags.indexOf(tag) === -1) {
             this.setState({filterTags: [...this.state.filterTags, tag]});
         }
     };
@@ -68,14 +63,17 @@ class Gyms extends React.Component {
     };
 
     render() {
+
         if (this.props.hasErrored) {
             return <div>
+                <GymMenu/>
                 <p>Sorry! Error rendering</p>
             </div>
         }
 
         if (this.props.isLoading) {
             return <div align="center">
+                <GymMenu/>
                 <p>Loading...</p>
                 <Spinner/>
             </div>
@@ -94,8 +92,6 @@ class Gyms extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("state.gymsReducer")
-    console.log(state.gymsReducer)
     return {
         gymsList: state.gymsReducer,
         hasErrored: state.gymsErrored,

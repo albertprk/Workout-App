@@ -65,20 +65,20 @@ export const addGymSuccess = gym => {
     return {
         type: 'ADD_GYM',
         gym: gym
-    }
+    };
 };
 
 export const addGymStarted = () => {
     return {
         type: 'ADD_GYM_STARTED'
-    }
+    };
 };
 
 export const addGymFailure = error => {
     return {
         type: 'ADD_GYM_FAILURE',
         payload: error
-    }
+    };
 };
 
 export const addGym = (gym) => {
@@ -106,5 +106,5 @@ export const addTag = (tag) => {
     return {
         type: 'ADD_TAG',
         payload: tag
-    }
-}
+    };
+};

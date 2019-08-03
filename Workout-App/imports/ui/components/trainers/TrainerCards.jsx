@@ -68,6 +68,24 @@ class TrainerCards extends React.Component {
                                 // below if statement renders all trainers if no gym query exists
                                 // if it does exist it only shows the trainers at that gym
                                 if (!queries.gym || targetTrainer.gym === queries.gym.replace(/"/g, "")) {
+
+                                    // code for calculating average score for each trainer
+                                    let avgScore = 0;
+                                    let numReviews = 0;
+                                    if (targetTrainer.comments.length === 0) {
+                                        avgScore = 10.0;
+                                        numReviews = 1;
+                                    } else {
+                                        targetTrainer.comments.map((comment, index) => {
+                                            avgScore += comment.rate;
+                                            numReviews++;
+                                        });
+                                        avgScore /= numReviews;
+                                        avgScore = avgScore.toFixed(1);
+                                    }
+
+
+
                                     return (
                                         <div className="card" onClick={() => {
                                             this.props.changetrainerInfoObjectId(targetTrainer._id);
@@ -88,8 +106,7 @@ class TrainerCards extends React.Component {
                                             </div>
                                             <div className="extra content">
 
-                                                ADD RATING HERE:
-                                                {targetTrainer.overall_rate}
+                                                <h3>{avgScore}/10</h3>
 
                                                 <div className="ui labels">
                                                     {

@@ -66,6 +66,21 @@ class TrainerInfo extends React.Component {
             var thatTrainerId = this.props.thatTrainerInfoObjectId;
             var targetTrainer = this.props.trainersList.find(x => x._id === thatTrainerId);
 
+            // code for calculating average score for each trainer
+            let avgScore = 0;
+            let numReviews = 0;
+            if (targetTrainer.comments.length === 0) {
+                avgScore = 10.0;
+            } else {
+                targetTrainer.comments.map((comment, index) => {
+                    avgScore += comment.rate;
+                    numReviews++;
+                });
+                avgScore /= numReviews;
+                avgScore = avgScore.toFixed(1);
+            }
+
+
 
             const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
@@ -83,13 +98,16 @@ class TrainerInfo extends React.Component {
                                         <div className="content">
                                             <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
                                             <div className="meta">
-                                                <span>verified personal trainer</span>
+                                                <span>Trainer at {targetTrainer.gym}</span>
                                                 <span> {this.props.thatTrainerInfoObjectId}</span>
                                             </div>
                                             <div className="description">
                                                 <p>
                                                     {targetTrainer.description}
                                                 </p>
+                                            </div>
+                                            <div>
+                                                {avgScore}/10
                                             </div>
                                             {/* <div className="extra">
                 recommended by 36 other users

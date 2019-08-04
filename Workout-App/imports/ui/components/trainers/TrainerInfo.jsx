@@ -63,8 +63,19 @@ class TrainerInfo extends React.Component {
             )
         } else {
 
+            // parse URL
+            const querystring = require('query-string');
+            const queries = querystring.parse(this.props.location.search);
+
+            // get target trainer
             var thatTrainerId = this.props.thatTrainerInfoObjectId;
             var targetTrainer = this.props.trainersList.find(x => x._id === thatTrainerId);
+
+            // if trainer is in URL, get trainer based on that
+            if (queries.trainer) {
+                var trainerEmail = queries.trainer;
+                targetTrainer = this.props.trainersList.find(x => x.email === trainerEmail);
+            }
 
             // code for calculating average score for each trainer
             let avgScore = 0;
@@ -99,7 +110,6 @@ class TrainerInfo extends React.Component {
                                             <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
                                             <div className="meta">
                                                 <span>Trainer at {targetTrainer.gym}</span>
-                                                <span> {this.props.thatTrainerInfoObjectId}</span>
                                             </div>
                                             <div className="description">
                                                 <p>
@@ -109,9 +119,6 @@ class TrainerInfo extends React.Component {
                                             <div>
                                                 {avgScore}/10
                                             </div>
-                                            {/* <div className="extra">
-                recommended by 36 other users
-              </div> */}
                                         </div>
                                     </div>
                                 </div>

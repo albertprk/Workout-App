@@ -9,34 +9,33 @@ const querystring = require('query-string');
 
 class TrainerCards extends React.Component {
     componentDidMount() {
-        console.log("mouting");
         this.props.fetchData("http://localhost:9000/trainers")
-        console.log("mounted");
-        console.log(this.props)
-
-        const queries = querystring.parse(this.props.location.search);
-        console.log("QUERYS:");
-        console.log(queries);
-        console.log(queries.gym);
-        console.log(queries.tags);
     }
 
     render() {
         if (this.props.hasErrored) {
             return <div>
+                <TrainersMenu/>
+                <br/>
                 <p>Sorry! Error rendering</p>
             </div>
         }
 
         if (this.props.isLoading) {
-            return <div align="center">
-                <p>Loading...</p>
-                <Spinner/>
+            return <div>
+                <TrainersMenu/>
+                <br/>
+                <div align="center">
+                    <p>Loading...</p>
+                    <Spinner/>
+                </div>
             </div>
         }
 
         return (
             <div>
+                <TrainersMenu/>
+                <br/>
                 {this.renderTrainerCards()}
             </div>
         )
@@ -44,11 +43,7 @@ class TrainerCards extends React.Component {
 
     renderTrainerCards() {
         const queries = querystring.parse(this.props.location.search);
-        console.log("in trainerCard page");
-        console.log(this.props.trainersList);
         var allTrainers = this.props.trainersList;
-        console.log("this.props.trainersList length");
-        console.log(this.props.trainersList.length);
         const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
         if (allTrainers.length === 0) {
@@ -60,8 +55,7 @@ class TrainerCards extends React.Component {
         } else {
             return (
                 <div>
-                    <TrainersMenu/>
-                    <br/>
+
                     <div className="ui link cards">
                         {
                             allTrainers.map((targetTrainer, index) => {
@@ -83,7 +77,6 @@ class TrainerCards extends React.Component {
                                         avgScore /= numReviews;
                                         avgScore = avgScore.toFixed(1);
                                     }
-
 
 
                                     return (
@@ -133,7 +126,6 @@ class TrainerCards extends React.Component {
                                         </div>
                                     )
                                 }
-
                             })
                         }
                     </div>

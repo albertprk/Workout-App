@@ -83,6 +83,7 @@ class Gyms extends React.Component {
         if (this.props.hasErrored) {
             return <div>
                 <GymMenu/>
+                <br/>
                 <p>Sorry! Error rendering</p>
             </div>
         }
@@ -90,6 +91,7 @@ class Gyms extends React.Component {
         if (this.props.isLoading) {
             return <div align="center">
                 <GymMenu/>
+                <br/>
                 <p>Loading...</p>
                 <Spinner/>
             </div>
@@ -99,6 +101,7 @@ class Gyms extends React.Component {
             <div>
                 {this.renderTags()}
                 <GymMenu/>
+                <br/>
                 <ul>
                     {this.renderGyms()}
                 </ul>

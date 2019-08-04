@@ -27,8 +27,8 @@ body {
 .__trainers-menu-bar {
   position: relative;
   margin-left:0;
-  margin-right:8%;
-  width: 80%;
+  margin-right:0;
+  width: 100%;
 }
 
 .__trainercard {

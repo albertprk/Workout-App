@@ -95,7 +95,7 @@ export const getTrainer = (id) => {
 }
 
 //add a trainer to databse, called from trainerform
-export const addTrainer = (id, trainer) => {
+export const addTrainer = (Trainer) => {
     return dispatch => {
         console.log("adding a new trainer to database!");
         console.log(Trainer);

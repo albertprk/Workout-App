@@ -1,7 +1,7 @@
 import React from 'react';
 import update from 'react-addons-update'
 import {connect} from 'react-redux'
-import {getTrainer} from '../../actions/trainers'
+import {getTrainer, updateTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
 import Spinner from '../Spinner'
 import {gymsFetchData} from "../../actions/page";
@@ -36,14 +36,18 @@ class TrainerUpdate extends React.Component {
 
     componentDidMount   ()  {
       let currentuser = Meteor.userId();
-      if(currentuser) {
+      if(currentuser && Meteor.user().Trainer) {
         this.props.getTrainer(currentuser)
           .then(result => {
-              console.log("wtf how did this work" + JSON.stringify(result.data))
               this.setState(result.data);
               console.log(this.state)
         })
 
+      } else if(currentuser === null) {
+        alert('Please Signin or Signup first');
+      } else {
+        alert('Please sign up as a trainer first! Click ok to be redirected to the signup page');
+        this.props.history.push("/account/addtrainer")
       }
     }
 
@@ -53,20 +57,21 @@ class TrainerUpdate extends React.Component {
     };
 
     handleSubmit = (e) => {
+      e.preventDefault();
       let user = Meteor.userId();
       if (user === null) {
         console.log("not logged in");
         alert('Please Signin or Signup first');
       } else {
 
-        //TODO: its safer to make this update in the server but due to datbase issues, the call is made in client side but only user itself can modify its account
-        if(Meteor.userId()) {
-        Meteor.users.update({ _id: Meteor.userId() }, { $set: { Trainer: true } });
-        }
-          //update state just incase it changed
-          this.setState( { user: user });
-          console.log("updated user to" + user);
-        this.props.addTrainer(this.state);
+        this.props.updateTrainer(user, this.state)
+          .then(result => {
+              if (result.success) {
+                alert("update successful");
+              } else {
+                alert("something went wrong, lets try this again")
+              }
+          })
       }
     }
 
@@ -236,7 +241,7 @@ class TrainerUpdate extends React.Component {
                     </div>
 
                     <div className="field">
-                        <label>Profile Picture</label>
+                        <label>Profile Picture (Only submit a new file to change your picture)</label>
                         <div className="fields">
                             <div className="four wide field">
                                 <FileBase64
@@ -331,7 +336,7 @@ class TrainerUpdate extends React.Component {
                             id="addTrainer"
                             onClick={this.handleSubmit}
                         >
-                            TODO: add u[date method tmr
+                            Update Trainer
                         </button>
                     </div>
                 </form>
@@ -352,6 +357,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         getTrainer: (id) => dispatch(getTrainer(id)),
+        updateTrainer: (id, trainer) => dispatch(updateTrainer(id, trainer)),
         fetchData: (url) => dispatch(gymsFetchData(url)),
         fetchTrainersTags: (url) => dispatch(trainerTagsFetchData(url))
     };

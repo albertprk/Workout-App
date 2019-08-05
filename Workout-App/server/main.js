@@ -8,6 +8,16 @@ function insertLink(title, url) {
 
 Meteor.startup(() => {
 
+  Meteor.publish(null, function () {
+    return Meteor.users.find({
+      _id: this.userId
+    }, {
+      fields: {
+        Trainer: 1
+      }
+    });
+  });
+
   Meteor.users.allow({
     update: function (userId, user, fields, modifier) {
       // can only change your own documents

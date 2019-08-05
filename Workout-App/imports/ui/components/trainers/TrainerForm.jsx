@@ -38,20 +38,24 @@ class TrainerForm extends React.Component {
     };
 
     handleSubmit = (e) => {
-        let user = Meteor.userId();
-        if (user === null) {
-            console.log("not logged in");
-            alert('Please Signin or Signup first');
-        } else {
+      let user = Meteor.userId();
+      if (user === null) {
+        console.log("not logged in");
+        alert('Please Signin or Signup first');
+      } else if(Meteor.user().Trainer) {
+        //Prevent mutiple trainer profile per account
+        alert('You already have an existing Trainer');
+        }
+        else {
 
-            //TODO: its safer to make this update in the server but due to datbase issues, the call is made in client side but only user itself can modify its account
-            if (Meteor.userId()) {
-                Meteor.users.update({_id: Meteor.userId()}, {$set: {Trainer: true}});
-            }
-            //update state just incase it changed
-            this.setState({user: user});
-            console.log("updated user to" + user);
-            this.props.addTrainer(this.state);
+        //TODO: its safer to make this update in the server but due to datbase issues, the call is made in client side but only user itself can modify its account
+        if(Meteor.userId()) {
+          Meteor.users.update({ _id: Meteor.userId() }, { $set: { Trainer: true } });
+        }
+        //update state just incase it changed
+        this.setState( { user: user });
+        console.log("updated user to" + user);
+        this.props.addTrainer(this.state);
         }
     }
 

@@ -63,6 +63,22 @@ router.get('/gettrainer', function (req, res, next) {
   })
 });
 
+// update trainer detail of the user
+router.get('/updatetrainer', function (req, res, next) {
+    let user = req.query.user;
+    let trainer = JSON.parse(req.query.trainer);
+    console.log("updating trainer information of user: " + user + "with new trainer detail:" + trainer.firstName)
+    Trainer.findOneAndUpdate({'user': user}, { "$set": { "firstName": trainer.firstName, "lastName": trainer.lastName, "gender": trainer.gender, "gym": trainer.gym, "phone": trainer.phone, "email": trainer.email, "profilePicture": trainer.profilePicture, "cost": trainer.cost, "description": trainer.description, "tags": trainer.tags}}, {new: true}, function(err, result){
+        if(err) {
+            console.log("error in getting specfic trainer");
+            console.log(err);
+            return res.json({success: false, error: err})
+        }
+        console.log("update complete")
+        return res.json({success: true, data: result})
+  })
+});
+
 // getting a specfic trainers information, req have _id for the id, comment for the new comment
 router.put('/updateOneTrainerComment', function (req, res, next) {
     let id = req.body.id;

@@ -95,7 +95,7 @@ export const getTrainer = (id) => {
 }
 
 //add a trainer to databse, called from trainerform
-export const addTrainer = (Trainer) => {
+export const addTrainer = (id, trainer) => {
     return dispatch => {
         console.log("adding a new trainer to database!");
         console.log(Trainer);
@@ -110,6 +110,35 @@ export const addTrainer = (Trainer) => {
             })
             .catch(err => {
                 console.log("There is an error occurring in add Trainer");
+            });
+    }
+}
+
+
+//update a trainer, called from trainerupdate
+export const updateTrainer = (id, trainer) => {
+    return dispatch => {
+        console.log("updating a trainer in database!");
+        console.log(trainer);
+
+
+        return axios.get("http://localhost:9000/trainers/updatetrainer", {
+            params: {
+              user: id,
+              trainer: trainer
+            }
+        })
+            .then((response) => {
+                if (!response.data) {
+                    throw Error(response.statusText);
+                }
+                console.log("this is the returned data" + response.data)
+
+                return response.data;
+            })
+            .catch((err) => {
+                console.log("There is an error ouccring in updating this specfic trainer")
+                console.log(err);
             });
 
     }

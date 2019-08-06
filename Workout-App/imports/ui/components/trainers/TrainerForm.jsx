@@ -34,13 +34,11 @@ class TrainerForm extends React.Component {
 
     getFiles = (pic) => {
         this.setState({profilePicture: pic[0].base64});
-        console.log(this.state);
     };
 
     handleSubmit = (e) => {
       let user = Meteor.userId();
       if (user === null) {
-        console.log("not logged in");
         alert('Please Signin or Signup first');
       } else if(Meteor.user().Trainer) {
         //Prevent mutiple trainer profile per account
@@ -54,7 +52,6 @@ class TrainerForm extends React.Component {
         }
         //update state just incase it changed
         this.setState( { user: user });
-        console.log("updated user to" + user);
         this.props.addTrainer(this.state);
         }
     }
@@ -91,7 +88,6 @@ class TrainerForm extends React.Component {
             this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
             // Hard Code Change later!
         }
-        console.log(this.props.trainerTagsList);
         return this.props.trainerTagsList.map((tag) => {
             return (<option> {tag} </option>)
         });
@@ -122,8 +118,6 @@ class TrainerForm extends React.Component {
             this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
             // Hard Code Change later!
         }
-
-        console.log(this.props.trainerTagsList);
 
         const gymList = this.props.gymsList;
         const gymNameList = gymList.map(function (el) {
@@ -244,15 +238,6 @@ class TrainerForm extends React.Component {
                                 <FileBase64
                                     multiple={true}
                                     onDone={this.getFiles.bind(this)}/>
-                                {/*<input*/}
-                                {/*    type="text"*/}
-                                {/*    id="profilepicture"*/}
-                                {/*    placeholder="Profile Picture URL"*/}
-                                {/*    required="required"*/}
-                                {/*    onChange={(e) => {*/}
-                                {/*        this.setState({profilePicture: e.target.value})*/}
-                                {/*    }}*/}
-                                {/*/>*/}
                             </div>
                         </div>
                     </div>

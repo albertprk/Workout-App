@@ -17,7 +17,6 @@ export const trainersErrored = (bool) => {
 
 
 export const isTrainersLoading = (bool) => {
-    console.log("isTrainersLoading starts in actions")
     return {
         type: 'TRAINERS_LOADING',
         isLoading: bool
@@ -25,9 +24,6 @@ export const isTrainersLoading = (bool) => {
 };
 
 export const trainersSuccess = (trainers) => {
-    console.log("SUCCESSFUL TRAINERS");
-    console.log("trainers from actions: ");
-    console.log(trainers)
     return {
         type: 'TRAINERS_FETCH_SUCCESS',
         trainers: trainers
@@ -37,7 +33,6 @@ export const trainersSuccess = (trainers) => {
 export const trainersFetchData = (url) => {
     return (dispatch) => {
         dispatch(isTrainersLoading(true));
-        console.log("fetching in trainers ...");
 
         axios.get(url)
             .then((response) => {
@@ -45,17 +40,8 @@ export const trainersFetchData = (url) => {
                 if (!response.data) {
                     throw Error(response.statusText);
                 }
-                console.log("dispatch starts")
                 dispatch(isTrainersLoading(false));
-                console.log("dispatch ends")
-
-                console.log("trainer success starts")
-                console.log(response.data)
                 dispatch(trainersSuccess(response.data));
-                console.log("trainer success ends")
-
-                console.log("success in fetch data")
-                console.log(response.data);
                 return response.data;
             })
             .catch((err) => {
@@ -69,10 +55,6 @@ export const trainersFetchData = (url) => {
 //get information about a specfic trainer using user _id
 export const getTrainer = (id) => {
   return dispatch => {
-      console.log("getting trainer information for user: " + id);
-
-
-
       return axios.get("http://localhost:9000/trainers/gettrainer", {
           params: {
             user: id
@@ -82,8 +64,6 @@ export const getTrainer = (id) => {
               if (!response.data) {
                   throw Error(response.statusText);
               }
-              console.log("this is the returned data" + response.data)
-
               return response.data;
           })
           .catch((err) => {
@@ -94,12 +74,8 @@ export const getTrainer = (id) => {
 }
 
 //get information about a specfic trainer using Trainer _id
-export const getTrainerbyobjectID = (id) => {
+export const getTrainerByObjectID = (id) => {
   return dispatch => {
-      console.log("getting trainer information for trainer _id: " + id);
-
-
-
       return axios.get("http://localhost:9000/trainers/gettrainerbyobjectid", {
           params: {
             objectid: id
@@ -109,8 +85,6 @@ export const getTrainerbyobjectID = (id) => {
               if (!response.data) {
                   throw Error(response.statusText);
               }
-              console.log("this is the returned data" + response.data)
-
               return response.data;
           })
           .catch((err) => {
@@ -123,10 +97,6 @@ export const getTrainerbyobjectID = (id) => {
 //add a trainer to databse, called from trainerform
 export const addTrainer = (Trainer) => {
     return dispatch => {
-        console.log("adding a new trainer to database!");
-        console.log(Trainer);
-
-
         axios
             .post("http://localhost:9000/trainers", {
                 trainer: Trainer
@@ -136,6 +106,7 @@ export const addTrainer = (Trainer) => {
             })
             .catch(err => {
                 console.log("There is an error occurring in add Trainer");
+                console.log(err);
             });
     }
 }
@@ -144,10 +115,6 @@ export const addTrainer = (Trainer) => {
 //update a trainer, called from trainerupdate
 export const updateTrainer = (id, trainer) => {
     return dispatch => {
-        console.log("updating a trainer in database!");
-        console.log(trainer);
-
-
         return axios.get("http://localhost:9000/trainers/updatetrainer", {
             params: {
               user: id,
@@ -158,8 +125,6 @@ export const updateTrainer = (id, trainer) => {
                 if (!response.data) {
                     throw Error(response.statusText);
                 }
-                console.log("this is the returned data" + response.data)
-
                 return response.data;
             })
             .catch((err) => {
@@ -176,4 +141,14 @@ export const addTrainerSuccess = (Trainer) => {
         type: 'ADD_TRAINER',
         payload: Trainer
     }
+};
+
+// called when searching for a trainer by name
+export const trainerSearchName = (trainerSearchName) => {
+    console.log("trainer search name:");
+    console.log(trainerSearchName);
+    return {
+        type: 'TRAINER_SEARCH_NAME',
+        trainerSearchName: trainerSearchName
+    };
 };

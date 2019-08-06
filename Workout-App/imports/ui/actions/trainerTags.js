@@ -19,8 +19,6 @@ export const isTrainerTagsLoading = (bool) => {
 };
 
 export const trainersTagsSuccess = (trainersTags) => {
-    console.log("trainersTags");
-    console.log(trainersTags);
     return {
         type: 'TRAINERS_TAGS_FETCH_SUCCESS',
         trainersTags: trainersTags
@@ -38,9 +36,6 @@ export const trainerTagsFetchData = (url) => {
                     throw Error(response.statusText);
                 }
                 dispatch(isTrainerTagsLoading(false));
-
-                console.log("trainerTagsFetchData");
-                console.log(response.data);
                 dispatch(trainersTagsSuccess(response.data));
                 return response.data;
             })

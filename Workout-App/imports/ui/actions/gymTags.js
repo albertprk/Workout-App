@@ -10,7 +10,6 @@ export const gymsTagsErrored = (bool) => {
 
 
 export const isGymTagsLoading = (bool) => {
-    console.log("isGymsLoading starts in actions");
     return {
         type: 'GYMS_TAGS_LOADING',
         isLoading: bool
@@ -18,8 +17,6 @@ export const isGymTagsLoading = (bool) => {
 };
 
 export const gymsTagsSuccess = (gymsTags) => {
-    console.log("gymsTags");
-    console.log(gymsTags);
     return {
         type: 'GYMS_TAGS_FETCH_SUCCESS',
         gymsTags: gymsTags
@@ -38,8 +35,6 @@ export const gymTagsFetchData = (url) => {
                 }
                 dispatch(isGymTagsLoading(false));
 
-                console.log("gymTagsFetchData");
-                console.log(response.data);
                 dispatch(gymsTagsSuccess(response.data));
                 return response.data;
             })

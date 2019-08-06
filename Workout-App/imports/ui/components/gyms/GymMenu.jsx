@@ -9,14 +9,13 @@ class GymMenu extends Component {
     constructor() {
         super();
         this.state = ({
-            gymSearchName: ""
+            gymSearchName: "",
+            tag: ""
         })
     }
 
     searchGymName = (e) => {
         e.preventDefault();
-        console.log("SUBMITTED");
-        console.log(this.props.searchName);
         this.props.gymSearchName(this.state.gymSearchName);
     };
 
@@ -41,7 +40,6 @@ class GymMenu extends Component {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
-        console.log(this.props.gymTagsList);
         return this.props.gymTagsList.map((tag) => {
             return (<option> {tag} </option>)
         });
@@ -106,6 +104,7 @@ class GymMenu extends Component {
                                 <Icon className="search icon" size='large'/>
                             </form>
                         </div>
+
                         <div
                             className="item"
                             onClick={this.clearSearch}
@@ -125,7 +124,7 @@ const mapStateToProps = (state) => {
     return {
         gymsList: state.gymsReducer,
         tagsList: state.gymsTagsReducer,
-        searchName: state.gymSearchName
+        gymSearchName: state.gymSearchName
     };
 };
 

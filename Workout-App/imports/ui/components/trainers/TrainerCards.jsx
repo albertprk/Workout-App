@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux'
-import {trainersFetchData, trainerInfoObjectId} from '../../actions/trainers'
-import {} from '../../reducers/trainers'
+import {trainersFetchData, trainerInfoObjectId, trainerSearchName} from '../../actions/trainers'
+// import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 import TrainersMenu from './TrainersMenu';
 
@@ -49,20 +49,20 @@ class TrainerCards extends React.Component {
         if (allTrainers.length === 0) {
             return (
                 <div>
-                    rendering
+                    List of trainers is empty
                 </div>
             )
         } else {
             return (
                 <div>
-
                     <div className="ui link cards">
                         {
                             allTrainers.map((targetTrainer, index) => {
                                 // below if statement renders all trainers if no gym query exists
                                 // if it does exist it only shows the trainers at that gym
-                                if (!queries.gym || targetTrainer.gym === queries.gym.replace(/"/g, "")) {
-
+                                if (   (!queries.gym && !this.props.tSearchName)
+                                    || (this.props.tSearchName && this.props.tSearchName === (targetTrainer.firstName + " " + targetTrainer.lastName))
+                                    || (queries.gym && targetTrainer.gym === queries.gym.replace(/"/g, "") && !this.props.tSearchName)) {
                                     // code for calculating average score for each trainer
                                     let avgScore = 0;
                                     let numReviews = 0;
@@ -78,10 +78,9 @@ class TrainerCards extends React.Component {
                                         avgScore = avgScore.toFixed(1);
                                     }
 
-
                                     return (
                                         <div className="card" onClick={() => {
-                                            this.props.changetrainerInfoObjectId(targetTrainer._id);
+                                            this.props.changeTrainerInfoObjectId(targetTrainer._id);
                                             this.props.history.push("/mytrainers?trainer=" + targetTrainer._id);
                                         }}>
                                             <div className="image">
@@ -140,13 +139,15 @@ const mapStateToProps = (state) => {
         trainersList: state.trainersReducer,
         hasErrored: state.trainersErrored,
         isLoading: state.trainersLoading,
+        tSearchName: state.trainerSearchName
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(trainersFetchData(url)),
-        changetrainerInfoObjectId: (trainerId) => dispatch(trainerInfoObjectId(trainerId))
+        changeTrainerInfoObjectId: (trainerId) => dispatch(trainerInfoObjectId(trainerId)),
+        trainerSearchName: (name) => dispatch(trainerSearchName(name))
     }
 };
 

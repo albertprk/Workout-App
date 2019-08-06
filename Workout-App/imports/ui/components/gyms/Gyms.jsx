@@ -29,24 +29,16 @@ class Gyms extends React.Component {
                     contains = false
                 }
             }
-            if (this.props.searchName) {
-                if (this.props.searchName === gym.name) {
-                    return (
-                        <GymCard
-                            parentCallBack={this.getTagFromChild}
-                            gym={gym}
-                        />
-                    )
-                        ;
-
-                }
-            } else if (this.state.filterTags.length === 0 || contains)
+            if (this.props.gSearchName && this.props.gSearchName === gym.name
+                || (!this.props.gSearchName && (this.state.filterTags.length === 0 || contains))) {
                 return (
                     <GymCard
                         parentCallBack={this.getTagFromChild}
                         gym={gym}
                     />
                 )
+                    ;
+            }
         });
 
     };
@@ -58,8 +50,6 @@ class Gyms extends React.Component {
     };
 
     renderTags = () => {
-        console.log("render tags");
-        console.log(this.state.filterTags);
         return this.state.filterTags.map((tag) => {
             return (
                 <div
@@ -115,7 +105,7 @@ const mapStateToProps = (state) => {
         gymsList: state.gymsReducer,
         hasErrored: state.gymsErrored,
         isLoading: state.gymsLoading,
-        searchName: state.gymSearchName
+        gSearchName: state.gymSearchName
     };
 };
 

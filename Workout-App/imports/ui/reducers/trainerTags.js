@@ -1,7 +1,6 @@
 import './../actions/trainerTags';
 
 export const trainersTagsLoading = (state = false, action) => {
-    console.log("trainersLoading in reducer works", action.isLoading);
     if (action.type === 'TRAINERS_TAGS_LOADING') {
         return action.isLoading
     }
@@ -18,8 +17,6 @@ export const trainersTagsErrored = (state = false, action) => {
 export const managerTrainersTagsReducer = (trainersTagsList = [], action) => {
     switch (action.type) {
         case 'TRAINERS_TAGS_FETCH_SUCCESS':
-            console.log("tags reducer");
-            console.log(action.trainersTags.data);
             var trainersTagsSorted = action.trainersTags.data;
             trainersTagsSorted.sort();
             return trainersTagsSorted;

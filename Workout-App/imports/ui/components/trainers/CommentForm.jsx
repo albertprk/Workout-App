@@ -5,7 +5,6 @@ import {connect} from "react-redux";
 import {trainerCommentUpdate} from "../../actions/trainerCommentUpdate";
 import {trainersFetchData} from "../../actions/trainers";
 import Spinner from "../Spinner";
-import {trainersLoading} from "../../reducers/trainers";
 
 class CommentForm extends React.Component{
     constructor(props){
@@ -27,7 +26,7 @@ class CommentForm extends React.Component{
 
     // handleChange = e => this.setState({ rating: e.target.value })
     handleUpdateComment = () => {
-        if (this.state.fullname != "" && this.state.context != "" && this.state.rate != ""){
+        if (this.state.fullname !== "" && this.state.context !== "" && this.state.rate !== ""){
             const commentObject = {
                 fullname: this.state.fullname,
                 context: this.state.context,
@@ -36,11 +35,8 @@ class CommentForm extends React.Component{
             };
             this.props.updateComment(commentObject,this.props.thatTrainerInfoObjectId);
 
-            console.log(this.state);
-
             while(true){
                 if (!this.props.isLoading){
-                    console.log(this.props.thatTrainerInfoObjectId);
                     this.handleClose();
                     this.props.fetchData("http://localhost:9000/trainers");
                     alert('Thank you for your comment and rating');

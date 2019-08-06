@@ -21,8 +21,6 @@ export const isGymsLoading = (bool) => {
 };
 
 export const gymsSuccess = (gyms) => {
-    console.log("SUCCESSFUL ACTION");
-    console.log(gyms);
     return {
         type: 'GYMS_FETCH_SUCCESS',
         gyms: gyms
@@ -57,8 +55,6 @@ export const gymsFetchData = (url) => {
  */
 
 export const addGymSuccess = gym => {
-    console.log("add gym success action");
-    console.log(gym);
     return {
         type: 'ADD_GYM',
         gym: gym

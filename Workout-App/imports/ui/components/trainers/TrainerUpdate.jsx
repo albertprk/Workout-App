@@ -1,9 +1,7 @@
 import React from 'react';
-import update from 'react-addons-update'
 import {connect} from 'react-redux'
 import {getTrainer, updateTrainer} from '../../actions/trainers'
 import FileBase64 from "react-file-base64";
-import Spinner from '../Spinner'
 import {gymsFetchData} from "../../actions/page";
 import {trainerTagsFetchData} from "../../actions/trainerTags";
 
@@ -40,7 +38,6 @@ class TrainerUpdate extends React.Component {
         this.props.getTrainer(currentuser)
           .then(result => {
               this.setState(result.data);
-              console.log(this.state)
         })
 
       } else if(currentuser === null) {
@@ -53,14 +50,12 @@ class TrainerUpdate extends React.Component {
 
     getFiles = (pic) => {
         this.setState({profilePicture: pic[0].base64});
-        console.log(this.state);
     };
 
     handleSubmit = (e) => {
       e.preventDefault();
       let user = Meteor.userId();
       if (user === null) {
-        console.log("not logged in");
         alert('Please Signin or Signup first');
       } else {
 
@@ -103,11 +98,10 @@ class TrainerUpdate extends React.Component {
     };
 
     renderTrainerTags = () => {
-        if (this.props.trainerTagsList.length == 0) {
+        if (this.props.trainerTagsList.length === 0) {
             this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
             // Hard Code Change later!
         }
-        console.log(this.props.trainerTagsList);
         return this.props.trainerTagsList.map((tag)=>{
             return ( <option> {tag} </option>)
         });
@@ -116,17 +110,15 @@ class TrainerUpdate extends React.Component {
 
     render() {
 
-        if (this.props.gymsList.length == 0) {
+        if (this.props.gymsList.length === 0) {
             this.props.fetchData("http://localhost:9000/gyms");
             // Hard Code Change later!
         }
 
-        if (this.props.trainerTagsList.length == 0) {
+        if (this.props.trainerTagsList.length === 0) {
             this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
             // Hard Code Change later!
         }
-
-        console.log(this.props.trainerTagsList);
 
         const gymList = this.props.gymsList;
         const gymNameList = gymList.map(function (el) { return el.name;});

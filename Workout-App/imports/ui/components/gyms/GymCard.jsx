@@ -10,8 +10,6 @@ class GymCard extends React.Component {
     }
 
     sendTagToParent = (tag) => {
-        console.log("sending tag to parent");
-        console.log(tag);
         this.props.parentCallBack(tag);
     };
 

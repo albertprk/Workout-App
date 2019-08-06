@@ -27,9 +27,9 @@ export const manageGymsReducer = (gymsList = [], action) => {
     }
 };
 
-export const gymSearchNameReducer = (searchName = "", action)=> {
+export const gymSearchNameReducer = (gymSearchName = "", action)=> {
     if (action.type === 'GYM_SEARCH_NAME') {
-        return action.searchName;
+        return action.gymSearchName;
     }
-    return searchName;
+    return gymSearchName;
 };

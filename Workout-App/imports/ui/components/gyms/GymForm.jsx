@@ -29,7 +29,6 @@ class GymForm extends React.Component {
 
     getFiles = (pic) => {
         this.setState({picture: pic[0].base64});
-        console.log(this.state);
     };
 
     handleSubmit = (e) => {
@@ -83,7 +82,6 @@ class GymForm extends React.Component {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
-        console.log(this.props.gymTagsList);
         return this.props.gymTagsList.map((tag) => {
             return (<option> {tag} </option>)
         });
@@ -108,7 +106,6 @@ class GymForm extends React.Component {
             this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
             // Hard Code Change later!
         }
-        console.log(this.props.gymTagsList);
 
         return (
             <div>

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {trainersFetchData, getTrainerbyobjectID} from '../../actions/trainers'
+import {trainersFetchData, getTrainerByObjectID} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 
@@ -47,13 +47,11 @@ class TrainerInfo extends React.Component {
           objectid = queries.trainer;
       }
 
-        //console.log("_id is" + objectid)
-        this.props.getTrainerbyobjectID(objectid)
+        this.props.getTrainerByObjectID(objectid)
         .then(result => {
             this.setState(result.data);
             //for debug purposes
-            //console.log("KKKKKKKKKKKKKK" + JSON.stringify(this.state))
-
+``
         })
     }
 
@@ -81,10 +79,6 @@ class TrainerInfo extends React.Component {
 
 
     renderTrainer() {
-
-
-
-
             // code for calculating average score for each trainer
             let targetTrainer = this.state;
             let avgScore = 0;
@@ -232,7 +226,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(trainersFetchData(url)),
-        getTrainerbyobjectID: (id) => dispatch(getTrainerbyobjectID(id))
+        getTrainerByObjectID: (id) => dispatch(getTrainerByObjectID(id))
     }
 }
 

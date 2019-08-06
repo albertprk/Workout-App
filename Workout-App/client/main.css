@@ -16,14 +16,6 @@
   }
 }
 
-h1 {
-  margin:0;
-}
-
-body {
-  font-family: sans-serif;
-}
-
 .__trainers-menu-bar {
   position: relative;
   margin-left:0;
@@ -96,4 +88,82 @@ body {
   height:250px;
   width:300px;
   border-color:red;
+}
+
+a, a:hover {
+  color: white;
+  text-decoration:none;
+}
+
+h1 {
+  margin:0;
+}
+
+body {
+  padding:0;
+  font-family: sans-serif;
+}
+
+/* For the home page slider */
+.slider-holder {
+  width: 1000px;
+  height: 400px;
+  background:url(https://i.imgur.com/Ev11XHG.png);
+  background-color:black;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom:100px;
+  box-shadow: 7px 7px 2px #d5d5d5;
+}
+
+.image-holder {
+  width: 100%;
+  background-color: #d9e0e4;
+  height: 400px;
+  clear: both;
+  position: relative;
+  float:center;
+  -webkit-transition: left 2s;
+  -moz-transition: left 2s;
+  -o-transition: left 2s;
+  transition: left 2s;
+}
+
+.slider-image {
+  float: center;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+#slider-image-1:target ~ .image-holder {
+  left: 0px;
+}
+
+#slider-image-2:target ~ .image-holder {
+  left: -1000px;
+}
+
+#slider-image-3:target ~ .image-holder {
+  left: -2000px;
+}
+
+.button-holder {
+  position: relative;
+  top: -20px;
+}
+
+.slider-change {
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+  border-radius: 5px;
+  background-color: white;
+  margin-right:25px;
+  margin-bottom:20px;
 }

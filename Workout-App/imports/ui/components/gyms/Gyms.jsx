@@ -29,7 +29,10 @@ class Gyms extends React.Component {
             if (this.props.gSearchName && this.props.gSearchName === gym.name
                 || (!this.props.gSearchName && (this.props.sortingTagsList.length === 0 || contains))) {
                 return (
-                    <GymCard gym={gym}/>
+                    <div>
+                        <GymCard gym={gym}/>
+                        <br/>
+                    </div>
                 );
             }
         });

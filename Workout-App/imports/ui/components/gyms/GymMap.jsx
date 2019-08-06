@@ -13,13 +13,13 @@ class GymMap extends Component {
         super(props);
     }
 
-    getLatLong = (address, f) => {
-        Geocode.setApiKey('AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo');
+    getLatLong = (gym, f) => {
+        // Geocode.setApiKey('AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo');
         return new Promise((resolve, reject) => {
-            Geocode.fromAddress(address).then(
+            Geocode.fromAddress(gym.address).then(
                 response => {
                     const {lat, lng} = response.results[0].geometry.location;
-                    console.log("address to lat long");
+                    console.log("address for " + gym.name + "to lat long");
                     console.log(lat, lng);
                     resolve(lat, lng);
                 },
@@ -29,24 +29,23 @@ class GymMap extends Component {
                 }
             );
         })
-
-    }
+    };
 
     render() {
-        var {gymLat, gymLong} = this.getLatLong(this.props.gym.address);
-        console.log("lat and long:");
-        console.log(gymLat, gymLong);
+        // do not uncomment the next line! calls google maps API
+        // var {gymLat, gymLong} = this.getLatLong(this.props.gym);
         return (
             <div className="mapBox" id="mapBox">
                 <Map
                     google={this.props.google}
-                    zoom={10}
+                    zoom={12}
                     style={mapStyles}
-                    initialCenter={{ lat: 49.2418, lng: -123.1126}}
+                    initialCenter={{ lat: this.props.gym.lat, lng: this.props.gym.long}}
                 >
                     <Marker
                         name={this.props.gym.name}
-                        position={{gymLat, gymLong}}
+                        lat={this.props.gym.lat}
+                        long={this.props.gym.long}
                     />
                 </Map>
             </div>
@@ -55,5 +54,5 @@ class GymMap extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ('AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo')
+    apiKey: ""//'AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo'
 })(GymMap);

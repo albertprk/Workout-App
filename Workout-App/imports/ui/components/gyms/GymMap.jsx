@@ -14,7 +14,7 @@ class GymMap extends Component {
     }
 
     getLatLong = (gym, f) => {
-        // Geocode.setApiKey('AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo');
+        // Geocode.setApiKey('');
         return new Promise((resolve, reject) => {
             Geocode.fromAddress(gym.address).then(
                 response => {
@@ -54,5 +54,5 @@ class GymMap extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ""//'AIzaSyBIrx-1nADNA9oGYFhPFbh2hkxQinBCZqo'
+    apiKey: ""
 })(GymMap);

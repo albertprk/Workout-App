@@ -90,7 +90,7 @@ class TrainerCards extends React.Component {
                                 //      if sorting tags are present
                                 //      user is searching by name
                                 //      URL contains a specific trainer
-                                if (   (!queries.gym && !this.props.tSearchName && (this.props.sortingTagsList.length === 0 || contains))
+                                if ((!queries.gym && !this.props.tSearchName && (this.props.sortingTagsList.length === 0 || contains))
                                     || (this.props.tSearchName && this.props.tSearchName === (targetTrainer.firstName + " " + targetTrainer.lastName))
                                     || (queries.gym && targetTrainer.gym === queries.gym.replace(/"/g, "") && !this.props.tSearchName)) {
                                     // code for calculating average score for each trainer
@@ -146,11 +146,11 @@ class TrainerCards extends React.Component {
                                                 <span className="right floated">
                                                 Joined in {new Date(targetTrainer.joiningDate).getDate() + "-" + months[new Date(targetTrainer.joiningDate).getMonth()] + "-" + new Date(targetTrainer.joiningDate).getFullYear()}
                                             </span>
-                                                <span>
-                                                {/* // todo: make it dynamic */}
-                                                    <i className="user icon"/>
-                                                Hired by 75 users
-                                            </span>
+                                                {/*<span>*/}
+                                                {/*/!* // todo: make it dynamic *!/*/}
+                                                {/*    <i className="user icon"/>*/}
+                                                {/*Hired by 75 users*/}
+                                                {/*</span>*/}
                                             </div>
                                         </div>
                                     )

@@ -85,12 +85,11 @@ class GymCard extends React.Component {
                                         {this.props.gym.description}
                                     </div>
                                 </div>
-                                <div className="extra content">
-                                    <a>
-                                        <i className="user icon"/>
-                                        22 swolr members checked in here
-                                    </a>
-                                </div>
+                                {/*<div className="extra content">*/}
+                                {/*    <a>*/}
+                                {/*        <i className="user icon"/>*/}
+                                {/*    </a>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                     </div>

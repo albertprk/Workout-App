@@ -3,13 +3,14 @@ import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
 import {addSortingTag} from "../../actions/sortingTags";
 import {gymSearchName} from "../../actions/gyms";
+import GymMap from './GymMap'
 
 class GymCard extends React.Component {
 
     addSortingTag = (tag) => {
         if (this.props.gSearchName) this.props.gymSearchName("");
         this.props.addSortingTag(tag);
-    }
+    };
 
     render() {
         var now = new Date();
@@ -66,9 +67,11 @@ class GymCard extends React.Component {
 
                         <div className="content">
                             <div className="ui card">
-                                <div className="image medium">
-                                    <img src="https://i.imgur.com/WMq5Sux.png"/>
+
+                                <div>
+                                    <GymMap gym={this.props.gym}/>
                                 </div>
+
                                 <div className="content">
                                     <a className="header">
                                         {this.props.gym.name}

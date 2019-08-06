@@ -91,3 +91,9 @@ body {
   border-radius:5px;
   box-shadow:0px 4px #1a283c;
 }
+
+#mapBox {
+  height:250px;
+  width:300px;
+  border-color:red;
+}

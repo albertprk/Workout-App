@@ -90,7 +90,33 @@ export const getTrainer = (id) => {
               console.log("There is an error ouccring in fetching this specfic trainer")
               console.log(err);
           });
+  }
+}
 
+//get information about a specfic trainer using Trainer _id
+export const getTrainerbyobjectID = (id) => {
+  return dispatch => {
+      console.log("getting trainer information for trainer _id: " + id);
+
+
+
+      return axios.get("http://localhost:9000/trainers/gettrainerbyobjectid", {
+          params: {
+            objectid: id
+          }
+      })
+          .then((response) => {
+              if (!response.data) {
+                  throw Error(response.statusText);
+              }
+              console.log("this is the returned data" + response.data)
+
+              return response.data;
+          })
+          .catch((err) => {
+              console.log("There is an error ouccring in fetching this specfic trainer")
+              console.log(err);
+          });
   }
 }
 

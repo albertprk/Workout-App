@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {trainersFetchData} from '../../actions/trainers'
+import {trainersFetchData, getTrainerbyobjectID} from '../../actions/trainers'
 import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 
@@ -15,12 +15,46 @@ import CommentForm from './CommentForm';
 class TrainerInfo extends React.Component {
     constructor() {
         super();
+        this.state = ({
+            _id: "",
+            firstName: "",
+            lastName: "",
+            gender: "",
+            profilePicture: "",
+            gym: [],
+            description: "",
+            email: "",
+            phone: "",
+            joiningDate: "",
+            tag: "",
+            tags: [],
+            cost: 0,
+            overall_rate: null,
+            user: "",
+            __v: "",
+            comments: []
+        });
     }
 
 
     componentDidMount() {
-        this.props.fetchData("http://localhost:9000/trainers")
-        // const queries = querystring.parse(this.props.location.search);
+      // parse URL
+      const querystring = require('query-string');
+      const queries = querystring.parse(this.props.location.search);
+
+      let objectid = this.props.thatTrainerInfoObjectId;
+      if (queries.trainer) {
+          objectid = queries.trainer;
+      }
+
+        //console.log("_id is" + objectid)
+        this.props.getTrainerbyobjectID(objectid)
+        .then(result => {
+            this.setState(result.data);
+            //for debug purposes
+            //console.log("KKKKKKKKKKKKKK" + JSON.stringify(this.state))
+
+        })
     }
 
     render() {
@@ -47,37 +81,12 @@ class TrainerInfo extends React.Component {
 
 
     renderTrainer() {
-        // todo: show specific trainer, not 0
-        // this.props.trainersList
 
-        // todo: Oliver investigate why this part has been called three times
 
-        console.log("all three trainers : ")
-        console.log(this.props.trainersList)
 
-        if (this.props.trainersList.length === 0) {
-            return (
-                <div>
-                    rendering
-                </div>
-            )
-        } else {
-
-            // parse URL
-            const querystring = require('query-string');
-            const queries = querystring.parse(this.props.location.search);
-
-            // get target trainer
-            var thatTrainerId = this.props.thatTrainerInfoObjectId;
-            var targetTrainer = this.props.trainersList.find(x => x._id === thatTrainerId);
-
-            // if trainer is in URL, get trainer based on that
-            if (queries.trainer) {
-                var trainerEmail = queries.trainer;
-                targetTrainer = this.props.trainersList.find(x => x.email === trainerEmail);
-            }
 
             // code for calculating average score for each trainer
+            let targetTrainer = this.state;
             let avgScore = 0;
             let numReviews = 0;
             if (targetTrainer.comments.length === 0) {
@@ -202,7 +211,7 @@ class TrainerInfo extends React.Component {
                     </div>
                 </div>
             );
-        }
+
     }
 }
 
@@ -217,11 +226,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchData: (url) => dispatch(trainersFetchData(url))
+        fetchData: (url) => dispatch(trainersFetchData(url)),
+        getTrainerbyobjectID: (id) => dispatch(getTrainerbyobjectID(id))
     }
 }
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TrainerInfo);
-
- 

@@ -82,7 +82,7 @@ class TrainerCards extends React.Component {
                                     return (
                                         <div className="card" onClick={() => {
                                             this.props.changetrainerInfoObjectId(targetTrainer._id);
-                                            this.props.history.push("/mytrainers?trainer=" + targetTrainer.email);
+                                            this.props.history.push("/mytrainers?trainer=" + targetTrainer._id);
                                         }}>
                                             <div className="image">
                                                 <img src={targetTrainer.profilePicture}/>

@@ -51,7 +51,7 @@ router.get('/tags', function (req, res, next) {
 // getting a specfic trainers information, req have _id for the user
 router.get('/gettrainer', function (req, res, next) {
     let user = req.query.user;
-    console.log("coooooooooooooooooooooool" + user)
+    console.log("Getting information for user: " + user)
     Trainer.findOne({'user': user}, function(err, trainer){
         if(err) {
             console.log("error in getting specfic trainer");
@@ -59,6 +59,22 @@ router.get('/gettrainer', function (req, res, next) {
             return res.json({success: false, error: err})
         }
         console.log("got trainer under user:" + user)
+        return res.json({success: true, data: trainer})
+  })
+});
+
+// getting a specfic trainers information
+// && using Trainer Object_ID
+router.get('/gettrainerbyobjectid', function (req, res, next) {
+    let objectid = req.query.objectid;
+    console.log("Getting information for trainer_id: " + objectid)
+    Trainer.findOne({'_id': objectid}, function(err, trainer){
+        if(err) {
+            console.log("error in getting specfic trainer");
+            console.log(err);
+            return res.json({success: false, error: err})
+        }
+        console.log("got trainer under _id:" + objectid)
         return res.json({success: true, data: trainer})
   })
 });

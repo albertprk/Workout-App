@@ -100,6 +100,11 @@ class TrainerInfo extends React.Component {
                 avgScore = avgScore.toFixed(1);
             }
 
+            let name = targetTrainer.firstName + " " + targetTrainer.lastName;
+            if (targetTrainer._id === '5d10010e9112ea2c77b0a989') {
+                name += " 🏆 (Trainer of the Month)";
+            }
+
 
 
             const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
@@ -116,7 +121,7 @@ class TrainerInfo extends React.Component {
                                             <img src={targetTrainer.profilePicture}/>
                                         </div>
                                         <div className="content">
-                                            <a className="header">{targetTrainer.firstName + " " + targetTrainer.lastName}</a>
+                                            <a className="header">{name}</a>
                                             <div className="meta">
                                                 <span>Trainer at {targetTrainer.gym}</span>
                                             </div>

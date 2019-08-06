@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aa2865e4-1aea-4684-873e-c903de983d19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" afterDir="false" />
     </list>
     <ignored path="D:\UBC\CPSC436I\project_repo\Workout-App\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/Workout-App/node_modules/" />
@@ -25,8 +24,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+                <state relative-caret-position="357">
+                  <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -74,8 +73,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="458">
-                  <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+                <state relative-caret-position="952">
+                  <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
                   <folding>
                     <element signature="e#0#39#0" expanded="true" />
                   </folding>
@@ -335,7 +334,7 @@
       <workItem from="1565061636553" duration="18458000" />
       <workItem from="1565111162435" duration="1127000" />
       <workItem from="1565115343757" duration="1892000" />
-      <workItem from="1565123163666" duration="705000" />
+      <workItem from="1565123163666" duration="1492000" />
     </task>
     <task id="LOCAL-00003" summary="avg score implemented">
       <created>1564811883373</created>
@@ -379,15 +378,21 @@
       <option name="project" value="LOCAL" />
       <updated>1565116502057</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="removed google maps API key">
+      <created>1565127511034</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565127511034</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71354000" />
+    <option name="totallyTimeSpent" value="72141000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21375267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -406,8 +411,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.4107143" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.88372093" visible="true" weight="0.30444205" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.11627907" side_tool="true" weight="0.6097561" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.88272923" visible="true" weight="0.30444205" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.11727079" side_tool="true" visible="true" weight="0.30444205" />
       <window_info anchor="bottom" id="GraphQL" order="12" weight="0.3296875" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
       <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.32936078" />
@@ -433,7 +438,8 @@
     <MESSAGE value="added search by name functionality for trainers&#10;removed all console.log statements" />
     <MESSAGE value="added search functionality for gyms and trainers" />
     <MESSAGE value="integrated google maps API" />
-    <option name="LAST_COMMIT_MESSAGE" value="integrated google maps API" />
+    <MESSAGE value="removed google maps API key" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed google maps API key" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Workout-App/store/configureStore.js">
@@ -747,16 +753,6 @@
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -796,10 +792,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="56" column="17" selection-start-line="56" selection-start-column="17" selection-end-line="56" selection-end-column="17" />
+        <state relative-caret-position="952">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -4,6 +4,7 @@ import {trainersLoading, trainersErrored, managerTrainersReducer, trainerInfoObj
 import {trainersTagsLoading,trainersTagsErrored,managerTrainersTagsReducer} from"./trainerTags"
 import {gymsTagsLoading, gymsTagsErrored, managerGymsTagsReducer} from "./gymTags"
 import {trainerCommentUpdateLoading, trainerCommentUpdateErrored, managerTrainerCommentUpdateReducer} from "./trainerCommentUpdate"
+import {manageSortingTagsReducer} from "./sortingTags";
 
 const rootReducer = combineReducers({
 
@@ -18,6 +19,8 @@ const rootReducer = combineReducers({
     trainersErrored: trainersErrored,
     trainerId: trainerInfoObjectId,
     trainerSearchName: trainerSearchNameReducer,
+
+    manageSortingTags: manageSortingTagsReducer,
 
     trainersTagsLoading: trainersTagsLoading,
     trainersTagsErrored: trainersTagsErrored,

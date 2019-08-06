@@ -1,17 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux'
 import {NavLink} from 'react-router-dom'
-
+import {addSortingTag} from "../../actions/sortingTags";
+import {gymSearchName} from "../../actions/gyms";
 
 class GymCard extends React.Component {
 
-    constructor(props) {
-        super(props);
+    addSortingTag = (tag) => {
+        if (this.props.gSearchName) this.props.gymSearchName("");
+        this.props.addSortingTag(tag);
     }
-
-    sendTagToParent = (tag) => {
-        this.props.parentCallBack(tag);
-    };
 
     render() {
         var now = new Date();
@@ -48,7 +46,7 @@ class GymCard extends React.Component {
                                             return (
                                                 <button
                                                     className="ui button"
-                                                    onClick={() => this.sendTagToParent(tag)}
+                                                    onClick={() => {this.addSortingTag(tag)}}
                                                 >
                                                     {tag}
                                                 </button>
@@ -102,12 +100,16 @@ class GymCard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {};
+    return {
+        gSearchName: state.gymSearchName,
+        sortingTagList: state.manageSortingTags
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addTag: (tag) => dispatch(addTag(tag))
+        gymSearchName: (name) => dispatch(gymSearchName(name)),
+        addSortingTag: (sortingTag) => dispatch(addSortingTag(sortingTag))
     };
 };
 

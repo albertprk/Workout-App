@@ -5,16 +5,13 @@ import {connect} from 'react-redux'
 import {gymsFetchData} from '../../actions/page'
 import Spinner from '../Spinner'
 import {gymSearchName} from "../../actions/gyms";
+import {removeAllSortingTags, removeSortingTag} from "../../actions/sortingTags";
 
 class Gyms extends React.Component {
 
-    constructor() {
-        super();
-        this.state = ({filterTags: []});
-    }
-
     componentDidMount() {
         this.props.fetchData("http://localhost:9000/gyms");
+        this.props.removeAllSortingTags();
         this.props.gymSearchName("");
     }
 
@@ -24,37 +21,29 @@ class Gyms extends React.Component {
     renderGyms() {
         return this.props.gymsList.map((gym) => {
             let contains = true;
-            for (let i = 0; i < this.state.filterTags.length; i++) {
-                if (!gym.tags.includes(this.state.filterTags[i])) {
+            for (let i = 0; i < this.props.sortingTagsList.length; i++) {
+                if (!gym.tags.includes(this.props.sortingTagsList[i])) {
                     contains = false
                 }
             }
             if (this.props.gSearchName && this.props.gSearchName === gym.name
-                || (!this.props.gSearchName && (this.state.filterTags.length === 0 || contains))) {
+                || (!this.props.gSearchName && (this.props.sortingTagsList.length === 0 || contains))) {
                 return (
-                    <GymCard
-                        parentCallBack={this.getTagFromChild}
-                        gym={gym}
-                    />
-                )
-                    ;
+                    <GymCard gym={gym}/>
+                );
             }
         });
 
     };
 
-    getTagFromChild = (tag) => {
-        if (this.state.filterTags.indexOf(tag) === -1) {
-            this.setState({filterTags: [...this.state.filterTags, tag]});
-        }
-    };
-
     renderTags = () => {
-        return this.state.filterTags.map((tag) => {
+        return this.props.sortingTagsList.map((tag) => {
             return (
                 <div
                     className="ui button"
-                    onClick={() => this.removeTag(tag)}
+                    onClick={() => {
+                        this.props.removeSortingTag(tag)
+                    }}
                 >
                     {tag}
                 </div>
@@ -62,14 +51,7 @@ class Gyms extends React.Component {
         });
     };
 
-    removeTag = (tagToRemove) => {
-        this.setState({
-            filterTags: this.state.filterTags.filter((tag) => tag !== tagToRemove)
-        })
-    };
-
     render() {
-
         if (this.props.hasErrored) {
             return <div>
                 <GymMenu/>
@@ -89,8 +71,9 @@ class Gyms extends React.Component {
 
         return (
             <div>
-                {this.renderTags()}
                 <GymMenu/>
+                <br/>
+                {this.renderTags()}
                 <br/>
                 <ul>
                     {this.renderGyms()}
@@ -105,14 +88,17 @@ const mapStateToProps = (state) => {
         gymsList: state.gymsReducer,
         hasErrored: state.gymsErrored,
         isLoading: state.gymsLoading,
-        gSearchName: state.gymSearchName
+        gSearchName: state.gymSearchName,
+        sortingTagsList: state.manageSortingTags
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(gymsFetchData(url)),
-        gymSearchName: (name) => dispatch(gymSearchName(name))
+        gymSearchName: (name) => dispatch(gymSearchName(name)),
+        removeSortingTag: (sortingTag) => dispatch(removeSortingTag(sortingTag)),
+        removeAllSortingTags: () => dispatch(removeAllSortingTags())
     };
 };
 

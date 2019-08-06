@@ -145,8 +145,6 @@ export const addTrainerSuccess = (Trainer) => {
 
 // called when searching for a trainer by name
 export const trainerSearchName = (trainerSearchName) => {
-    console.log("trainer search name:");
-    console.log(trainerSearchName);
     return {
         type: 'TRAINER_SEARCH_NAME',
         trainerSearchName: trainerSearchName

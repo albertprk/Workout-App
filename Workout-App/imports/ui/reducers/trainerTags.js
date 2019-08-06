@@ -8,7 +8,7 @@ export const trainersTagsLoading = (state = false, action) => {
 };
 
 export const trainersTagsErrored = (state = false, action) => {
-    if (action.type === 'TRIANERS_TAGS_ERRORED') {
+    if (action.type === 'TRAINERS_TAGS_ERRORED') {
         return action.hasErrored;
     }
     return state;

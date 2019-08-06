@@ -4,13 +4,31 @@ import {trainersFetchData, trainerInfoObjectId, trainerSearchName} from '../../a
 // import {} from '../../reducers/trainers'
 import Spinner from '../Spinner'
 import TrainersMenu from './TrainersMenu';
+import {removeAllSortingTags, removeSortingTag} from "../../actions/sortingTags";
 
 const querystring = require('query-string');
 
 class TrainerCards extends React.Component {
     componentDidMount() {
-        this.props.fetchData("http://localhost:9000/trainers")
+        this.props.fetchData("http://localhost:9000/trainers");
+        this.props.removeAllSortingTags();
+        this.props.trainerSearchName("");
     }
+
+    renderTags = () => {
+        return this.props.sortingTagsList.map((tag) => {
+            return (
+                <div
+                    className="ui button"
+                    onClick={() => {
+                        this.props.removeSortingTag(tag)
+                    }}
+                >
+                    {tag}
+                </div>
+            )
+        });
+    };
 
     render() {
         if (this.props.hasErrored) {
@@ -36,6 +54,9 @@ class TrainerCards extends React.Component {
             <div>
                 <TrainersMenu/>
                 <br/>
+                {this.renderTags()}
+                <br/>
+                <br/>
                 {this.renderTrainerCards()}
             </div>
         )
@@ -58,9 +79,18 @@ class TrainerCards extends React.Component {
                     <div className="ui link cards">
                         {
                             allTrainers.map((targetTrainer, index) => {
-                                // below if statement renders all trainers if no gym query exists
-                                // if it does exist it only shows the trainers at that gym
-                                if (   (!queries.gym && !this.props.tSearchName)
+                                // field for sorting by tags
+                                let contains = true;
+                                for (let i = 0; i < this.props.sortingTagsList.length; i++) {
+                                    if (!targetTrainer.tags.includes(this.props.sortingTagsList[i])) {
+                                        contains = false;
+                                    }
+                                }
+                                // below if statement renders all trainers based on:
+                                //      if sorting tags are present
+                                //      user is searching by name
+                                //      URL contains a specific trainer
+                                if (   (!queries.gym && !this.props.tSearchName && (this.props.sortingTagsList.length === 0 || contains))
                                     || (this.props.tSearchName && this.props.tSearchName === (targetTrainer.firstName + " " + targetTrainer.lastName))
                                     || (queries.gym && targetTrainer.gym === queries.gym.replace(/"/g, "") && !this.props.tSearchName)) {
                                     // code for calculating average score for each trainer
@@ -139,7 +169,8 @@ const mapStateToProps = (state) => {
         trainersList: state.trainersReducer,
         hasErrored: state.trainersErrored,
         isLoading: state.trainersLoading,
-        tSearchName: state.trainerSearchName
+        tSearchName: state.trainerSearchName,
+        sortingTagsList: state.manageSortingTags
     }
 };
 
@@ -147,7 +178,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         fetchData: (url) => dispatch(trainersFetchData(url)),
         changeTrainerInfoObjectId: (trainerId) => dispatch(trainerInfoObjectId(trainerId)),
-        trainerSearchName: (name) => dispatch(trainerSearchName(name))
+        trainerSearchName: (name) => dispatch(trainerSearchName(name)),
+        removeSortingTag: (sortingTag) => dispatch(removeSortingTag(sortingTag)),
+        removeAllSortingTags: () => dispatch(removeAllSortingTags())
     }
 };
 

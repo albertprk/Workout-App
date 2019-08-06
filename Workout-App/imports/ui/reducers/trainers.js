@@ -36,8 +36,6 @@ export const managerTrainersReducer = (trainersList = [], action) => {
 
 export const trainerSearchNameReducer = (trainerSearchName = "", action)=> {
     if (action.type === 'TRAINER_SEARCH_NAME') {
-        console.log("trainerSearchNameReducer");
-        console.log(action.trainerSearchName);
         return action.trainerSearchName;
     }
     return trainerSearchName;

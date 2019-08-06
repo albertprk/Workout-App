@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {Icon} from 'semantic-ui-react'
 import {trainerSearchName} from "../../actions/trainers";
+import {addSortingTag, removeAllSortingTags} from "../../actions/sortingTags";
+import {gymTagsFetchData} from "../../actions/gymTags";
 
 class TrainersMenu extends Component {
     constructor() {
@@ -12,9 +14,22 @@ class TrainersMenu extends Component {
         })
     }
 
+    addSortingTag = (e) => {
+        e.preventDefault();
+        if (this.props.tSearchName) {
+            this.props.trainerSearchName("");
+        }
+        this.props.addSortingTag(this.state.tag);
+        this.setState({tag: ""})
+    };
+
     searchTrainerName = (e) => {
         e.preventDefault();
+        if (this.props.tagsList.length) {
+            this.props.removeAllSortingTags();
+        }
         this.props.trainerSearchName(this.state.trainerSearchName);
+        this.setState({trainerSearchName: ""})
     };
 
     trainerNames = () => {
@@ -30,7 +45,18 @@ class TrainersMenu extends Component {
     clearSearch = (e) => {
         e.preventDefault();
         this.props.trainerSearchName("");
+        this.props.removeAllSortingTags();
         this.setState({ trainerSearchName: "" });
+    };
+
+    gymTags = () => {
+        if (this.props.tagsList.length === 0) {
+            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            // Hard Code Change later!
+        }
+        return this.props.tagsList.map((tag) => {
+            return (<option> {tag} </option>)
+        });
     };
 
     render() {
@@ -47,6 +73,7 @@ class TrainersMenu extends Component {
                         <div className="item">
                             <form
                                 className="ui transparent icon input"
+                                onSubmit={this.addSortingTag}
                             >
                                 <input
                                     type="text"
@@ -56,12 +83,12 @@ class TrainersMenu extends Component {
                                     list="gymTags"
                                     value={this.state.tag}
                                     onChange={ (e) => {
-                                        // tag input here
+                                        this.setState({tag: e.target.value})
                                     }}
                                 />
                                 <datalist id="gymTags">
                                     {
-                                        // this.trainerTags()
+                                        this.gymTags()
                                     }
                                 </datalist>
                                 <Icon className="search icon" size='large'/>
@@ -113,13 +140,18 @@ class TrainersMenu extends Component {
 const mapStateToProps = (state) => {
     return {
         trainersList: state.trainersReducer,
-        trainerSearchName: state.trainerSearchName
+        tagsList: state.gymsTagsReducer,
+        tSearchName: state.trainerSearchName,
+        sortingTagsList: state.manageSortingTags
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         trainerSearchName: (name) => dispatch(trainerSearchName(name)),
+        fetchGymsTags: (url) => dispatch(gymTagsFetchData(url)),
+        removeAllSortingTags: () => dispatch(removeAllSortingTags()),
+        addSortingTag: (sortingTag) => dispatch(addSortingTag(sortingTag)),
     };
 };
 

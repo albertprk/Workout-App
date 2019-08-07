@@ -32,7 +32,10 @@ class TrainerUpdate extends React.Component {
 
     }
 
-    componentDidMount   ()  {
+
+
+
+    componentDidMount() {
       let currentuser = Meteor.userId();
       if(currentuser && Meteor.user().Trainer) {
         this.props.getTrainer(currentuser)
@@ -58,7 +61,7 @@ class TrainerUpdate extends React.Component {
       if (user === null) {
         alert('Please Signin or Signup first');
       } else {
-
+        console.log("starting update")
         this.props.updateTrainer(user, this.state)
           .then(result => {
               if (result.success) {

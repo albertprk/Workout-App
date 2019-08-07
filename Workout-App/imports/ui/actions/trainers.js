@@ -115,11 +115,9 @@ export const addTrainer = (Trainer) => {
 //update a trainer, called from trainerupdate
 export const updateTrainer = (id, trainer) => {
     return dispatch => {
-        return axios.get("http://localhost:9000/trainers/updatetrainer", {
-            params: {
+        return axios.put("http://localhost:9000/trainers/updatetrainer", {
               user: id,
               trainer: trainer
-            }
         })
             .then((response) => {
                 if (!response.data) {

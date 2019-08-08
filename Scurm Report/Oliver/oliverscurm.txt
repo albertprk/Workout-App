@@ -1,0 +1,5 @@
+1. overall layout of the website, pages like gym and trainers and trainer and their functions
+
+2. start implementing the backend and designing one of four pages in html and javascript.
+
+3. Setting up github and commiting. I guess we could have ran into merge conflict issue but that hasn't happened yet.

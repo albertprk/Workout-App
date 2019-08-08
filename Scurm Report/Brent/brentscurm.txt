@@ -1,0 +1,5 @@
+In the last two weeks I've worked on project concept generation, project requirements, and studied fundamental skills in CSS, HTML, and Javascript.
+
+In the next two weeks I will be working on the basic HTML and CSS of the project; I aim to have dummy pages created for all parts of the website and have the design mostly complete.
+
+I haven't gotten stuck too much as the project is only starting, but I have had trouble wrapping my head around the fundamentals of web development.

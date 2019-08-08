@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Workout-App",
+    "\\Workout-App\\backend",
+    "\\Workout-App\\backend\\api",
+    "\\Workout-App\\backend\\api\\models",
+    "\\Workout-App\\backend\\api\\routes",
+    "\\Workout-App\\imports",
+    "\\Workout-App\\imports\\ui",
+    "\\Workout-App\\imports\\ui\\actions",
+    "\\Workout-App\\imports\\ui\\components"
+  ],
+  "SelectedNode": "\\Workout-App\\backend\\api\\app.js",
+  "PreviewInSolutionExplorer": false
+}

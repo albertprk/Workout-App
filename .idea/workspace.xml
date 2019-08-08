@@ -1,0 +1,871 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aa2865e4-1aea-4684-873e-c903de983d19" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx" afterDir="false" />
+    </list>
+    <ignored path="D:\UBC\CPSC436I\project_repo\Workout-App\.idea\shelf/" />
+    <ignored path="$PROJECT_DIR$/Workout-App/node_modules/" />
+    <ignored path="$PROJECT_DIR$/Workout-App/backend/api/node_modules/" />
+    <ignored path="$PROJECT_DIR$/Workout-App/.meteor/local/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="459">
+                  <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="221">
+                  <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMenu.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="238">
+                  <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/client/main.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-579">
+                  <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="458">
+                  <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#0#39#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="167">
+                  <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="91" selection-end-column="41" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="422">
+                  <caret line="148" column="57" lean-forward="true" selection-start-line="148" selection-start-column="60" selection-end-line="152" selection-end-column="58" />
+                  <folding>
+                    <element signature="e#0#26#0" expanded="true" />
+                    <element signature="e#204#236#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>gettrainer</find>
+      <find>isLoading</find>
+      <find>cons</find>
+      <find>console.log</find>
+      <find>TRAINER_COMMENT_UPDATE_SUCCESS</find>
+      <find>fetchData</find>
+      <find>targetTrainer.comments</find>
+      <find>trainersList</find>
+      <find>targetTrainer</find>
+      <find>gymname</find>
+      <find>primary</find>
+      <find>pictur</find>
+      <find>datali</find>
+      <find>spiel</find>
+      <find>verifie</find>
+      <find>tags</find>
+      <find>rating</find>
+      <find>rate</find>
+      <find>avg</find>
+      <find>wide</find>
+      <find>trainer at</find>
+      <find>menu</find>
+      <find>console</find>
+      <find>searchname</find>
+      <find>searc</find>
+      <find>addtag</find>
+      <find>submit</find>
+      <find>map</find>
+      <find>22</find>
+      <find>75</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>gyms</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/TrainerCommentUpdate.js" />
+        <option value="$PROJECT_DIR$/Workout-App/backend/api/routes/gyms.js" />
+        <option value="$PROJECT_DIR$/Workout-App/backend/api/routes/trainersRouter.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/SideMenu.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/App.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/gyms.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainerCommentUpdate.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerForm.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CommentForm.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/Account.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/gymTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/trainerCommentUpdate.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/trainerTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/gymTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerUpdate.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/gyms.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymForm.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/page.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainerTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/rootReducer.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/sortingTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/sortingTags.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainers.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/actions/trainers.js" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainersMenu.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMenu.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/client/main.css" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="312" />
+    <option name="y" value="26" />
+    <option name="width" value="1237" />
+    <option name="height" value="777" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="gyms" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="trainers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="HbShouldOpenHtmlAsHb" value="enabled" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="js.meteor.library.cached" value="$PROJECT_DIR$/Workout-App/.meteor" />
+    <property name="js.meteor.library.was.enabled" value="true" />
+    <property name="js.meteor.project" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="changed UI for forms, overall website layout&#10;implemented search function for gyms">
+      <created>1564774843266</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564774843266</updated>
+    </task>
+    <task id="LOCAL-00002" summary="CSS work&#10;routed home page to '/'">
+      <created>1564779304989</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1564779304989</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aa2865e4-1aea-4684-873e-c903de983d19" name="Default Changelist" comment="" />
+      <created>1564807828616</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1564807828616</updated>
+      <workItem from="1564807836185" duration="2866000" />
+      <workItem from="1564849632887" duration="2215000" />
+      <workItem from="1564937736394" duration="3406000" />
+      <workItem from="1565037260736" duration="646000" />
+      <workItem from="1565061636553" duration="18458000" />
+      <workItem from="1565111162435" duration="1127000" />
+      <workItem from="1565115343757" duration="1892000" />
+      <workItem from="1565123163666" duration="1492000" />
+      <workItem from="1565130900034" duration="936000" />
+      <workItem from="1565132123077" duration="1516000" />
+    </task>
+    <task id="LOCAL-00003" summary="avg score implemented">
+      <created>1564811883373</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1564811883373</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fixed myTrainers not staying on trainer when refreshing">
+      <created>1564941974088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1564941974088</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added search by name functionality for trainers&#10;removed all console.log statements">
+      <created>1565075461221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1565075461222</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added search functionality for gyms and trainers">
+      <created>1565080992315</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1565080992315</updated>
+    </task>
+    <task id="LOCAL-00007" summary="integrated google maps API">
+      <created>1565086430966</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1565086430966</updated>
+    </task>
+    <task id="LOCAL-00008" summary="integrated google maps API">
+      <created>1565116502057</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1565116502057</updated>
+    </task>
+    <task id="LOCAL-00009" summary="removed google maps API key">
+      <created>1565127511034</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1565127511034</updated>
+    </task>
+    <task id="LOCAL-00010" summary="new branch for tuesday presentation">
+      <created>1565131093603</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1565131093603</updated>
+    </task>
+    <task id="LOCAL-00011" summary="new branch for tuesday presentation">
+      <created>1565131746203</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565131746203</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added Albert's CSS and home page">
+      <created>1565132562847</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1565132562847</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="74593000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21801706" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.73634" weight="0.3277439" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.4107143" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.8816631" visible="true" weight="0.30444205" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.118336886" side_tool="true" visible="true" weight="0.30444205" />
+      <window_info anchor="bottom" id="GraphQL" order="12" weight="0.3296875" />
+      <window_info anchor="bottom" id="TypeScript" order="13" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" visible="true" weight="0.32936078" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info anchor="right" id="Maven" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="changed UI for forms, overall website layout&#10;implemented search function for gyms" />
+    <MESSAGE value="CSS work&#10;routed home page to '/'" />
+    <MESSAGE value="avg score implemented" />
+    <MESSAGE value="fixed myTrainers not staying on trainer when refreshing" />
+    <MESSAGE value="added search by name functionality for trainers&#10;removed all console.log statements" />
+    <MESSAGE value="added search functionality for gyms and trainers" />
+    <MESSAGE value="integrated google maps API" />
+    <MESSAGE value="removed google maps API key" />
+    <MESSAGE value="new branch for tuesday presentation" />
+    <MESSAGE value="added Albert's CSS and home page" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Albert's CSS and home page" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Workout-App/store/configureStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/semantic-ui-react/index.d.ts" />
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1193">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/node_modules/mongoose/lib/model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="3494" column="62" selection-start-line="3494" selection-start-column="62" selection-end-line="3494" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/axios/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="149" column="14" selection-start-line="149" selection-start-column="14" selection-end-line="149" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/@types/react/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="1042" column="12" selection-start-line="1042" selection-start-column="12" selection-end-line="1042" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/semantic-ui-react/dist/commonjs/modules/Rating/Rating.d.ts" />
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/semantic-ui-react/dist/commonjs/collections/Form/Form.d.ts" />
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/semantic-ui-react/dist/commonjs/modules/Modal/Modal.d.ts" />
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/models/Gym.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/routes/gyms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="30" column="20" selection-start-line="30" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/routes/trainersRouter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/backend/api/models/Trainer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1139" column="8" selection-start-line="1139" selection-start-column="8" selection-end-line="1139" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="121" column="12" selection-start-line="121" selection-start-column="12" selection-end-line="121" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CommentForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Account.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/AccountMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/AccountsUIWrapper.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/App.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/SideMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Spinner.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/gymTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/trainerCommentUpdate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="41" column="33" selection-start-line="41" selection-start-column="33" selection-end-line="41" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/trainerTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainerCommentUpdate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerUpdate.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="583">
+          <caret line="228" column="58" selection-start-line="228" selection-start-column="58" selection-end-line="228" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="93" column="2" selection-start-line="93" selection-start-column="2" selection-end-line="93" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="1283" column="4" selection-start-line="1283" selection-start-column="4" selection-end-line="1283" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/gyms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/gyms.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="55" lean-forward="true" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/gymTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/trainers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="121">
+          <caret line="131" column="33" lean-forward="true" selection-start-line="131" selection-start-column="33" selection-end-line="131" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/sortingTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/rootReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainerTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/actions/sortingTags.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1698">
+          <caret line="108" selection-start-line="108" selection-end-line="108" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainersMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/react-geocode/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/Gyms.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/client/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-579">
+          <caret line="106" column="25" selection-start-line="106" selection-start-column="25" selection-end-line="106" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="87" column="47" selection-start-line="87" selection-start-column="47" selection-end-line="91" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="148" column="57" lean-forward="true" selection-start-line="148" selection-start-column="60" selection-end-line="152" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#204#236#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,56 @@
+{
+  "name": "Workout-App",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer",
+    "build": "react-scripts build"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.3.4",
+    "@types/react": "^16.8.21",
+    "@types/react-redux": "^7.1.0",
+    "axios": "^0.19.0",
+    "bcrypt": "^3.0.6",
+    "cors": "^2.8.5",
+    "google-maps-react": "^2.0.2",
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "^0.4.1",
+    "query-string": "^6.8.2",
+    "react": "^16.8.6",
+    "react-addons-update": "^15.6.2",
+    "react-dom": "^16.5.0",
+    "react-file-base64": "^1.0.3",
+    "react-geocode": "^0.1.2",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "^3.0.1",
+    "react-spinners": "^0.5.4",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-react": "^0.87.3"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.1",
+    "postcss": "^6.0.22",
+    "postcss-load-config": "^1.2.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          "last 2 versions"
+        ]
+      }
+    }
+  }
+}

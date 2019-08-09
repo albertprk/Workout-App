@@ -10,7 +10,7 @@ import {removeAllSortingTags, removeSortingTag} from "../../actions/sortingTags"
 class Gyms extends React.Component {
 
     componentDidMount() {
-        this.props.fetchData("http://localhost:9000/gyms");
+        this.props.fetchData("/gyms");
         this.props.removeAllSortingTags();
         this.props.gymSearchName("");
     }

@@ -1,6 +1,6 @@
 # Swolr
 
-Swolr is a web application that is designed to introduce trainees to trainers, newbies to gyms, and lifters to lifting partners. 
+Swolr is a web application that introduces users to local gyms and personal trainers. It allows users to search for gyms and trainers based on preferences, book appointments with trainers, and leave reviews after their training sessions.
 
 There are four pages.
 

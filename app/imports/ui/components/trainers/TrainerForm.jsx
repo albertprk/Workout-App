@@ -85,7 +85,7 @@ class TrainerForm extends React.Component {
 
     renderTrainerTags = () => {
         if (this.props.trainerTagsList.length == 0) {
-            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
         return this.props.trainerTagsList.map((tag) => {
@@ -110,12 +110,12 @@ class TrainerForm extends React.Component {
         }
 
         if (this.props.gymsList.length === 0) {
-            this.props.fetchData("http://localhost:9000/gyms");
+            this.props.fetchData("/gyms");
             // Hard Code Change later!
         }
 
         if (this.props.trainerTagsList.length === 0) {
-            this.props.fetchTrainersTags("http://localhost:9000/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
 

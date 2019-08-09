@@ -3,14 +3,14 @@ import Chart from 'react-apexcharts'
 import {ExtendedPieChartData as percentage} from "react-minimal-pie-chart";
 
 
-class PieChart extends React.Component {
+class RateBarChart extends React.Component {
 
     constructor(props) {
         super(props);
 
         const comments = this.props.comments;
         var totalVotes = this.props.comments.filter(function(c){return c!= null && c != undefined;}).length;
-        
+
         var rateLess6 = this.props.comments.filter(function(c){return c.rate < 6;}).length;
         var rate6 = this.props.comments.filter(function(c){return c.rate == 6;}).length;
         var rate7 = this.props.comments.filter(function(c){return c.rate == 7;}).length;
@@ -54,10 +54,10 @@ class PieChart extends React.Component {
     }
     render() {
         return (
-            <Chart options={this.state.options} series={this.state.series} type="bar" width={400} height={220} />
+            <Chart options={this.state.options} series={this.state.series} type="bar" width={400} height={270} />
         )
     }
 
 }
 
-export default PieChart;
+export default RateBarChart;

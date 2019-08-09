@@ -6,6 +6,9 @@ import Spinner from '../Spinner'
 
 const querystring = require('query-string');
 import CommentForm from './CommentForm';
+import ModalExampleSize from "./CertificateModal";
+import {Rating } from 'semantic-ui-react'
+import RateBarChart from "./RateBarChart";
 
 
 // export default class TrainerInfo extends Component {
@@ -99,117 +102,140 @@ class TrainerInfo extends React.Component {
                 name += " 🏆 (Trainer of the Month)";
             }
 
+        var avgScoreRound = Math.round(avgScore);
 
 
             const months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
 
-            return (
-                <div>
-                    <div className="ui segment">
-                        <div className="ui two column very relaxed grid">
-                            <div className="column">
-                                <div className="ui items">
-                                    <div className="item">
-                                        <div className="image">
-                                            {/* todo: oliver Dynamic show this from Mongo data! */}
-                                            <img src={targetTrainer.profilePicture}/>
+        return (
+            <div>
+                <div className="ui segment">
+                    <div className="ui two column very relaxed grid">
+                        <div className="column">
+                            <div className="ui items">
+                                <div className="item">
+                                    <div className="image">
+                                        {/* todo: oliver Dynamic show this from Mongo data! */}
+                                        <img src={targetTrainer.profilePicture}/>
+                                    </div>
+                                    <div className="content">
+                                        <a className="header">{name}</a>
+                                        <div className="meta">
+                                            <span>Trainer at {targetTrainer.gym}</span>
                                         </div>
-                                        <div className="content">
-                                            <a className="header">{name}</a>
-                                            <div className="meta">
-                                                <span>Trainer at {targetTrainer.gym}</span>
-                                            </div>
-                                            <div className="description">
-                                                <p>
-                                                    {targetTrainer.description}
-                                                </p>
-                                            </div>
-                                            <div>
+                                        <div className="description">
+                                            <p>
+                                                {targetTrainer.description}
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <h3>
                                                 {avgScore}/10
-                                            </div>
+                                            </h3>
+
+                                            <Rating maxRating={10} rating={avgScoreRound} icon='star' size='large' disabled/>
+
+
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="ui label">
-                                    <i className="mail icon"/> {targetTrainer.email}
-                                </div>
-
-                                <div className="ui label">
-                                    <i className="globe icon"/> {targetTrainer.phone}
-                                </div>
-
-                                <br/>
-                                <br/>
-                                <div className="ui labels">
-                                    {
-                                        targetTrainer.tags.map((tag, index) => {
-                                            return (
-                                                <div className="ui label" key={index}>
-                                                    {tag}
-                                                </div>
-                                            )
-                                        })
-
-                                    }
-                                </div>
-
-                                <br></br>
-                                <div className="ui tag labels">
-                                    <a className="ui label">
-                                        ${targetTrainer.cost}
-                                    </a>
-                                </div>
                             </div>
-                            <div className="column">
-                                <div className="ui comments">
-                                    <div className="comment">
-                                        <div className="content">
-                                            <div>
-                                                {
-                                                    targetTrainer.comments.length !== 0 &&
-                                                    targetTrainer.comments.map((comment, index) => {
-                                                        if (comment != null) {
-                                                            return (
-                                                                <div key={index}>
-                                                                    <a className="author">{comment.fullname}</a>
-                                                                    <div className="metadata">
-                                                                        <div className="date">
-                                                                            {/* todo: oliver: get the subtraction of date */}
-                                                                            {
-                                                                                new Date(comment.date).getDate() + "-" + months[new Date(comment.date).getMonth()] + "-" + new Date(comment.date).getFullYear()
-                                                                            }
 
-                                                                        </div>
+                            <div className="ui label">
+                                <i className="mail icon"/> {targetTrainer.email}
+                            </div>
 
-                                                                        <div className="rating">
-                                                                            <i className="like icon"></i> {comment.rate}/10
-                                                                        </div>
+                            <div className="ui label">
+                                <i className="globe icon"/> {targetTrainer.phone}
+                            </div>
+
+                            <br/>
+                            <br/>
+                            <div className="ui labels">
+                                {
+                                    targetTrainer.tags.map((tag, index) => {
+                                        return (
+                                            <div className="ui label" key={index}>
+                                                {tag}
+                                            </div>
+                                        )
+                                    })
+
+                                }
+                            </div>
+
+                            <br></br>
+                            <div className="ui tag labels">
+                                <a className="ui label">
+                                    ${targetTrainer.cost}
+                                </a>
+                            </div>
+
+                            <br></br>
+                            <div>
+                                {
+                                    targetTrainer.comments.length !== 0 &&
+                                    <RateBarChart comments = {targetTrainer.comments}/>
+                                }
+                            </div>
+
+
+                            {
+                                (avgScore >= 9) &&
+                                (targetTrainer.comments.length >= 10) &&
+                                <ModalExampleSize targetTrainer={targetTrainer} avgScore={avgScore}/>
+                            }
+
+                        </div>
+                        <div className="column">
+                            <div className="ui comments">
+                                <div className="comment">
+                                    <div className="content">
+                                        <div>
+                                            {
+                                                targetTrainer.comments.length !== 0 &&
+                                                targetTrainer.comments.map((comment, index) => {
+                                                    if (comment != null) {
+                                                        return (
+                                                            <div key={index}>
+                                                                <a className="author">{comment.fullname}</a>
+                                                                <div className="metadata">
+                                                                    <div className="date">
+                                                                        {/* todo: oliver: get the subtraction of date */}
+                                                                        {
+                                                                            new Date(comment.date).getDate() + "-" + months[new Date(comment.date).getMonth()] + "-" + new Date(comment.date).getFullYear()
+                                                                        }
 
                                                                     </div>
-                                                                    <div className="text">
-                                                                        {comment.context}
+
+                                                                    <div className="rating">
+                                                                        <i className="like icon"></i> {comment.rate}/10
                                                                     </div>
 
                                                                 </div>
-                                                            )
-                                                        }
-                                                    })
-                                                }
-                                            </div>
+                                                                <div className="text">
+                                                                    {comment.context}
+                                                                </div>
+
+                                                          </div>
+                                                        )
+                                                    }
+                                                })
+                                            }
                                         </div>
                                     </div>
-                                    <br/>
-                                    <CommentForm/>
                                 </div>
+                                <br/>
+                                <CommentForm/>
                             </div>
                         </div>
-                        <div className="ui vertical divider">
-                            review
-                        </div>
+                    </div>
+                    <div className="ui vertical divider">
+                        review
                     </div>
                 </div>
-            );
+            </div>
+        );
 
     }
 }

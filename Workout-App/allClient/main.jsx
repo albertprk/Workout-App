@@ -14,3 +14,4 @@ Meteor.startup(() => {
       </Provider>,
       document.getElementById('react-target'));
 });
+

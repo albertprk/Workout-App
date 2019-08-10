@@ -1,33 +1,29 @@
 # Swolr
+### Brent Hanover (@brenthanover) 
+### Oliver Yan Li (@Oliverlee1003)
+### Albert Park (@Wohlte)
+### Eric Wang (@ewang998)
+
 
 Swolr is a web application that introduces users to local gyms and personal trainers. It allows users to search for gyms and trainers based on preferences, book appointments with trainers, and leave reviews after their training sessions.
 
-There are four pages.
-
-==============================================================================
 
 ## Gyms Page:
+* In a three-pane design, the application features a list of gyms with its picture, information, and location on a map using the Google Maps API.  
+* At the top of the gyms page, there is an option in the search bar to filter results by tag (e.g. yoga, weightlifting) or by gym name. 
+* For each listed gym, users can pull up a list of all trainers registered at that location. 
 
-In the upper part, we see a map with gyms. (In phase one, we use a photo instead)
-In the lower part, we see a list of gyms with its information such as picture, location, hours. 
-In either part, when we click one gym, the page is redirect to Trainers page.
-
-==============================================================================
 
 ## Trainers page:
-We see a list of trainers with default filter of location. 
-We see a list of trainers with their brief introduction such as Picture, Name, Gym Locations, Introduction, workout tags
-We should be able to filer trainers by workout type (yoga, bodybuilding etc), location, Price, Gender
-Once we click the specific trainer, the page is redirect to Trainer Page.
+* We see a list of trainers with default filter of location. 
+* We see a list of trainers with their brief introduction such as Picture, Name, Gym Locations, Introduction, workout tags
+* We should be able to filer trainers by workout type (yoga, bodybuilding etc), location, Price, Gender
+* Once we click the specific trainer, the page is redirect to Trainer Page.
 
-
-==============================================================================
 
 ## Trainer Page:
 We see the detail information of the trainer such as Availability (Text at first, Calendar format in the second phase), Workout tags(eg. Arms, legs, Chest), introduction, Picture 
 
-
-==============================================================================
 
 ## User Profile Page:
 We see detailed information about trainer such as :
@@ -38,8 +34,6 @@ We see detailed information about trainer such as :
 
 We can also upload the trainers information here.
 
-
-==============================================================================
 
 # Project task requirements
 
@@ -78,7 +72,7 @@ We can also upload the trainers information here.
 -   List of gyms visited, workouts tried (tags), trainers/members trained with
 
 ## Filter function on trainer
-- workout type (yoga, bodybuilding etc), location, etc
+- Workout type (yoga, bodybuilding etc), location, etc
 - Location
 - Price (from low to high, high to low)
 - Gender

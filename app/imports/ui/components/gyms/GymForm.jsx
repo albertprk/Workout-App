@@ -79,7 +79,7 @@ class GymForm extends React.Component {
 
     renderGymTags = () => {
         if (this.props.gymTagsList.length === 0) {
-            this.props.fetchGymsTags("/gyms/tags");
+            this.props.fetchGymsTags("https://swolrinfoapi.herokuapp.com/gymsAPI/tags");
             // Hard Code Change later!
         }
         return this.props.gymTagsList.map((tag) => {
@@ -103,7 +103,7 @@ class GymForm extends React.Component {
         }
 
         if (this.props.gymTagsList.length === 0) {
-            this.props.fetchGymsTags("/gyms/tags");
+            this.props.fetchGymsTags("https://swolrinfoapi.herokuapp.com/gymsAPI/tags");
             // Hard Code Change later!
         }
 

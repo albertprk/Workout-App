@@ -10,7 +10,7 @@ const querystring = require('query-string');
 
 class TrainerCards extends React.Component {
     componentDidMount() {
-        this.props.fetchData("/swolr/trainers");
+        this.props.fetchData("https://swolrinfoapi.herokuapp.com/trainersAPI");
         this.props.removeAllSortingTags();
         this.props.trainerSearchName("");
     }

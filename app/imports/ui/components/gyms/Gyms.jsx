@@ -10,7 +10,7 @@ import {removeAllSortingTags, removeSortingTag} from "../../actions/sortingTags"
 class Gyms extends React.Component {
 
     componentDidMount() {
-        this.props.fetchData("/gyms");
+        this.props.fetchData("https://swolrinfoapi.herokuapp.com/gymsAPI");
         this.props.removeAllSortingTags();
         this.props.gymSearchName("");
     }

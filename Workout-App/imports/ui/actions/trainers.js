@@ -55,7 +55,7 @@ export const trainersFetchData = (url) => {
 //get information about a specfic trainer using user _id
 export const getTrainer = (id) => {
   return dispatch => {
-      return axios.get("http://localhost:9000/trainers/gettrainer", {
+      return axios.get("https://swolrinfoapi.herokuapp.com/trainersAPI/gettrainer", {
           params: {
             user: id
           }
@@ -76,7 +76,7 @@ export const getTrainer = (id) => {
 //get information about a specfic trainer using Trainer _id
 export const getTrainerByObjectID = (id) => {
   return dispatch => {
-      return axios.get("http://localhost:9000/trainers/gettrainerbyobjectid", {
+      return axios.get("https://swolrinfoapi.herokuapp.com/trainersAPI/gettrainerbyobjectid", {
           params: {
             objectid: id
           }
@@ -98,7 +98,7 @@ export const getTrainerByObjectID = (id) => {
 export const addTrainer = (Trainer) => {
     return dispatch => {
         axios
-            .post("http://localhost:9000/trainers", {
+            .post("https://swolrinfoapi.herokuapp.com/trainersAPI", {
                 trainer: Trainer
             })
             .then(res => {
@@ -115,7 +115,7 @@ export const addTrainer = (Trainer) => {
 //update a trainer, called from trainerupdate
 export const updateTrainer = (id, trainer) => {
     return dispatch => {
-        return axios.put("http://localhost:9000/trainers/updatetrainer", {
+        return axios.put("https://swolrinfoapi.herokuapp.com/trainersAPI/updatetrainer", {
               user: id,
               trainer: trainer
         })

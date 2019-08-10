@@ -2,11 +2,13 @@
   "name": "Workout-App",
   "private": true,
   "scripts": {
-    "start": "meteor run",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
-    "build": "react-scripts build"
+    "build": "react-scripts build",
+    "client": "meteor run",
+    "server": "cd backend && cd api && npm start",
+    "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
@@ -14,6 +16,7 @@
     "@types/react-redux": "^7.1.0",
     "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
+    "concurrently": "^4.1.1",
     "cors": "^2.8.5",
     "google-maps-react": "^2.0.2",
     "jquery": "^3.4.1",

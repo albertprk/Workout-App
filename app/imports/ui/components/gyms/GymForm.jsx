@@ -103,7 +103,7 @@ class GymForm extends React.Component {
         }
 
         if (this.props.gymTagsList.length === 0) {
-            this.props.fetchGymsTags("/swolr/gyms/tags");
+            this.props.fetchGymsTags("/gyms/tags");
             // Hard Code Change later!
         }
 

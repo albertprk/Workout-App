@@ -102,7 +102,7 @@ class TrainerUpdate extends React.Component {
 
     renderTrainerTags = () => {
         if (this.props.trainerTagsList.length === 0) {
-            this.props.fetchTrainersTags("/swolr/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
         return this.props.trainerTagsList.map((tag)=>{
@@ -114,12 +114,12 @@ class TrainerUpdate extends React.Component {
     render() {
 
         if (this.props.gymsList.length === 0) {
-            this.props.fetchData("/swolr/gyms");
+            this.props.fetchData("/gyms");
             // Hard Code Change later!
         }
 
         if (this.props.trainerTagsList.length === 0) {
-            this.props.fetchTrainersTags("/swolr/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
 

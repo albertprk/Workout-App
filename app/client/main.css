@@ -126,11 +126,12 @@ body {
   padding-top:-5px;
   padding:10px;
   font-size:120%;
-  text-shadow: 2px 2px rgba(0,0,0,0.3);
 }
 
 .navItem:hover {
-  background:rgba(255,255,255,0.3);
+  background:rgba(255,255,255,1);
+  color:black;
+  border-radius:5px;
 }
 
 #header {

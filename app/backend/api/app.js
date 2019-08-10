@@ -24,7 +24,7 @@ var connected = false;
 var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority';
 
 // mongoose.connect(dbRoute, {dbName: 'workoutApp'});
-var db = mongoose.connect(process.env.MONGODB_URI || dbRoute, {dbName: 'swolr'}, (error) => {
+var db = mongoose.connect(dbRoute || process.env.MONGODB_URI, {dbName: 'swolr'}, (error) => {
     //var db = mongoose.connect(dbRoute,(error) => {
     console.log("connecting to mongo...");
     if (error) {

@@ -85,7 +85,7 @@ class TrainerForm extends React.Component {
 
     renderTrainerTags = () => {
         if (this.props.trainerTagsList.length == 0) {
-            this.props.fetchTrainersTags("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
         return this.props.trainerTagsList.map((tag) => {
@@ -115,7 +115,7 @@ class TrainerForm extends React.Component {
         }
 
         if (this.props.trainerTagsList.length === 0) {
-            this.props.fetchTrainersTags("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority/trainers/tags");
+            this.props.fetchTrainersTags("/swolr/trainers/tags");
             // Hard Code Change later!
         }
 

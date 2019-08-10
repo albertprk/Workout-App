@@ -79,7 +79,7 @@ class GymForm extends React.Component {
 
     renderGymTags = () => {
         if (this.props.gymTagsList.length === 0) {
-            this.props.fetchGymsTags("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority/gyms/tags");
+            this.props.fetchGymsTags("/gyms/tags");
             // Hard Code Change later!
         }
         return this.props.gymTagsList.map((tag) => {
@@ -103,7 +103,7 @@ class GymForm extends React.Component {
         }
 
         if (this.props.gymTagsList.length === 0) {
-            this.props.fetchGymsTags("mongodb+srv://mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority/gyms/tags");
+            this.props.fetchGymsTags("/gyms/tags");
             // Hard Code Change later!
         }
 

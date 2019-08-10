@@ -38,18 +38,27 @@ app.listen(port, () => console.log("listening on port"));
 var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority';
 
 // mongoose.connect(dbRoute, {dbName: 'workoutApp'});
-var db = mongoose.connect(dbRoute, {dbName: 'swolr'}, (error) => {
-    //var db = mongoose.connect(dbRoute,(error) => {
+// mongoose.connect(dbRoute, {dbName: 'swolr'}, { useNewUrlParser: true }, (error) => {
+//     //var db = mongoose.connect(dbRoute,(error) => {
+//
+//     console.log("connecting to mongo...");
+//     if (error) {
+//         console.log("error connecting to mongodb");
+//         console.log(error);
+//     } else {
+//         console.log("successful connection to mongodb");
+//         connected = true;
+//     }.catch(function(error){
+//             console.log('Error getting the posts');
+//         });
+// });
 
-    console.log("connecting to mongo...");
-    if (error) {
-        console.log("error connecting to mongodb");
-        console.log(error);
-    } else {
-        console.log("successful connection to mongodb");
-        connected = true;
+try {
+      mongoose.connect(dbRoute, {dbName: 'swolr'}, { useNewUrlParser: true }); 
+    } catch (error) {
+      console.log(errror);
+      process.exit(1);
     }
-});
 
 // test mongo connectivity
 app.get('/test_mongo', (req, res) => {

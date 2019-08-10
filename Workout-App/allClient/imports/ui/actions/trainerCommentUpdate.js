@@ -29,7 +29,7 @@ export const trainerCommentUpdate = (comment, id) => {
 
         axios
             // Danger!!! Hard Code!!!
-            .put("http://localhost:9000/trainers/updateOneTrainerComment", {
+            .put("http://localhost:9000/trainersbackend/updateOneTrainerComment", {
                 comment: comment,
                 id: id
             })

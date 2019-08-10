@@ -57,10 +57,10 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/usersbackend', usersRouter);
 app.use("/testAPI", testAPIRouter);
-app.use("/trainers", trainersRouter);
-app.use('/gyms', gymsRouter);
+app.use("/trainersbackend", trainersRouter);
+app.use('/gymsbackend', gymsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -76,6 +76,23 @@ app.use(function (err, req, res, next) {
     // render the error page
     res.status(err.status || 500);
     res.render('error');
+});
+
+if (process.env.NODE_ENV === 'production') {
+    // Serve any static files
+    app.use(express.static(path.join(__dirname, 'client/build')));
+// Handle React routing, return all requests to React app
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+    });
+}
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
+app.listen(process.env.PORT || 9000, function() {
+    console.log('Express server is up and running!');
 });
 
 module.exports = app;

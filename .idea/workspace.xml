@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa2865e4-1aea-4684-873e-c903de983d19" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/gyms/GymMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/gyms/GymMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/gyms/Gyms.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/gyms/Gyms.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx" afterDir="false" />
     </list>
     <ignored path="D:\UBC\CPSC436I\project_repo\Workout-App\.idea\shelf/" />
@@ -30,24 +28,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2094">
-              <caret line="12" column="108" selection-start-line="12" selection-start-column="108" selection-end-line="12" selection-end-column="108" />
+            <state relative-caret-position="-800">
+              <caret line="113" column="181" selection-start-line="113" selection-start-column="181" selection-end-line="113" selection-end-column="181" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymCard.jsx">
+        <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/CommentForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-255" />
+            <state relative-caret-position="-2094" />
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="105" column="116" selection-start-line="105" selection-start-column="116" selection-end-line="105" selection-end-column="116" />
+            <state relative-caret-position="1130">
+              <caret line="105" column="164" selection-start-line="105" selection-start-column="164" selection-end-line="105" selection-end-column="164" />
             </state>
           </provider>
         </entry>
@@ -55,15 +53,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymMap.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-532" />
+            <state relative-caret-position="-560" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymMenu.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="53" column="121" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="121" />
+            <state relative-caret-position="800">
+              <caret line="84" column="56" lean-forward="true" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -71,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/Gyms.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="47" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="47" />
+            <state relative-caret-position="-1130">
+              <caret line="12" column="142" selection-start-line="12" selection-start-column="142" selection-end-line="12" selection-end-column="142" />
             </state>
           </provider>
         </entry>
@@ -80,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3030">
-              <caret line="117" column="120" selection-start-line="117" selection-start-column="120" selection-end-line="117" selection-end-column="120" />
+            <state relative-caret-position="-2927">
+              <caret line="117" column="154" selection-start-line="117" selection-start-column="154" selection-end-line="117" selection-end-column="154" />
             </state>
           </provider>
         </entry>
@@ -89,24 +87,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerInfo.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1516" />
+            <state relative-caret-position="-3172" />
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="53" column="116" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="116" />
+            <state relative-caret-position="-1123">
+              <caret line="53" column="150" selection-start-line="53" selection-start-column="150" selection-end-line="53" selection-end-column="150" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="769">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="132">
+              <caret line="49" column="145" selection-start-line="49" selection-start-column="145" selection-end-line="49" selection-end-column="145" />
             </state>
           </provider>
         </entry>
@@ -150,8 +148,8 @@
       <find>map</find>
       <find>22</find>
       <find>75</find>
-      <find>/trainer</find>
       <find>/gyms</find>
+      <find>/trainer</find>
     </findStrings>
     <replaceStrings>
       <replace>gyms</replace>
@@ -198,13 +196,13 @@
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" />
         <option value="$PROJECT_DIR$/app/backend/api/app.js" />
-        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx" />
-        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx" />
-        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx" />
-        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx" />
+        <option value="$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx" />
         <option value="$PROJECT_DIR$/app/imports/ui/components/gyms/GymMenu.jsx" />
         <option value="$PROJECT_DIR$/app/imports/ui/components/gyms/Gyms.jsx" />
-        <option value="$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx" />
+        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx" />
+        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx" />
+        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx" />
+        <option value="$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx" />
       </list>
     </option>
   </component>
@@ -560,7 +558,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="added Albert's CSS and home page" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainers.js" />
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/sortingTags.js" />
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/rootReducer.js" />
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/reducers/trainerTags.js" />
@@ -675,67 +672,74 @@
         <state relative-caret-position="-139" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerInfo.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1516" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="769">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="53" column="116" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3030">
-          <caret line="117" column="120" selection-start-line="117" selection-start-column="120" selection-end-line="117" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2094">
-          <caret line="12" column="108" selection-start-line="12" selection-start-column="108" selection-end-line="12" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymCard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255" />
+        <state relative-caret-position="-1295">
+          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1130">
+          <caret line="105" column="164" selection-start-line="105" selection-start-column="164" selection-end-line="105" selection-end-column="164" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymMenu.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="53" column="121" selection-start-line="53" selection-start-column="116" selection-end-line="53" selection-end-column="121" />
+        <state relative-caret-position="800">
+          <caret line="84" column="56" lean-forward="true" selection-start-line="84" selection-start-column="56" selection-end-line="84" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/Gyms.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="47" />
+        <state relative-caret-position="-1130">
+          <caret line="12" column="142" selection-start-line="12" selection-start-column="142" selection-end-line="12" selection-end-column="142" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymMap.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532" />
+        <state relative-caret-position="-560" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/gyms/GymForm.jsx">
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/CommentForm.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="105" column="116" selection-start-line="105" selection-start-column="116" selection-end-line="105" selection-end-column="116" />
+        <state relative-caret-position="-2094" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerCards.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-800">
+          <caret line="113" column="181" selection-start-line="113" selection-start-column="181" selection-end-line="113" selection-end-column="181" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerForm.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2927">
+          <caret line="117" column="154" selection-start-line="117" selection-start-column="154" selection-end-line="117" selection-end-column="154" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerInfo.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3172" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainersMenu.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1123">
+          <caret line="53" column="150" selection-start-line="53" selection-start-column="150" selection-end-line="53" selection-end-column="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/imports/ui/components/trainers/TrainerUpdate.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="49" column="145" selection-start-line="49" selection-start-column="145" selection-end-line="49" selection-end-column="145" />
         </state>
       </provider>
     </entry>

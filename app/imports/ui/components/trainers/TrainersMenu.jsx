@@ -51,7 +51,7 @@ class TrainersMenu extends Component {
 
     gymTags = () => {
         if (this.props.tagsList.length === 0) {
-            this.props.fetchGymsTags("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net:27017/gyms/tags");
+            this.props.fetchGymsTags("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority/gyms/tags");
             // Hard Code Change later!
         }
         return this.props.tagsList.map((tag) => {

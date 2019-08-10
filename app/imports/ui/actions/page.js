@@ -79,7 +79,7 @@ export const addGym = (gym) => {
         dispatch(addGymStarted());
 
         axios
-            .post("http://localhost:9000/gyms", {
+            .post("/gyms", {
                 gym: gym
             })
             .then(res => {

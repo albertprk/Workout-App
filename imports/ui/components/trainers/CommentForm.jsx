@@ -38,7 +38,7 @@ class CommentForm extends React.Component{
             while(true){
                 if (!this.props.isLoading){
                     this.handleClose();
-                    this.props.fetchData("/trainers");
+                    this.props.fetchData("/trainersAPI");
                     alert('Thank you for your comment and rating');
                     break;
                 }

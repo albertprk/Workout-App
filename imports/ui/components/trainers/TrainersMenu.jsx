@@ -51,7 +51,7 @@ class TrainersMenu extends Component {
 
     gymTags = () => {
         if (this.props.tagsList.length === 0) {
-            this.props.fetchGymsTags("/swolr/gyms/tags");
+            this.props.fetchGymsTags("/gymsAPI/tags");
             // Hard Code Change later!
         }
         return this.props.tagsList.map((tag) => {

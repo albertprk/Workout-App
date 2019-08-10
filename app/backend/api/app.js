@@ -21,7 +21,7 @@ var connected = false;
 // dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-obiso.mongodb.net/workout-app?retryWrites=true&w=majority';
 
 // let's use swolr work out Mongo Database
-var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/workout-app?retryWrites=true&w=majority';
+var dbRoute = 'mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net:27017';
 
 // mongoose.connect(dbRoute, {dbName: 'workoutApp'});
 var db = mongoose.connect(dbRoute || process.env.MONGODB_URI, {dbName: 'swolr'}, (error) => {

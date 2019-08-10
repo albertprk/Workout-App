@@ -51,7 +51,7 @@ class GymMenu extends Component {
 
     gymTags = () => {
         if (this.props.tagsList.length === 0) {
-            this.props.fetchGymsTags("http://localhost:9000/gyms/tags");
+            this.props.fetchGymsTags("/swolr/gyms/tags");
             // Hard Code Change later!
         }
         return this.props.tagsList.map((tag) => {

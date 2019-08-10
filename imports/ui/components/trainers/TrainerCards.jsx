@@ -10,7 +10,7 @@ const querystring = require('query-string');
 
 class TrainerCards extends React.Component {
     componentDidMount() {
-        this.props.fetchData("http://localhost:9000/trainers");
+        this.props.fetchData("http://localhost:9000/trainersAPI");
         this.props.removeAllSortingTags();
         this.props.trainerSearchName("");
     }

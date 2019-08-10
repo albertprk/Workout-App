@@ -85,7 +85,7 @@ class TrainerForm extends React.Component {
 
     renderTrainerTags = () => {
         if (this.props.trainerTagsList.length == 0) {
-            this.props.fetchTrainersTags("swolr/trainers/tags");
+            this.props.fetchTrainersTags("/trainers/tags");
             // Hard Code Change later!
         }
         return this.props.trainerTagsList.map((tag) => {

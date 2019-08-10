@@ -17,7 +17,7 @@ class Gyms extends React.Component {
 
     // renders list of gyms
     // filters by tags if tags present
-    // only shows single gym if searching by name
+    // only shows single gym if searching name
     renderGyms() {
         return this.props.gymsList.map((gym) => {
             let contains = true;

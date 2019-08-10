@@ -47,7 +47,7 @@ class TrainerUpdate extends React.Component {
         alert('Please Signin or Signup first');
       } else {
         alert('Please sign up as a trainer first! Click ok to be redirected to the signup page');
-        this.props.history.push("/account/addtrainer")
+        this.props.history.push("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net:27017/account/addtrainer")
       }
     }
 

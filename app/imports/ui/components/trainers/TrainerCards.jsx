@@ -10,7 +10,7 @@ const querystring = require('query-string');
 
 class TrainerCards extends React.Component {
     componentDidMount() {
-        this.props.fetchData("/trainers");
+        this.props.fetchData("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net:27017/trainers");
         this.props.removeAllSortingTags();
         this.props.trainerSearchName("");
     }
@@ -111,7 +111,7 @@ class TrainerCards extends React.Component {
                                     return (
                                         <div className="card" onClick={() => {
                                             this.props.changeTrainerInfoObjectId(targetTrainer._id);
-                                            this.props.history.push("/mytrainers?trainer=" + targetTrainer._id);
+                                            this.props.history.push("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net/mytrainers?trainer=" + targetTrainer._id);
                                         }}>
                                             <div className="image">
                                                 <img src={targetTrainer.profilePicture}/>

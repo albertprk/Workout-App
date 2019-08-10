@@ -10,7 +10,7 @@ import {removeAllSortingTags, removeSortingTag} from "../../actions/sortingTags"
 class Gyms extends React.Component {
 
     componentDidMount() {
-        this.props.fetchData("/gyms");
+        this.props.fetchData("mongodb+srv://m001-student:m001-mongodb-basics@sandbox-kclfx.mongodb.net:27017/gyms");
         this.props.removeAllSortingTags();
         this.props.gymSearchName("");
     }

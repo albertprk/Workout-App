@@ -4,6 +4,7 @@
 ### Albert Park (@Wohlte)
 ### Eric Wang (@ewang998)
 
+#### Swolr is deployed at: http://swolr.herokuapp.com/
 
 Swolr is a web application that introduces users to local gyms and personal trainers. It allows users to search for gyms and trainers based on preferences, book appointments with trainers, and leave reviews after their training sessions.
 

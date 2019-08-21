@@ -41,21 +41,32 @@ Swolr is a web application that introduces users to local gyms and personal trai
 ### Split up requirements into minimum, standard, and stretch requirements
 
 #### Minimum requirements (3-5 will definitely complete):
-- [x] Filter function on trainer (after selecting gym, price low to high etc)
-- [x] A trainer page (with dummy trainners’ information), profile page, and a gym page
-- [x] Pop-up/page when selecting trainer, showing trainer’s information
+- Filter function on trainer (after selecting gym, price low to high etc)
+  - Completed, users can filter gyms and trainers by tags and search by name
+- A trainer page (with dummy trainners’ information), profile page, and a gym page
+  - Completed, there is a page with all trainers, a detailed page for each trainer, a page where trainers can edit their info, and a page with all of the gyms.
+- Pop-up/page when selecting trainer, showing trainer’s information
+  - Completed, a separate page was implemented when a trainer on the trainers page is clicked. That page has all of the detailed information for the trainer
 
 #### Standard requirements (3-7 will most likely complete):
-- [x] Ability to create a profile for a user
-- [x] Rating system for users, trainers, gyms
-- [x] Map to show locations of gyms
-- [x] Ability to leave reviews on pages
-- [x] Have the admin account and limit user from updating the trainer’s information
-- [x] Use Google maps API to find closest gyms and present that info in our app
+- Ability to create a profile for a user
+  - Completed, users can sign in and create a trainer profile. Once they have created the profile they can edit their information on the trainer form page.
+- Rating system for users, trainers, gyms
+  - Completed for trainers, users can comment and rate trainers
+- Map to show locations of gyms
+  - Completed, Google maps API was integrated with the project to show the gyms location on a map
+- Ability to leave reviews on pages
+  - Completed for trainers, users can comment on trainers
+- Have the admin account and limit user from updating the trainer’s information
+  - Completed, when user signs up as a trainer a custom field - Trainer is updated to differentiate regular user and trainer. Trainer has the ability to update its own information
+- Use Google maps API to find closest gyms and present that info in our app.
+  - Not completed. Google maps API was implemented and GPS coordinates are stored in the block of data for each gym, but we did not implement an algorithm to sort gyms by location.
 
 #### Stretch requirements (2-3, hope to complete 1):
-- [ ] Matching system to give recommended lifting partners/trainers to members
-- [ ] Paypal/Bitcoin
+- Matching system to give recommended lifting partners/trainers to members
+  - Not implemented
+- Paypal/Bitcoin
+  - Not implemented
 
 
 ### Pick 2 minimum requirements and break each of them down into ~2-5 smaller tasks
@@ -82,7 +93,6 @@ Swolr is a web application that introduces users to local gyms and personal trai
 - [ ] Location.
 - [ ] Price (from low to high, high to low)
 - [ ] Gender
-- [x] Name
 
 
 
@@ -135,6 +145,9 @@ We successfully incorporated Google Maps API into our application to show the lo
 
 ### Dropdown for tags:
 To get the list of tags associated with all gyms and trainers, we created a backend call that populates an array with the tags and stores it in redux. When we are filtering the gyms and trainers by tags, those tags appear as prompts in the form field.
+
+### Search gyms and trainers by name
+This was not part of our original goals. We created functionality to store the list of gym and trainers names in redux, and connected it to the search bar at the top of the gyms and trainers pages. Clicking on the search bar makes a list of all gym or trainer names pop up. As the user types, the options narrow down until the user can select the gym or trainer they're looking for. When they hit enter, the page will only show that gym or trainer.
 
 ### Loaded, loading, and not loaded features
 To show the user that the website is loading and not just stalled, we wanted to implement a loading spinner. The spinner itself was downloaded through npm but the functionality implemented with redux. Right after the fetch data action is sent, we send an action to make the spinner component appear.  When the data is successfully fetched, we send a successful load action that removes the spinner component and puts in all of the cards populated with the data. If the data never loads, the spinner spins for a few seconds and then times out, and the spinner is removed and the page shows an error message in place of any component. These are all done with actions, redux, and switch statements.

@@ -41,47 +41,48 @@ Swolr is a web application that introduces users to local gyms and personal trai
 ### Split up requirements into minimum, standard, and stretch requirements
 
 #### Minimum requirements (3-5 will definitely complete):
-* Filter function on trainer (after selecting gym, price low to high etc)
-* A trainer page (with dummy trainners’ information), profile page, and a gym page
-* Pop-up/page when selecting trainer, showing trainer’s information
+- [x] Filter function on trainer (after selecting gym, price low to high etc)
+- [x] A trainer page (with dummy trainners’ information), profile page, and a gym page
+- [x] Pop-up/page when selecting trainer, showing trainer’s information
 
 #### Standard requirements (3-7 will most likely complete):
-* Ability to create a profile for a user
-* Rating system for users, trainers, gyms
-* Map to show locations of gyms
-* Ability to leave reviews on pages
-* Have the admin account and limit user from updating the trainer’s information
-* Use Google maps API to find closest gyms and present that info in our app
+- [x] Ability to create a profile for a user
+- [x] Rating system for users, trainers, gyms
+- [x] Map to show locations of gyms
+- [x] Ability to leave reviews on pages
+- [x] Have the admin account and limit user from updating the trainer’s information
+- [x] Use Google maps API to find closest gyms and present that info in our app
 
 #### Stretch requirements (2-3, hope to complete 1):
-* Matching system to give recommended lifting partners/trainers to members
-* Paypal/Bitcoin
+- [ ] Matching system to give recommended lifting partners/trainers to members
+- [ ] Paypal/Bitcoin
 
 
 ### Pick 2 minimum requirements and break each of them down into ~2-5 smaller tasks
 
 #### Gyms page, Trainers page, Trainer page, profile page, Gyms page
-* List of Gym with information
-* Types of equipment
-* Hours, location
+- [x] List of Gym with information
+- [x] Types of equipment
+- [x] Hours, location
 
 #### Trainers Page 
-* List of trainer with its brief bio (Picture, Name, Gym Locations, Introduction, workout tags)
+- [x] List of trainer with its brief bio (Picture, Name, Gym Locations, Introduction, workout tags)
 
 #### Trainer page
-* Availability (Text at first, Calendar format in the second phase)
-* Workout type, tags( eg. Arms, legs, Chest)
-* Bio 
+- [ ] Availability (Text at first, Calendar format in the second phase)
+- [x] Workout type, tags( eg. Arms, legs, Chest)
+- [x] Bio 
 
 #### User Profile page
-* Your physical attributes
-* List of gyms visited, workouts tried (tags), trainers/members trained with
+- [ ] Your physical attributes
+- [ ] List of gyms visited, workouts tried (tags), trainers/members trained with
 
 #### Filter function on trainer
-* Workout type (yoga, bodybuilding etc), location, etc
-* Location.
-* Price (from low to high, high to low)
-* Gender
+- [x] Workout type (yoga, bodybuilding etc), location, etc
+- [ ] Location.
+- [ ] Price (from low to high, high to low)
+- [ ] Gender
+- [x] Name
 
 
 
@@ -100,7 +101,7 @@ We learned that it is a good idea to deploy the app early during development. Th
 ### Styling:
 #### Issue:
 Our goal was to make the app as aesthetically pleasing as possible. When dealing with the header, we aimed to make it moving around and make sure that it would invite users to try the app. After cropping the image, changing the brightness of the picture and editing the CSS, we made our header moving up and down. 
-# albert anything to add XXXXXXXXXXXXXXXXXX
+
 We also had discussions on how the pages would look. For example, when we initially designed the layout of trainers page, we were debating whether to use card or rows to display the trainers. We mocked up the page by rows and cards separately and compared them together, and then agreed to use cards instead. 
 
 #### What did we learn?

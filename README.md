@@ -13,6 +13,8 @@ Swolr is a web application that introduces users to local gyms and personal trai
 
 # Application structure
 
+## Website pages
+
 ### Gyms Page:
 * In a three-pane design, the application features a list of gyms with its picture, information, and location on a map using the Google Maps API.  
 * At the top of the gyms page, there is an option in the search bar to filter results by tag (e.g. yoga, weightlifting) or by gym name. 
@@ -33,7 +35,104 @@ Swolr is a web application that introduces users to local gyms and personal trai
 * Users who are Gym Owners have the option to add new gyms. 
 * Users who are Trainers may sign up as a trainer, and modify their existing trainer information. 
 
+# Code styling and samples
 
+### Code style
+
+Our code style follows proper indenting and formatting and adheres to camel case. We tried as best as possible to be descriptive with functions and variables without being pedantic.
+
+### Folder structure
+
+The code structure is separated into two main areas: frontend and backend. All frontend files can be found in Workout-App/imports/ui. All backend files are kept under Workout-App/backend/api, with the exception of the Meteor server file under Workout-App/server which manages the user IDs. Styling is kept under Workout-App/client/main.css.
+
+In the frontend, we separate actions, components and reducers, so that they are easily found. Actions are split up into actions for gyms, trainers, tags, etc. Components are split up into three main areas: gyms, trainers, and general. The reducers are split up by gyms, traingers, tags, etc, and combined using root reducer.
+
+The backend is split up similarly. The server file for meteor is kept separately as that's what meteor requires, but the rest of the backend is stored in backend/api. Models holds all of the schema for the database, and routes holds all of the routing files.
+
+### Code samples
+
+We have included some code samples to display the typical code structure for our actions, reducers, and components.
+
+```
+export const trainersLoading = (state = false, action) => {
+    if (action.type === 'TRAINERS_LOADING') {
+        return action.isLoading
+    }
+    return state;
+};
+
+export const trainersErrored = (state = false, action) => {
+    if (action.type === 'TRAINERS_ERRORED') {
+        return action.hasErrored;
+    }
+    return state;
+};
+```
+
+Above is an example of a couple of reducers. The reducer is clearly labeled so an unfamiliar person would know what the reducer and action does. The two above are clearly sent when the trainers are loading and when they have errored. In this case they just return booleans, but other reducers have data being returned.
+
+```
+export const gymsFetchData = (url) => {
+    return (dispatch) => {
+        dispatch(isGymsLoading(true));
+
+        axios.get(url)
+            .then((response) => {
+                if (!response.data) {
+                    throw Error(response.statusText);
+                }
+                dispatch(isGymsLoading(false));
+                dispatch(gymsSuccess(response.data));
+                return response.data;
+            })
+            .catch((err) => {
+                console.log("There is an error occurring in fetch gyms action");
+                console.log(err);
+                dispatch(gymsErrored(true))
+            });
+    };
+};
+```
+
+This is an example of an action that uses axios and thunk to asynchronously return a function. The action actually calls other actions in it, like 'isTrainersLoading', 'trainersSuccess', and 'trainersErrored'. It is clear from the names and style that the first line of the return statement dispatches an action saying that the trainers are loading. 
+
+If the data is successfully fetched, an action is dispatched that says the trainers aren't loading, and then dispatches an action with the data saying that the asynchronous call has been successful. The catch statement is clear as well, console logging an error if it occurs and then dispatching an action saying that the trainers fetch data action has errored. All of this can be gleaned from the code by reading it because of the clear variable names and structured design.
+
+
+```
+    render() {
+        if (this.props.hasErrored) {
+            return <div>
+                <GymMenu/>
+                <br/>
+                <p>Sorry! Error rendering</p>
+            </div>
+        }
+
+        if (this.props.isLoading) {
+            return <div align="center">
+                <GymMenu/>
+                <br/>
+                <p>Loading...</p>
+                <Spinner/>
+            </div>
+        }
+
+        return (
+            <div>
+                <GymMenu/>
+                <br/>
+                {this.renderTags()}
+                <br/>
+                <ul>
+                    {this.renderGyms()}
+                </ul>
+            </div>
+        )
+    };
+```
+
+This is a sample component, showing only the render method. It is clear to see that if there is an error, only show an error message, if the page is loading, to display a loading sign with a loading spinner, and otherwise to show the tags and the gyms. We often abstracted functionality out to other methods to increase readability. 
 
 
 # Project task requirements
@@ -95,6 +194,47 @@ Swolr is a web application that introduces users to local gyms and personal trai
 - [ ] Gender
 
 
+
+
+
+
+# Basic Contribution:
+
+### Oliver:
+
+Trainers page:  I took charge of the trainers page design by semantic UI, generated the data from backend using get method from mongo DB. I wrote the backend method to get all the trainers information, all the trainers tags, all the gyms tags. When we do the search in trainers page, those tags are generated automatically in the dropdown. I also wrote the loading feature that when it’s fetching data from backend, there’s a spinner loading in the page. 
+
+Trainer page: I used semantic UI to show the trainers information and comment form. I wrote back end method to update the trainer comments, give trainers a rate. I also used semantic-rating to display rating bar. 
+
+I also set up mongoDB, express, wrote connection between trainers page and trainer by redux, so that once we click on a trainer, it leads to that trainer information page. I also wrote the certification awarded to the trainers who fulfil the requirements, and pdf generator to display the pdf version of certification
+
+### Eric: 
+User Authentication: added meteor’s existing user account functionality and google log in, also updated custom field of “trainer” on user object to express user status 
+
+Trainer Card: I designed the trainer card that design trainer and the information that we display on the card
+
+Add Trainer/Edit Trainer: I implemented the forms to add and edit trainer information 
+
+I also set up the project initially using meteor and semantic ui, deployed the project by deploying express API and helped deploy front end meteor application  
+
+### Brent:
+
+Gyms: I took the lead on the gyms, creating the schema for the database, creating the card component, the gyms page comprised of the cards with each dataset, the gym form to add new data to our database, and creating the tag system that was copied over to the forms and trainers pages. Along with the above there was significant work in setting up actions, reducers, backend calls, and components.
+
+Sorting and searching: I created the sorting algorithm that sorts the frontend data based on tags. I used the backend call implemented by Eric that returns the list of tags, and through redux, made it so that the user can sort the gyms and trainers by selecting or deselecting tags. I also implemented a search feature which allows users to search gyms and trainers by name.
+
+Actions, axios, thunk: I implemented thunk and axios into our actions and made them asynchronous calls that can return functions. This made it easier to do our calls to the backend, and made it so that we can dispatch actions in an action, and properly show error messages. I also created the structure for showing whether or not the data is loading, loaded, or errored.
+
+Other areas I took the lead on were implementing the Google maps API, storing images as base64 strings in mongo, parsing those strings into images, implementing the site navigation with BrowserRouter, putting data in the URL so it is persistent upon page reloading, and added most of the data for the trainers and gyms.
+
+
+### Albert:
+
+User Interface Design: Contributed CSS and HTML design to the front end, including navigation, header, and other components of the website design. 
+
+Redux: Contributed to the addition of Redux to our application, mainly employing routing and server requests when clicking through the navigation. 
+
+Deployment: Contributed to the deployment of the application through heroku. 
 
 
 

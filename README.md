@@ -190,6 +190,8 @@ Deployment: Contributed to the deployment of the application through heroku.
 
 # Basic Functionality Requirements
 
+Swolr is intended for users to be able to discover gyms and trainers, and for trainers and gyms to advertise their services. Our end product should allow users to search and filter gyms and trainers, create profiles, rate trainers and gyms, and set up workout sessions with trainers.
+
 ### Split up requirements into minimum, standard, and stretch requirements
 
 #### Minimum requirements (3-5 will definitely complete):
@@ -246,7 +248,9 @@ Deployment: Contributed to the deployment of the application through heroku.
 - [ ] Price (from low to high, high to low)
 - [ ] Gender
 
+There were only a couple of goals that we did not achieve. We did make up for this by adding additional functionality, like sorting by tags, searching gyms and trainers by name, and having the prefilled trainers form for the trainers to edit their data.
 
+There is significant functionality that could be added as well. Future expansion could include user profiles that track workouts and trainers used, a matching algorithm to recommend trainers to users, a booking system that accepts payment, and additional parameter sorting like location and gender.
 
 
 

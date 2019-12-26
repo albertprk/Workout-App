@@ -3,11 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="aa2865e4-1aea-4684-873e-c903de983d19" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Workout-App/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Workout-App/package.json" afterDir="false" />
     </list>
     <ignored path="D:\UBC\CPSC436I\project_repo\Workout-App\.idea\shelf/" />
     <ignored path="$PROJECT_DIR$/Workout-App/node_modules/" />
@@ -28,7 +23,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
+            <state relative-caret-position="147">
               <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -40,7 +35,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
+            <state relative-caret-position="4221">
               <caret line="208" column="56" selection-start-line="208" selection-start-column="56" selection-end-line="208" selection-end-column="56" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -50,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+            <state relative-caret-position="1155">
+              <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -63,9 +58,33 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="546">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/apexcharts/types/apexcharts.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
+            <state relative-caret-position="8211">
               <caret line="399" column="2" selection-start-line="399" selection-start-column="2" selection-end-line="399" selection-end-column="2" />
             </state>
           </provider>
@@ -74,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/canvasjs/src/core/charts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
+            <state relative-caret-position="126">
               <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
             </state>
           </provider>
@@ -83,7 +102,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="756">
               <caret line="36" column="30" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="30" />
             </state>
           </provider>
@@ -92,7 +111,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/react-minimal-pie-chart/src/types/index.d.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
+            <state relative-caret-position="315">
               <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
             </state>
           </provider>
@@ -181,7 +200,6 @@
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymCard.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerCards.jsx" />
-        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/PdfCerticate.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/ExportPDF.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/newWindowCertificate.jsx" />
@@ -195,11 +213,12 @@
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx" />
         <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx" />
+        <option value="$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="18" />
+    <option name="x" value="75" />
     <option name="y" value="23" />
     <option name="width" value="1256" />
     <option name="height" value="777" />
@@ -215,62 +234,6 @@
             <path>
               <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
               <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="gyms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Workout-App" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="Workout-App" type="462c0819:PsiDirectoryNode" />
-              <item name="imports" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="trainers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -288,6 +251,7 @@
     <property name="js.meteor.library.cached" value="$PROJECT_DIR$/Workout-App/.meteor" />
     <property name="js.meteor.library.was.enabled" value="true" />
     <property name="js.meteor.project" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -345,6 +309,8 @@
       <workItem from="1565132123077" duration="1516000" />
       <workItem from="1565311162819" duration="14675000" />
       <workItem from="1565333737391" duration="10113000" />
+      <workItem from="1565468049221" duration="634000" />
+      <workItem from="1577381945078" duration="231000" />
     </task>
     <task id="LOCAL-00003" summary="avg score implemented">
       <created>1564811883373</created>
@@ -420,12 +386,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99381000" />
+    <option name="totallyTimeSpent" value="100311000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="18" y="23" width="1256" height="777" extended-state="0" />
+    <frame x="75" y="23" width="1256" height="777" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20566802" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20566802" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -440,9 +406,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49911347" visible="true" weight="0.41021898" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49911347" weight="0.40936556" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.8803192" weight="0.4627737" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.8803192" visible="true" weight="0.46223566" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5008865" side_tool="true" weight="0.41021898" />
       <window_info anchor="bottom" id="GraphQL" order="12" weight="0.3296875" />
       <window_info anchor="bottom" id="TypeScript" order="13" sideWeight="0.73049647" weight="0.329927" />
@@ -558,16 +524,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/react-geocode/lib/index.js" />
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Home.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -733,44 +689,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-336">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/semantic-ui-react/dist/commonjs/modules/Rating/Rating.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="45" column="43" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/canvasjs/src/core/charts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/apexcharts/types/apexcharts.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="399" column="2" selection-start-line="399" selection-start-column="2" selection-end-line="399" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -788,33 +710,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/react-minimal-pie-chart/src/types/index.d.ts">
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2478">
-          <caret line="118" column="29" selection-start-line="118" selection-start-column="29" selection-end-line="118" selection-end-column="29" />
+        <state relative-caret-position="147">
+          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="22" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Workout-App/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="36" column="30" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/TrainerInfo.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
+        <state relative-caret-position="4221">
           <caret line="208" column="56" selection-start-line="208" selection-start-column="56" selection-end-line="208" selection-end-column="56" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -825,10 +733,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/RateBarChart.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+        <state relative-caret-position="1155">
+          <caret line="57" column="9" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/trainers/CertificateModal.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/apexcharts/types/apexcharts.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8211">
+          <caret line="399" column="2" selection-start-line="399" selection-start-column="2" selection-end-line="399" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/canvasjs/src/core/charts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/node_modules/react-minimal-pie-chart/src/types/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Workout-App/imports/ui/components/gyms/GymMap.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

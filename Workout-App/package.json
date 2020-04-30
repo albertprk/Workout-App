@@ -19,7 +19,7 @@
     "dom-to-image": "^2.6.0",
     "google-maps-react": "^2.0.2",
     "html2canvas": "^1.0.0-rc.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jspdf": "^1.5.3",
     "mdbootstrap": "^4.8.7",
     "mdbreact": "^4.19.0",

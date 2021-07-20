@@ -33,7 +33,7 @@
     "react-file-base64": "^1.0.3",
     "react-geocode": "^0.1.2",
     "react-minimal-pie-chart": "^5.0.0",
-    "react-native": "^0.60.4",
+    "react-native": "^0.62.3",
     "react-native-vector-icons": "^6.6.0",
     "react-new-window": "^0.1.2",
     "react-redux": "^7.0.3",
